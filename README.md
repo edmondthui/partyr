@@ -1,5 +1,5 @@
 # Partyr
-An application using the MERN Stack that allows users to organize and find parties.
+An application using the MERN Stack that allows users to organize and find parties.  
 [Live Demo](#)
 
 # Background and Overview  
