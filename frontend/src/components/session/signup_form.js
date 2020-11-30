@@ -6,23 +6,13 @@ class SignupForm extends React.Component {
     super(props);
     this.state = {
       email: '',
-      fname: '',
-      lname: '',
+      username: '',
       password: '',
       password2: '',
       errors: {}
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearedErrors = false;
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
-    }
-
-    this.setState({errors: nextProps.errors})
   }
 
   update(field) {
@@ -35,13 +25,17 @@ class SignupForm extends React.Component {
     e.preventDefault();
     let user = {
       email: this.state.email,
-      fname: this.state.fname,
-      lname: this.state.lname,
+      username: this.state.username,
       password: this.state.password,
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history); 
+    this.props.signup(user, this.props.history)
+      .then(() => this.props.history.push('/'));; 
+  }
+
+  componentWillUnmount() {
+    this.props.clearSessionErrors();
   }
 
   renderErrors() {
@@ -69,15 +63,9 @@ class SignupForm extends React.Component {
             />
             <br/>
             <input type="text"
-              value={this.state.fname}
-              onChange={this.update('fname')}
-              placeholder="First Name"
-            />
-            <br/>
-            <input type="text"
-              value={this.state.lname}
-              onChange={this.update('lname')}
-              placeholder="Last Name"
+              value={this.state.username}
+              onChange={this.update('username')}
+              placeholder="Username"
             />
             <br/>
             <input type="password"
