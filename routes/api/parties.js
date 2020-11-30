@@ -7,6 +7,8 @@ const User = require('../../models/User');
 const validatePartyInput = require("../../validation/party")
 const passport = require("passport");
 
+router.get("/test", (req, res) => res.json({ msg: "This is the parties route" }));
+router.get("/test", (req, res) => res.json({ msg: "This is the parties route" }));
 
 router.get("/parties", (req, res) => {
     Party.find()
