@@ -1,5 +1,5 @@
-const validText = arg => {
-    return typeof arg === 'string' && arg.trim().length>0;
+const validText = str => {
+    return typeof str === 'string' && str.trim().length > 0;
 }
 
 module.exports = validText
