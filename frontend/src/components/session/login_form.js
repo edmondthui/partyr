@@ -15,14 +15,6 @@ class LoginForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser === true) {
-      this.props.history.push('/tweets');
-    }
-
-    this.setState({errors: nextProps.errors})
-  }
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -37,7 +29,12 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user); 
+    this.props.login(user)
+      .then(() => this.props.history.push('/'));
+  }
+
+  componentWillUnmount() {
+    this.props.clearSessionErrors();
   }
 
   renderErrors() {
