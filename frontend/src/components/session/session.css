@@ -1,0 +1,104 @@
+.session-form-container {
+  box-sizing: inherit;
+  display: block;
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.login-form {
+  /* height: 400px; */
+}
+
+.signup-form {
+  /* height: 500px; */
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-form h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #02040f;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.session-form input[type="text"], 
+.session-form input[type="password"] {
+  display: block;
+  width: 70%;
+  height: 40px;
+  box-shadow: 0px 0px 5px 1px #e9e3e6;
+  /* border: 1px solid #02040f; */
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.login-form input[type="text"]:focus, 
+.login-form input[type="password"]:focus {
+  box-shadow: 0px 0px 8px 1px #ff8f1fa8;
+  /* border: 2px solid #f32b60; */
+  transition: 0.2s;
+}
+
+.signup-form input[type="text"]:focus, 
+.signup-form input[type="password"]:focus {
+  box-shadow: 0px 0px 8px 1px #f32b60a8;
+  /* border: 2px solid #f32b60; */
+  transition: 0.2s;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-family: 'Open Sans', sans-serif;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-family: 'Open Sans', sans-serif;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-family: 'Open Sans', sans-serif;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-family: 'Open Sans', sans-serif;
+}
+
+.session-form input[type="submit"] {
+  display: block;
+  width: 50%;
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #02040f;
+  color: white;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+
+.signup-form input[type="submit"]:hover {
+  background-color: #f32b60;
+  transition: 0.25s;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color:#ff8f1f;
+  transition: 0.25s;
+}
+
+.signup-form .errors {
+  margin: 10px 0px;
+  color: #f32b60;
+}
+
+.login-form .errors {
+  margin: 10px 0px;
+  color: #ff8f1f;
+}
