@@ -3,7 +3,6 @@ import { login, clearSessionErrors } from '../../actions/session_actions';
 import LoginForm from './login_form';
 
 const mapStateToProps = (state) => {
-  debugger;
   return {
     errors: state.errors.session
   };
