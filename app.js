@@ -34,9 +34,8 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
     console.log('User Disconnected');
   });
-  
-socket.on('example_message', function(msg){
-    console.log('message: ' + msg);
+  socket.on('message', function(msg){
+    console.log('message: ' + msg.message);
   });
 });
 
