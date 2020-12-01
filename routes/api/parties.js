@@ -20,21 +20,14 @@ router.get("/party/:id", (req, res) => {
 });
 
 router.put("/party/:id", (req, res) => {
-  Party.findByIdAndUpdate(
-    req.params.id,
-    { $set: req.body.title, description: req.body.description, date: req.body.date, guests: req.body.guests },
-    { new: true }, //try this -ray
+  console.log(req.body)
+  Party.findByIdAndUpdate(req.params.id, {...req.body}, {new: true},
     function (err, result) {
+      console.log(result)
       if (err) {
         res.status(404).json(err);
       } else {
-        const updateParty = {
-          title: req.body.title,
-          description: req.body.description,
-          host: req.body.hostId,
-          date: req.body.date,
-          guests: req.body.guest
-        };
+        const updateParty = {...req.body};
         res.json(updateParty);
       }
     }
@@ -63,9 +56,12 @@ router.post('/party',
         return res.status(400).json(errors);
       }
       const newParty = new Party({
+        host: req.body.hostId,
         title: req.body.title,
         description: req.body.description,
-        host: req.body.host.id
+        date: req.body.date,
+        location: req.body.location,
+        items: req.body.items
       });
   
       newParty.save().then(Party => res.json(Party));

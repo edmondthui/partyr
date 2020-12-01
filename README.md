@@ -1,6 +1,6 @@
 # Partyr
 An application using the MERN Stack that allows users to organize and find parties.  
-[Live Demo](#)
+[Live Demo](https://partyr-app.herokuapp.com/#/)
 
 # Background and Overview  
 Never have an unorganized party again. With Partyr, you can organize parties, work events, and social gatherings with stress-free planning. Let us do the planning and you do the partying.
