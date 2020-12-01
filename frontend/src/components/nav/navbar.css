@@ -20,7 +20,7 @@
 .NavBarRight a, .NavBarRight button {
   display: flex;
   justify-content: center;
-  padding-top: 5px;
+  padding-top: 2px;
   float: right;
   width: 90px;
   height: 30px;
