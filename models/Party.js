@@ -27,7 +27,10 @@ const PartySchema = new Schema({
   },
   items: [{
     type: String,
-  }]
+  }],
+  color: {
+    type: String
+  }
 });
 
 const Party = mongoose.model("party", PartySchema);

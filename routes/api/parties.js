@@ -55,13 +55,15 @@ router.post('/party',
       if (!isValid) {
         return res.status(400).json(errors);
       }
+      const randColor = (Math.floor(Math.random()*16777216)).toString(16).padStart(0, 6)
       const newParty = new Party({
         host: req.body.hostId,
         title: req.body.title,
         description: req.body.description,
         date: req.body.date,
         location: req.body.location,
-        items: req.body.items
+        items: req.body.items,
+        color: '#' + randColor
       });
   
       newParty.save().then(Party => res.json(Party));
