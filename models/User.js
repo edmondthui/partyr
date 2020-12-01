@@ -3,11 +3,7 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema(
   {
-    fname: {
-      type: String,
-      required: true,
-    },
-    lname: {
+    username: {
       type: String,
       required: true,
     },
@@ -24,9 +20,6 @@ const UserSchema = new Schema(
       default: Date.now,
     },
   },
-  {
-    timestamps: true,
-  }
 );
 
 const User = mongoose.model("users", UserSchema);

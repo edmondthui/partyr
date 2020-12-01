@@ -8,7 +8,7 @@ const PartySchema = new Schema({
   },
   guests: [{
     type: Schema.Types.ObjectId,
-    ref: "users", //references = foreign keys
+    ref: "users", 
   }],
   title: {
     type: String,
