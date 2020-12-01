@@ -1,6 +1,6 @@
-.splash {
+.gradient-bg {
   width: 100%;
-  height: calc(100vh - 72px);
+  height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +30,7 @@
   100%{background-position:0% 50%}
 }
 
-.splash h1 {
+.gradient-bg h1 {
   font-size: 48px;
   font-weight: 800;
   color: white;
@@ -38,7 +38,7 @@
   text-shadow: 2px 2px 6px rgba(30, 30, 30, 0.3);
 }
 
-.splash p {
+.gradient-bg p {
   font-size: 28px;
   font-weight: 700;
   color: #02040f;
