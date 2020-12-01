@@ -1,10 +1,12 @@
-.NavBar {
+/* .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+  height: 60px;
+  background-color: black;
+} */
 
-.NavBar button {
+.navbar button {
   height: 20px;
 }
 
