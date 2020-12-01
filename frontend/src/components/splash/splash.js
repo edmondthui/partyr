@@ -15,7 +15,10 @@ class Splash extends React.Component {
           Let us do the planning and you do the partying.
         </p>
         {/* <button className="cta-btn">Join Now</button> */}
-        <Link to={'/signup'} className="cta-btn">Join Now</Link>
+        <div className="button-container">
+          <Link to={'/signup'} className="cta-btn">Join Now</Link>
+          </div>
+          
       </div>
     );
   }

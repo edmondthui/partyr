@@ -68,6 +68,7 @@ class Party extends React.Component {
   }
 
   render() {
+
     let chatMessages = this.state.chat.map((msg, idx) => {
       return (
         <div key={idx} className="message">
@@ -76,7 +77,8 @@ class Party extends React.Component {
         </div>
       )
     })
-    return (
+    return (    
+
       <div className = "chat-box-container">
         <div className = "chat-messages">
           {chatMessages}
@@ -87,6 +89,8 @@ class Party extends React.Component {
           <button onClick={this.handleSubmit} className="live-chat-submit">Submit</button>
         </div>
       </div>
+
+
     )
   }
 
