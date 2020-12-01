@@ -6,7 +6,7 @@ class Splash extends React.Component {
 
   render() {
     return (
-      <div className="splash">
+      <div className="gradient-bg">
         <h1>Never have an unorganized party again.</h1>
         <p>With Partyr, you can organize parties, 
           <br />
