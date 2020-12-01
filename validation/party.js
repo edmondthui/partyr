@@ -18,9 +18,9 @@ module.exports = function validatePartyInput(data) {
     errors.description = 'Description is required';
   }
 
-  // if (!Validator.isDate(data.date) && data.date < currTime) {
-  //   errors.date = 'Valid Date is required';
-  // }
+  if (!Validator.isDate(data.date) && data.date < currTime) {
+    errors.date = 'Valid Date is required';
+  }
 
   if (Validator.isEmpty(data.host)) {
     errors.host = 'Host is required';

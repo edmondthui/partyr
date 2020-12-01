@@ -22,6 +22,9 @@ const PartySchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  location: {
+    type: String
+  }
 });
 
 const Party = mongoose.model("party", PartySchema);

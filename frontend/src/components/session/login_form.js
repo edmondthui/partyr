@@ -7,8 +7,7 @@ class LoginForm extends React.Component {
 
     this.state = {
       email: '',
-      password: '',
-      errors: {}
+      password: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,7 +29,11 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user)
-      .then(() => this.props.history.push('/'));
+      .then(() => {
+        if (this.props.currentUser) {
+          this.props.history.push('/')
+        }
+      });
   }
 
   componentWillUnmount() {
@@ -40,9 +43,9 @@ class LoginForm extends React.Component {
   renderErrors() {
     return(
       <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
+        {Object.keys(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>
-            {this.state.errors[error]}
+            {this.props.errors[error]}
           </li>
         ))}
       </ul>

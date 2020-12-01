@@ -8,8 +8,7 @@ class SignupForm extends React.Component {
       email: '',
       username: '',
       password: '',
-      password2: '',
-      errors: {}
+      password2: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,8 +29,12 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history)
-      .then(() => this.props.history.push('/'));; 
+    this.props.signup(user)
+      .then(() => {
+        if (this.props.currentUser) {
+          this.props.history.push('/')
+        }
+      }); 
   }
 
   componentWillUnmount() {
@@ -41,9 +44,9 @@ class SignupForm extends React.Component {
   renderErrors() {
     return(
       <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
+        {Object.keys(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>
-            {this.state.errors[error]}
+            {this.props.errors[error]}
           </li>
         ))}
       </ul>
