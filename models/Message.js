@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const messageSchema = mongoose.Schema({
   message: {
@@ -8,7 +9,7 @@ const messageSchema = mongoose.Schema({
     type: String
   },
   partyId:{ 
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "party"
   }
 }, {
