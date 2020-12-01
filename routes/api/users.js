@@ -32,11 +32,12 @@ router.post('/register', (req, res) => {
         errors.email = 'Email taken, please use another';
         return res.status(400).json(errors);
       } else {
+        const randColor = (Math.floor(Math.random()*16777216)).toString(16).padStart(0, 6)
         const newUser = new User({
           username: req.body.username,
           email: req.body.email,
           password: req.body.password,
-          color: '#' + (Math.floor(Math.random() * 2 ** 24)).toString(16).padStart(0, 6)
+          color: '#' + randColor
         })
 
         bcrypt.genSalt(10, (err, salt) => {
@@ -45,7 +46,7 @@ router.post('/register', (req, res) => {
             newUser.password = hash;
             newUser.save()
               .then(user => res.json(user))
-              .catch(err => console.log(err));
+              .catch(err => res.json(err));
           })
         })
       }
@@ -56,8 +57,6 @@ router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
   if (!isValid) {
-    // console.log(errors)
-    // console.log(req.body)
     return res.status(400).json(errors);
   }
 
