@@ -14,6 +14,7 @@ const io = require('socket.io')(http, {
   }
 });
 const Message = require('./models/Message');
+const { json } = require('body-parser');
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
@@ -30,13 +31,25 @@ mongoose
 app.get("/", (req, res) => res.send("Hello World"));
   
 io.on('connection', function(socket){ 
-  console.log('a user connected');
-  socket.on('disconnect', function(){
-    console.log('User Disconnected');
+  Message.find().sort({createdAt: -1}).limit(20).exec((err, messages) => {
+    if (err) {
+      return json(err)
+    }
+    socket.emit('init', messages)
   });
-  socket.on('message', function(msg){
-    console.log('message: ' + msg.message);
-  });
+
+  socket.on("message", (msg) => {
+    const message = new Message({
+      message: msg.message,
+      username: msg.username
+    })
+    message.save((err) => {
+      if (err) {
+        return json(err)
+      }
+    })
+    socket.broadcast.emit('new-msg', msg);
+  })
 });
 
 app.use(passport.initialize());
