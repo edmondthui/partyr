@@ -1,12 +1,16 @@
 import { connect } from 'react-redux';
-import Index from './index'
-// get parties
+import Index from './index';
+import { fetchParties } from '../../actions/party_actions';
 
-const mapStateToProps = state => ({
-  parties: state.parties
-})
+const mapStateToProps = state => {
+  debugger;
+  return {
+    parties: Object.values(state.parties.all)
+  }
+}
+
 const mapDispatchToProps = dispatch => ({
-  // fetchParties: () => dispatch(fetchParties())
+  fetchParties: () => dispatch(fetchParties())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Index);

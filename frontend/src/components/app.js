@@ -7,7 +7,7 @@ import NavBarContainer from './nav/navbar_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import Livechat from './livechat/livechat_container'
-
+import Parties from './party/index_container'
 
 const App = () => (
   <div>
@@ -17,6 +17,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/livechattest" component={Livechat} />
+      <ProtectedRoute exact path="/parties" component={Parties} />
     </Switch>
   </div>
 );
