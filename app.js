@@ -29,7 +29,7 @@ mongoose
 
 app.get("/", (req, res) => res.send("Hello World"));
   
-io.on('connection', function(socket){
+io.on('connection', function(socket){ 
   console.log('a user connected');
   socket.on('disconnect', function(){
     console.log('User Disconnected');
