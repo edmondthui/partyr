@@ -1,11 +1,9 @@
 const express = require("express");
 const Party = require("../../models/Party");
 const router = express.Router(); //get router object off of the router
-const User = require('../../models/User');
 const validatePartyInput = require("../../validation/party")
 const passport = require("passport");
 
-router.get("/test", (req, res) => res.json({ msg: "This is the parties route" }));
 router.get("/test", (req, res) => res.json({ msg: "This is the parties route" }));
 
 router.get("/parties", (req, res) => {
@@ -47,11 +45,9 @@ router.post('/party',
     passport.authenticate('jwt', { session: false }), 
     (req, res) => {
       const { errors, isValid } = validatePartyInput(req.body); 
-        
       if (!isValid) {
         return res.status(400).json(errors);
       }
-  
       const newParty = new Party({
         title: req.body.title,
         description: req.body.description,
@@ -61,7 +57,6 @@ router.post('/party',
       newParty.save().then(Party => res.json(Party));
     }
   );
-
 
 
 module.exports = router; 
