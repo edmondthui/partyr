@@ -30,7 +30,11 @@ class LoginForm extends React.Component {
     };
 
     this.props.login(user)
-      .then(() => this.props.history.push('/'));
+      .then(() => {
+        if (this.props.currentUser) {
+          this.props.history.push('/')
+        }
+      });
   }
 
   componentWillUnmount() {
