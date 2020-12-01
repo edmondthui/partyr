@@ -20,7 +20,10 @@
 .NavBarRight a, .NavBarRight button {
   display: flex;
   justify-content: center;
+<<<<<<< HEAD
   padding-top: 2px;
+=======
+>>>>>>> 2b8007a435c8453294b49b853d7e9d43bea066a4
   float: right;
   width: 90px;
   height: 30px;
@@ -32,6 +35,17 @@
   transition: 0.2s;
 }
 
+<<<<<<< HEAD
+=======
+.NavBarRight a {
+  padding-top: 2px;
+}
+
+.NavBarRight button {
+  padding-top: 5px;
+}
+
+>>>>>>> 2b8007a435c8453294b49b853d7e9d43bea066a4
 .signup, .logout {
   color: #f32b60;
 }
