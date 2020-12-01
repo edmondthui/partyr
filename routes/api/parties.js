@@ -2,8 +2,6 @@ const express = require("express");
 const Party = require("../../models/Party");
 const router = express.Router(); //get router object off of the router
 const User = require('../../models/User');
-// const validateRegisterInput = require("../../validation/register");
-// const validateLoginInput = require("../../validation/login");
 const validatePartyInput = require("../../validation/party")
 const passport = require("passport");
 
@@ -24,24 +22,19 @@ router.get("/party/:id", (req, res) => {
 });
 
 router.put("/party/:id", (req, res) => {
-    res.json({ msg: "THIS SHOULD UPDATE A PARTY" });
     Party.findById(req.params.id)
       .then(party => party.update({
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description, 
+        date: req.body.date
       }))
       .catch(err => res.status(404).json({nopartyfound: "No Party Found"}))
 });
 
-// dbase.collection("name").update(id, {$set:{first_name: req.body.first_name, last_name: req.body.last_name}}, (err, result) => {
-//     if(err) {
-//       throw err;
-//     }
-
 router.delete("/party/:id", (req, res) => {
     res.json({ msg: "THIS DELETE A PARTY" });    
     Party.findByIdAndRemove(req.params.id)
-      .then(party => res.json(party))
+      .then(party => dbase.collection('PARTYRdb').deleteOne(party))
       .catch(err => res.status(404).json({nopartyfound: "No Party Found"}))
 });
 
@@ -62,7 +55,7 @@ router.post('/party',
       const newParty = new Party({
         title: req.body.title,
         description: req.body.description,
-        host: req.host.id
+        host: req.body.host.id
       });
   
       newParty.save().then(Party => res.json(Party));

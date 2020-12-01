@@ -8,7 +8,15 @@ const jwt = require('jsonwebtoken');
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+//router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+
+router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+  res.json({
+    id: req.user.id,
+    username: req.body.username,
+    email: req.user.email
+  });
+})
 
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
@@ -21,7 +29,8 @@ router.post('/register', (req, res) => {
   User.findOne({ email: req.body.email })
     .then(user => {
       if (user) {
-        return res.status(400).json({ email: "A user has already registered with this email" })
+        errors.email = 'Email taken, please use another';
+        return res.status(400).json(errors);
       } else {
         const newUser = new User({
           username: req.body.username,
@@ -46,6 +55,8 @@ router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
   if (!isValid) {
+    console.log(errors)
+    console.log(req.body)
     return res.status(400).json(errors);
   }
 
@@ -55,18 +66,31 @@ router.post('/login', (req, res) => {
   User.findOne({ email: email })
     .then(user => {
       if (!user) {
-        return res.status(404).json({ email: "This user does not exist" });
+        errors.email = 'This user does not exist';
+        return res.status(404).json(errors);
       }
 
       bcrypt.compare(password, user.password)
-        .then(isMatch => {
-          if (isMatch) {
-            res.json({ msg: "Success" });
-          } else {
-            return res.status(40).json({ password: "Incorrect password" });
-          }
-        })
-    })
+      .then(isMatch => {
+        if (isMatch) {
+          const payload = {
+            id: user.id,
+            handle: user.handle,
+            email: user.email,
+          } 
+          jwt.sign(payload, keys.secretOrKey, {expiresIn:3600}, 
+            (err, token) => {res.json({
+                success: true,
+                token: "Bearer " + token
+              })
+            })
+        } else {
+          errors.password = 'Incorrect password'
+          return res.status(400).json(errors);
+        }
+      })  
+  })
+
 })
 
 
