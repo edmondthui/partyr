@@ -11,9 +11,10 @@ class Party extends React.Component {
       message: "",
       username: "",
     }
-
+    this.chat = null;
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.scrollToBottom = this.scrollToBottom.bind(this)
   }
 
   componentDidMount() {
@@ -56,11 +57,18 @@ class Party extends React.Component {
       username: this.props.user.username,
       message: ""
     })
-
   }
 
+  scrollToBottom() {
+    this.chat.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
 
   render() {
+
     let chatMessages = this.state.chat.map((msg, idx) => {
       return (
         <div key={idx} className="message">
@@ -69,16 +77,20 @@ class Party extends React.Component {
         </div>
       )
     })
-    return (
+    return (    
+
       <div className = "chat-box-container">
         <div className = "chat-messages">
           {chatMessages}
+          <div ref={el => (this.chat = el)}></div>
         </div>
         <div className = "chat-bar">
           <input onChange={this.update} className="live-chat-input" value={this.state.message}/>
           <button onClick={this.handleSubmit} className="live-chat-submit">Submit</button>
         </div>
       </div>
+
+
     )
   }
 
