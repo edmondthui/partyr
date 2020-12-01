@@ -85,12 +85,12 @@
 
 .signup-form input[type="submit"]:hover {
   background-color: #f32b60;
-  transition: 0.3s;
+  transition: 0.25s;
 }
 
 .login-form input[type="submit"]:hover {
   background-color:#ff8f1f;
-  transition: 0.3s;
+  transition: 0.25s;
 }
 
 .signup-form .errors {

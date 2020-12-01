@@ -29,12 +29,12 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
-    this.props.login(user)
-      .then(() => {
-        if (this.props.currentUser) {
-          this.props.history.push('/')
-        }
-      });
+    this.props.login(user);
+      // .then(() => {
+      //   if (this.props.currentUser) {
+      //     this.props.history.push('/index')
+      //   }
+      // });
   }
 
   componentWillUnmount() {
