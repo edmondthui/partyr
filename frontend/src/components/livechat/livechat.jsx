@@ -26,7 +26,7 @@ class Party extends React.Component {
       })
     })
 
-    this.socket.on('push', (msg) => {
+    this.socket.on('new-msg', (msg) => {
       this.setState({
         chat: [...this.state.chat, msg]
       })
@@ -39,7 +39,7 @@ class Party extends React.Component {
     })
 
     this.setState({
-      username: this.props.user.username // todo add user to props
+      username: this.props.user.username 
     }) 
   }
 
@@ -52,8 +52,9 @@ class Party extends React.Component {
     })
 
     this.setState({
-      chat: [...this.state.chat, {name: this.state.username, content: this.state.message}],
-      content: "", // resets the chatbox
+      chat: [...this.state.chat, {username: this.state.username, message: this.state.message}],
+      username: this.props.user.username,
+      message: ""
     })
 
   }
