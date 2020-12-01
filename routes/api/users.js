@@ -35,7 +35,8 @@ router.post('/register', (req, res) => {
         const newUser = new User({
           username: req.body.username,
           email: req.body.email,
-          password: req.body.password
+          password: req.body.password,
+          color: '#' + (Math.floor(Math.random() * 2 ** 24)).toString(16).padStart(0, 6)
         })
 
         bcrypt.genSalt(10, (err, salt) => {
@@ -87,7 +88,7 @@ router.post('/login', (req, res) => {
               })
             })
         } else {
-          errors.password = 'Incorrect password'
+          errors.password = 'Incorrect credentials'
           return res.status(400).json(errors);
         }
       })  

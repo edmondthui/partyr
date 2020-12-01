@@ -20,15 +20,17 @@ router.get("/party/:id", (req, res) => {
 });
 
 router.put("/party/:id", (req, res) => {
-  Party.findByIdAndUpdate(
+    Party.findByIdAndUpdate(
     req.params.id,
     { $set: req.body.title, description: req.body.description, date: req.body.date, guests: req.body.guests },
-    { new: true }, //try this -ray
+    { new: true}, //try this -ray
     function (err, result) {
       if (err) {
         res.status(404).json(err);
       } else {
         const updateParty = {
+          location: req.body.location,
+          items: req.body.items,
           title: req.body.title,
           description: req.body.description,
           host: req.body.hostId,
@@ -40,6 +42,55 @@ router.put("/party/:id", (req, res) => {
     }
   );
 });
+
+////test:
+  // Party.findByIdAndUpdate(req.params.id, { $set: req.body}, { new: true}, function (err, result) {
+  //     if (err) {
+  //       res.status(404).json(err);
+  //     } else {
+  //       // const updateParty = {
+  //       //   location: req.body.location,
+  //       //   items: req.body.items,
+  //       //   title: req.body.title,
+  //       //   description: req.body.description,
+  //       //   host: req.body.hostId,
+  //       //   date: req.body.date,
+  //       //   guests: req.body.guest
+  //       // };
+  //       res.json(req.body);
+  //     }
+  //   }
+  // );
+
+/////////alternative, doesnt work
+  // console.log(Party.findById(req.params.id));
+  // Party.findByIdAndUpdate(req.params.id, req.body, function(err,party){
+  //   if (err) return res.status(400).json(err);
+  //   res.json(party)
+  // })
+
+////////old code
+  // Party.findByIdAndUpdate(
+  //   req.params.id,
+  //   { $set: req.body.title, description: req.body.description, date: req.body.date, guests: req.body.guests },
+  //   { new: true}, //try this -ray
+  //   function (err, result) {
+  //     if (err) {
+  //       res.status(404).json(err);
+  //     } else {
+  //       const updateParty = {
+  //         location: req.body.location,
+  //         items: req.body.items,
+  //         title: req.body.title,
+  //         description: req.body.description,
+  //         host: req.body.hostId,
+  //         date: req.body.date,
+  //         guests: req.body.guest
+  //       };
+  //       res.json(updateParty);
+  //     }
+  //   }
+  // );
 
 
 router.delete("/party/:id", (req, res) => {
@@ -63,9 +114,12 @@ router.post('/party',
         return res.status(400).json(errors);
       }
       const newParty = new Party({
+        host: req.body.hostId,
         title: req.body.title,
         description: req.body.description,
-        host: req.body.host.id
+        date: req.body.date,
+        location: req.body.location,
+        items: req.body.items
       });
   
       newParty.save().then(Party => res.json(Party));
