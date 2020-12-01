@@ -29,13 +29,7 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user)
-      .then(() => this.props.login(user))
-      // .then(() => {
-      //   if (this.props.currentUser) {
-      //     this.props.history.push('/index')
-      //   }
-      // }); 
+    this.props.signup(user).then(() => this.props.login(user));
   }
 
   componentWillUnmount() {
