@@ -1,23 +1,55 @@
-/* .navbar {
+.NavBar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 60px;
+  align-items: center;
+  height: 72px;
   background-color: black;
-} */
-
-.navbar button {
-  height: 20px;
 }
 
-.Links1 {
-  width: 100px;
+.NavBar h1 {
+  font-size: 48px;
+  font-family: 'Fredoka One', cursive;
+  color: white;
+  text-align: center;
+  position: absolute;
+  left: calc(50% - 65px);
+}
+
+.NavBarRight a {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  padding-top: 10px;
+  float: right;
+  width: 90px;
+  height: 35px;
+  background-color: white;
+  border-radius: 30px;
+  margin-right: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  transition: 0.2s;
 }
 
-.Links2 {
-  width: 400px;
-  display: flex;
-  justify-content: space-between;
+.signup {
+  color: #f32b60;
 }
+
+.signup:hover {
+  background-color: #f32b60;
+  color: white;
+  box-shadow: 0px 0px 10px 3px #f32b60b0;
+  transition: 0.2s;
+}
+
+.login {
+  color: #ff8f1f;
+}
+
+.login:hover {
+  background-color: #ff8f1f;
+  color: white;
+  box-shadow: 0px 0px 10px 3px #ff8f1fb0;
+  transition: 0.2s;
+}
+

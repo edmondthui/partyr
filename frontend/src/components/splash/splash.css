@@ -1,0 +1,67 @@
+.splash {
+  width: 100%;
+  height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(96deg, #ff007b, #e80c0c, #ffa100, #04d776, #00e5f7, #04d776, #ffa100, #e80c0c, #ff007b);
+  background-size: 1000% 1000%;
+
+  -webkit-animation: splash-background 20s ease infinite;
+  -moz-animation: splash-background 20s ease infinite;
+  animation: splash-background 20s ease infinite;
+}
+
+@-webkit-keyframes splash-background {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes splash-background {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes splash-background {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.splash h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 6px rgba(30, 30, 30, 0.3);
+}
+
+.splash p {
+  font-size: 28px;
+  font-weight: 700;
+  color: #02040f;
+  margin-bottom: 40px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.cta-btn {
+  display: block;
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 28px;
+  font-weight: 600;
+  background-color: #02040f;
+  color: white;
+  transition: 0.2s;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.cta-btn:hover {
+  box-shadow: 0px 0px 10px 3px rgba(255, 218, 139, 0.8);
+  transition: 0.3s;
+  transform: scale(1.03);
+}
