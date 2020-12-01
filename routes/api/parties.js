@@ -22,7 +22,7 @@ router.get("/party/:id", (req, res) => {
 router.put("/party/:id", (req, res) => {
   Party.findByIdAndUpdate(
     req.params.id,
-    { $set: req.body.title, description: req.body.description },
+    { $set: req.body.title, description: req.body.description, date: req.body.date, guests: req.body.guests },
     { new: true }, //try this -ray
     function (err, result) {
       if (err) {
@@ -32,6 +32,8 @@ router.put("/party/:id", (req, res) => {
           title: req.body.title,
           description: req.body.description,
           host: req.body.hostId,
+          date: req.body.date,
+          guests: req.body.guest
         };
         res.json(updateParty);
       }
@@ -39,36 +41,19 @@ router.put("/party/:id", (req, res) => {
   );
 });
 
-///////////OLD CODE
-  // const {errors, isValid} = validatePartyInput(req.body)
-  // if (!isValid) {
-  //   return res.status(400).json(errors)
-  // }
-  // const party = Party.findById(req.params.id)
-  // party["title"] = req.body.title
-  // party["description"] = req.body.description
-  // party["host"] = req.body.host
-  // party.update(
-  //   {title: req.body.title},
-  //   {description: req.body.description},
-  //   {host: req.body.host.id}
-  // ).then(party => res.json(party))
-
-  //)
-
 
 router.delete("/party/:id", (req, res) => {
-    // res.json({ msg: "THIS DELETE A PARTY" });    
-    Party.findByIdAndRemove(req.params.id)
-      .then(party => dbase.collection('PARTYRdb').deleteOne(party))
-      .catch(err => res.status(404).json({nopartyfound: "No Party Found"}))
+  Party.findByIdAndRemove(req.params.id,
+    function (err, result) {
+      if (err) {
+        res.status(404).json(err);
+      } else {
+        res.json(result);
+      }
+    }
+  );
 });
 
-//////////Delete Notes
-// dbase.collection('name').deleteOne({_id: id}, (err, result) => {
-//     if(err) {
-//       throw err;
-//     }
 
 router.post('/party',
     passport.authenticate('jwt', { session: false }), 
