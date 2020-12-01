@@ -1,8 +1,16 @@
 const mongoose = require("mongoose");
 
 const messageSchema = mongoose.Schema({
-  message: String,
-  username: String
+  message: {
+    type: String
+  },
+  username: {
+    type: String
+  },
+  partyId:{ 
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "party"
+  }
 }, {
   timestamps: true,
 })
