@@ -20,7 +20,6 @@
 .NavBarRight a, .NavBarRight button {
   display: flex;
   justify-content: center;
-  padding-top: 2px;
   float: right;
   width: 90px;
   height: 30px;
@@ -30,6 +29,14 @@
   font-size: 18px;
   font-weight: 700;
   transition: 0.2s;
+}
+
+.NavBarRight a {
+  padding-top: 2px;
+}
+
+.NavBarRight button {
+  padding-top: 5px;
 }
 
 .signup, .logout {

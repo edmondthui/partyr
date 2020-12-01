@@ -30,11 +30,12 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user)
-      .then(() => {
-        if (this.props.currentUser) {
-          this.props.history.push('/')
-        }
-      }); 
+      .then(() => this.props.login(user))
+      // .then(() => {
+      //   if (this.props.currentUser) {
+      //     this.props.history.push('/index')
+      //   }
+      // }); 
   }
 
   componentWillUnmount() {
