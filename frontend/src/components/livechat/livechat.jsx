@@ -75,8 +75,8 @@ class Party extends React.Component {
           {chatMessages}
         </div>
         <div className = "chat-bar">
-          <input onChange={this.update}/>
-          <button onClick={this.handleSubmit}>Submit</button>
+          <input onChange={this.update} className="live-chat-input"/>
+          <button onClick={this.handleSubmit} className="live-chat-submit">Submit</button>
         </div>
       </div>
     )
