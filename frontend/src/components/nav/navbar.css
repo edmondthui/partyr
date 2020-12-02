@@ -7,7 +7,6 @@
   background-color: black;
 }
 
-<<<<<<< HEAD
 .NavBar h1 {
   font-size: 40px;
   font-family: 'Fredoka One', cursive;
@@ -19,9 +18,6 @@
 }
 
 .NavBarRGB {
-=======
-.NavBar:hover2 {
->>>>>>> master
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -29,57 +25,93 @@
   height: 60px;
   /* background-color: black; */
 
-  -webkit-animation: color_change 1.5s infinite alternate;
-	-moz-animation: color_change 1.5s infinite alternate;
-	-ms-animation: color_change 1.5s infinite alternate;
-	-o-animation: color_change 1.5s infinite alternate;
-	animation: color_change 1.5s infinite alternate;
+  -webkit-animation: color_change 2s infinite alternate;
+	-moz-animation: color_change 2s infinite alternate;
+	-ms-animation: color_change 2s infinite alternate;
+	-o-animation: color_change 2s infinite alternate;
+	animation: color_change 2s infinite alternate;
 }
 
 @-webkit-keyframes color_change {
-  0% { background-color: rgb(54, 181, 47); }
-  25% { background-color: rgb(227, 106, 126) }
-  50% { background-color: rgb(213, 134, 38) }
-  75% { background-color: rgb(30, 210, 250); }
-  100% { background-color: rgb(250, 30, 206)}
+  0% { background-color: #df0024 }
+  30% { background-color: #f3c300 }
+  60% { background-color: #00ac9f }
+  100% { background-color: #2e6db4}
 }
 @-moz-keyframes color_change {
-  0% { background-color: rgb(54, 181, 47); }
-  25% { background-color: rgb(227, 106, 126) }
-  50% { background-color: rgb(213, 134, 38) }
-  75% { background-color: rgb(30, 210, 250); }
-  100% { background-color: rgb(250, 30, 206)}
+  0% { background-color: #df0024 }
+  30% { background-color: #f3c300 }
+  60% { background-color: #00ac9f }
+  100% { background-color: #2e6db4}
 }
 @-ms-keyframes color_change {
-  0% { background-color: rgb(54, 181, 47); }
-  25% { background-color: rgb(227, 106, 126) }
-  50% { background-color: rgb(213, 134, 38) }
-  75% { background-color: rgb(30, 210, 250); }
-  100% { background-color: rgb(250, 30, 206)}
+  0% { background-color: #df0024 }
+  30% { background-color: #f3c300 }
+  60% { background-color: #00ac9f }
+  100% { background-color: #2e6db4}
 }
 @-o-keyframes color_change {
-  0% { background-color: rgb(54, 181, 47); }
-  25% { background-color: rgb(227, 106, 126) }
-  50% { background-color: rgb(213, 134, 38) }
-  75% { background-color: rgb(30, 210, 250); }
-  100% { background-color: rgb(250, 30, 206)}
+  0% { background-color: #df0024 }
+  30% { background-color: #f3c300 }
+  60% { background-color: #00ac9f }
+  100% { background-color: #2e6db4}
 }
 @keyframes color_change {
-  0% { background-color: rgb(54, 181, 47); }
-  25% { background-color: rgb(227, 106, 126) }
-  50% { background-color: rgb(213, 134, 38) }
-  75% { background-color: rgb(30, 210, 250); }
-  100% { background-color: rgb(250, 30, 206)}
+  0% { background-color: #df0024 }
+  30% { background-color: #f3c300 }
+  60% { background-color: #00ac9f }
+  100% { background-color: #2e6db4}
 }
 
 .NavBarRGB h1 {
   font-size: 40px;
   font-family: 'Fredoka One', cursive;
-  color: white;
+  color: black;
   text-align: center;
   position: absolute;
   left: calc(50% - 70px);
   letter-spacing: 0.5px;
+  
+}
+.nav-h1{
+}
+.nav-letter{
+  animation: jump 0.5s infinite;
+  display:inline-block;
+}
+.nav-letter2{
+  animation: hop 0.5s infinite;
+  display:inline-block;
+}
+.nav-letter3{
+  animation: shake 0.5s infinite;
+  display:inline-block;
+}
+.nav-letter4{
+  animation: explode 0.5s infinite;
+  display:inline-block;
+}
+
+@keyframes jump {
+  0% { transform: translate(0px, 2px) rotate(0deg); }
+  50% { transform: translate(0px, -2px) rotate(0deg); }
+  100% { transform: translate(0px, 2px) rotate(0deg); }
+}
+@keyframes hop {
+  0% { transform: translate(1px, 0px) rotate(10deg); }
+  50% { transform: translate(-1px, 0px) rotate(-10deg); }
+  100% { transform: translate(-1px, 0px) rotate(10deg); }
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(10deg); }
+  50% { transform: translate(-1px, -1px) rotate(-10deg); }
+  100% { transform: translate(-1px, -1px) rotate(10deg); }
+}
+@keyframes explode {
+  10% {transform: scale(0.5,0.5);}
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  50% { transform: translate(-1px, -1px) rotate(0deg); }
+  100% { transform: translate(-1px, -1px) rotate(0deg); }
 }
 
 .NavBarRight a, .NavBarRight button {
