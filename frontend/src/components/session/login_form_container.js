@@ -4,7 +4,7 @@ import LoginForm from './login_form';
 
 const mapStateToProps = (state) => {
   return {
-    errors: state.errors.session
+    errors: state.errors.session,
   };
 };
 
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginForm);
+  )(LoginForm);
