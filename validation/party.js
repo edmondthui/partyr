@@ -3,8 +3,6 @@ const validText = require('./valid-text');
 
 module.exports = function validatePartyInput(data) {
   let errors = {};
-
-  console.log("data", data)
   
   data.title = validText(data.title) ? data.title : '';
   data.description = validText(data.description) ? data.description : '';

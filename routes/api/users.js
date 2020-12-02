@@ -26,6 +26,14 @@ router.post('/register', (req, res) => {
     return res.status(400).json(errors);
   }
 
+  User.findOne({ username: req.body.username})
+  .then(user => {
+    if (user) {
+      errors.username = 'Username taken, please use another';
+      return res.status(400).json(errors);
+    }
+  })
+
   User.findOne({ email: req.body.email })
     .then(user => {
       if (user) {
@@ -97,8 +105,4 @@ router.post('/login', (req, res) => {
 
 
 module.exports = router;
-
-
-
-
 
