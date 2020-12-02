@@ -52,14 +52,14 @@ export const login = user => dispatch => (
     dispatch(receiveCurrentUser(decoded))
   })
   .catch(err => {
-    dispatch(receiveSessionErrors(err.response.data));
+    dispatch(receiveSessionErrors(err.response.data))
   })
 )
 
 export const logout = () => dispatch => {
-  localStorage.removeItem('jwtToken')
-  APIUtil.setAuthToken(false)
-  dispatch(logoutUser())
+  localStorage.removeItem('jwtToken');
+  APIUtil.setAuthToken(false);
+  dispatch(logoutUser());
 };
 
 export const clearSessionErrors = () => dispatch => {
