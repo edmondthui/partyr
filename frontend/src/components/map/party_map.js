@@ -30,18 +30,21 @@ class PartyMap extends React.Component {
       height: '100%'
     }
 
-    if (geolocation) {
-      geolocation.getCurrentPosition(position => {
-        mapOptions = {
-          center: {lat: position.coords.latitude, lng: position.coords.longitude},
-          zoom: 13
-        }
+    navigator.permissions && navigator.permissions.query({name: 'geolocation'}).then(PermissionStatus => {
+      if (PermissionStatus.state === "granted") {
+        geolocation.getCurrentPosition(position => {
+          mapOptions = {
+            center: {lat: position.coords.latitude, lng: position.coords.longitude},
+            zoom: 13
+          }
+          this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleClick}></Map> })
+        })
+      } else {
         this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleClick}></Map> })
-      })
-    } else {
-      this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleClick}></Map> })
-    }
+      }
+    })
   }
+
   render() {
     return (
       <div className="map-container">

@@ -7,7 +7,6 @@ class PartyIndexItem extends React.Component {
 
   render() {
     const { party } = this.props;
-    // debugger;
     return (
       <div className="party-index-item">
         <div>{party.title}</div>
