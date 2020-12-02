@@ -43,7 +43,6 @@ export const createParty = partyData => dispatch => {
       dispatch(receiveParty(party))
     })
     .catch(err => {
-      debugger;
       dispatch(receivePartyErrors(err.response.data))
     })
 }

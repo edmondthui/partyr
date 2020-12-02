@@ -33,6 +33,7 @@ class Party extends React.Component {
         chat: [...this.state.chat, msg]
       })
     })
+
   }
 
   update(e) {
@@ -66,15 +67,17 @@ class Party extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps !== this.props) {
-      this.socket.emit('join', {
-        partyId: this.props.party._id
-      })
+    debugger;
+    if (prevProps.party !== this.props.party) {
       this.setState({
         chat: []
       })
+      this.socket.emit('join', {
+        partyId: this.props.party._id
+      })
+
     }
-    this.scrollToBottom();
+    // this.scrollToBottom(); Comment back in when css is nice right now its too annoying
   }
 
 
