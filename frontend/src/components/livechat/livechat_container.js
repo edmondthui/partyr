@@ -2,6 +2,7 @@ import Livechat from './livechat'
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
+  debugger
   return {
     user: state.session.user
   };

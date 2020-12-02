@@ -41,6 +41,12 @@
   width: 100%
 }
 
+.chat-box-container {
+  height: calc(100vh - 60px);
+  width: 500px;
+  overflow: auto;
+}
+
 ::-webkit-scrollbar {
   width: 20px;
 }
@@ -50,7 +56,24 @@
 }
 
 ::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  /* call we use the pink and orange instead */
   border-radius: 6px;
   border: 3px solid black;
-  background: linear-gradient(0, #ff007b, #e80c0c, #ffa100, #04d776, #00e5f7, #04d776, #ffa100, #e80c0c, #ff007b);
+}
+.self {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: white;
+  background-color: skyblue;
+  border-radius: 15px;
+}
+.other {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: white;
+  background-color: lightpink;
+  border-radius: 15px;
 }
