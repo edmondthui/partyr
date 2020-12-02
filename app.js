@@ -30,18 +30,22 @@ mongoose
 
 app.get("/", (req, res) => res.send("Hello World"));
   
-io.on('connection', function(socket){ 
-  Message.find().sort({createdAt: -1}).exec((err, messages) => {
-    if (err) {
-      return json(err)
-    }
-    socket.emit('init', messages)
-  });
+io.on('connection', (socket) => { 
+
+  socket.on('join', (data) => {
+    Message.find({partyId: data.partyId}).sort({createdAt: -1}).exec((err, messages) => {
+        if (err) {
+          return json(err)
+        }
+        socket.emit('init', messages)
+      });
+  })
 
   socket.on("message", (msg) => {
     const message = new Message({
       message: msg.message,
-      username: msg.username
+      username: msg.username,
+      partyId: msg.partyId
     })
     message.save((err) => {
       if (err) {
