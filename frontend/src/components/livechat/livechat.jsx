@@ -82,11 +82,8 @@ class Party extends React.Component {
 
 
   render() {
-    //declare a const here
     let chatMessages = this.state.chat.map((msg, idx) => {
       return (
-        //if statement to have your messages send on the right side of the chat and
-        // other people's messages on the left.
         this.props.user.username === msg.username ? (
         <li className="self" style={{backgroundColor: this.props.user.color}}>
           <div key={idx} className="self" style={{backgroundColor: this.props.user.color}}>
@@ -102,10 +99,6 @@ class Party extends React.Component {
             </div>
           </li>
         )
-        // <div key={idx} className="message">
-        //   <p>{msg.username}</p>
-        //   <p>{msg.message}</p>
-        // </div>
       );
     })
     return (    
