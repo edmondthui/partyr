@@ -26,7 +26,8 @@ const PartySchema = new Schema({
     type: String
   },
   items: [{
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: "item", 
   }],
   color: {
     type: String
