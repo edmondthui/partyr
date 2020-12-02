@@ -8,6 +8,9 @@ const partiesReducer = (state={ all: {}, party: {} }, action) => {
     case RECEIVE_ALL_PARTIES:
       newState.all = action.parties.data;
       return newState;
+    case RECEIVE_PARTY:
+      newState.party = action.party.data;
+      return newState;
     default:
       return state;
   }

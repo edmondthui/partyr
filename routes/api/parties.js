@@ -9,7 +9,7 @@ const passport = require("passport");
 router.get("/parties", (req, res) => {
     Party.find()
         .sort({date: -1})
-        .then(parties => res.json(parties))
+        .when(parties => res.json(parties))
         .catch(err => res.status(404).json({ nopartiesfound: "No parties found"}))
 });
 
@@ -62,7 +62,7 @@ router.post('/party',
         description: req.body.description,
         date: req.body.date,
         location: req.body.location,
-        items: req.body.items,
+        // items: req.body.items,
         color: '#' + randColor
       });
   

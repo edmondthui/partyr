@@ -8,7 +8,7 @@ class CreatePartyForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      host: this.props.user,
+      host: this.props.user.id,
       title: '',
       description: '',
       date: '',
@@ -128,7 +128,7 @@ class CreatePartyForm extends React.Component {
                 type="datetime-local"
                 id="input-date"
                 value={party.date}
-                min={Date.now}
+                // min={Date.now}
                 onChange={this.update('date')} />
             </div>
           </div>
