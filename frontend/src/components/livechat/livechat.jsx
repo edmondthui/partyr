@@ -9,7 +9,7 @@ class Party extends React.Component {
     this.state= {
       chat: [],
       message: "",
-      username: "",
+      username: ""
     }
     this.chat = null;
     this.update = this.update.bind(this);
@@ -70,16 +70,37 @@ class Party extends React.Component {
   render() {
 
     let chatMessages = this.state.chat.map((msg, idx) => {
+      debugger
       return (
-        <div key={idx} className="message">
-          <p>{msg.username}</p>
-          <p>{msg.message}</p>
-        </div>
-      )
+        //if statement to have your messages send on the right side of the chat and
+        // other people's messages on the left.
+        this.props.user.username === msg.username ? (
+        <li className="self">
+          <div key={idx} className="self">
+            <p className="self">{msg.username}</p>
+            <p className="self">{msg.message}</p>
+          </div>
+        </li>
+        ) : (
+        <li className="other">
+          <div key={idx} className="other">
+            <p className="other">{msg.username}</p>
+            <p className="other">{msg.message}</p>
+          </div>
+        </li>
+        )
+        // <div key={idx} className="message">
+        //   <p>{msg.username}</p>
+        //   <p>{msg.message}</p>
+        // </div>
+      );
     })
     return (    
 
       <div className = "chat-box-container">
+        <div className="party-chat-title">
+          <h1>Party Chat</h1>
+        </div>
         <div className = "chat-messages">
           {chatMessages}
           <div ref={el => (this.chat = el)}></div>
