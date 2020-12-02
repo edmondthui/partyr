@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+const faker = require('faker');
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -12,12 +13,26 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoSignup = this.demoSignup.bind(this)
   }
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  demoSignup(e) {
+    e.preventDefault();
+    let password = faker.internet.password();
+    let user = {
+      email: faker.internet.email(),
+      username: faker.internet.userName(),
+      password: password,
+      password2: password
+    }
+
+    this.props.signup(user).then(() => this.props.login(user));
   }
 
   handleSubmit(e) {
@@ -75,6 +90,7 @@ class SignupForm extends React.Component {
               placeholder="Confirm Password"
             />
             <input type="submit" value="Submit" />
+            <button onClick={this.demoSignup} className="demo-btn">Demo Sign Up</button>
             {this.renderErrors()}
           </form>
         </div>

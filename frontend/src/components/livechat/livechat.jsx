@@ -9,7 +9,7 @@ class Party extends React.Component {
     this.state= {
       chat: [],
       message: "",
-      username: "",
+      username: ""
     }
     this.chat = null;
     this.update = this.update.bind(this);
@@ -18,6 +18,7 @@ class Party extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchUsers();
     this.socket = io(config[process.env.NODE_ENV].endpoint);
 
     this.socket.on('init', (msg) => {
@@ -49,7 +50,8 @@ class Party extends React.Component {
 
     this.socket.emit('message', {
       username: this.state.username,
-      message: this.state.message
+      message: this.state.message,
+      partyId: this.props.party._id
     })
 
     this.setState({
@@ -63,31 +65,62 @@ class Party extends React.Component {
     this.chat.scrollIntoView({ behavior: 'smooth' });
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      this.socket.emit('join', {
+        partyId: this.props.party._id
+      })
+      this.setState({
+        chat: []
+      })
+    }
     this.scrollToBottom();
   }
 
-  render() {
 
+  render() {
     let chatMessages = this.state.chat.map((msg, idx) => {
+      let color;
+      this.props.users.forEach(user => {
+        if (user.username === msg.username) {
+          color = user.color
+        }
+      })
       return (
-        <div key={idx} className="message">
-          <p>{msg.username}</p>
-          <p>{msg.message}</p>
-        </div>
+        this.props.user.username === msg.username ? (
+        <li key={idx} className="self">
+          <div>
+            <p>{msg.username}</p>
+            <p className="msg" style={{borderColor: this.props.user.color}}>{msg.message}</p>
+          </div>
+        </li>
+        ) : (
+          <li key={idx} className="other" >
+            <div>
+              <p>{msg.username}</p>
+              <p className="msg" style={{borderColor: color}}>{msg.message}</p>
+            </div>
+          </li>
+        )
       )
     })
     return (    
-
-      <div className = "chat-box-container">
-        <div className = "chat-messages">
-          {chatMessages}
-          <div ref={el => (this.chat = el)}></div>
+      <div>
+        <div className = "chat-box-container">
+          <div className="party-chat-title">
+            <h1>Party Chat</h1>
+          </div>
+          <div className = "chat-messages">
+            {chatMessages}
+            <div ref={el => (this.chat = el)}></div>
+          </div>
+          <div className = "chat-bar">
+          </div>
         </div>
-        <div className = "chat-bar">
-          <input onChange={this.update} className="live-chat-input" value={this.state.message}/>
-          <button onClick={this.handleSubmit} className="live-chat-submit">Submit</button>
-        </div>
+        <form>
+            <input onChange={this.update} className="live-chat-input" value={this.state.message}/>
+            <button onClick={this.handleSubmit} className="live-chat-submit">Submit</button>
+        </form>
       </div>
 
 

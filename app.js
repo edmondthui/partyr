@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const users = require("./routes/api/users");
 const parties = require("./routes/api/parties");
+const items = require("./routes/api/items")
 const http = require('http').Server(app);
 const io = require('socket.io')(http, {
   cors: {
@@ -30,18 +31,22 @@ mongoose
 
 app.get("/", (req, res) => res.send("Hello World"));
   
-io.on('connection', function(socket){ 
-  Message.find().sort({createdAt: -1}).limit(20).exec((err, messages) => {
-    if (err) {
-      return json(err)
-    }
-    socket.emit('init', messages)
-  });
+io.on('connection', (socket) => { 
+
+  socket.on('join', (data) => {
+    Message.find({partyId: data.partyId}).sort({createdAt: -1}).exec((err, messages) => {
+        if (err) {
+          return json(err)
+        }
+        socket.emit('init', messages)
+      });
+  })
 
   socket.on("message", (msg) => {
     const message = new Message({
       message: msg.message,
-      username: msg.username
+      username: msg.username,
+      partyId: msg.partyId
     })
     message.save((err) => {
       if (err) {
@@ -60,6 +65,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/parties", parties);
+app.use("/api/items", items);
 
 
 const port = process.env.PORT || 5000;

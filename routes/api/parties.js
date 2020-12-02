@@ -10,7 +10,7 @@ router.get("/parties", (req, res) => {
     Party.find()
         .sort({date: -1})
         .then(parties => res.json(parties))
-        .catch(err => res.status(404).json({ notpartiesfound: "No parties found"}))
+        .catch(err => res.status(404).json({ nopartiesfound: "No parties found"}))
 });
 
 router.get("/party/:id", (req, res) => {

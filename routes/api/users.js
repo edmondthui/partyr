@@ -26,6 +26,14 @@ router.post('/register', (req, res) => {
     return res.status(400).json(errors);
   }
 
+  User.findOne({ username: req.body.username})
+  .then(user => {
+    if (user) {
+      errors.username = 'Username taken, please use another';
+      return res.status(400).json(errors);
+    }
+  })
+
   User.findOne({ email: req.body.email })
     .then(user => {
       if (user) {
@@ -76,14 +84,16 @@ router.post('/login', (req, res) => {
           const payload = {
             id: user.id,
             email: user.email,
-            username: user.username
+            username: user.username,
+            color: user.color
           } 
           jwt.sign(payload, keys.secretOrKey, {expiresIn:3600}, 
             (err, token) => {res.json({
                 success: true,
                 token: "Bearer " + token, 
                 username: user.username,
-                email: user.email
+                email: user.email,
+                color : user.color
               })
             })
         } else {
@@ -95,10 +105,12 @@ router.post('/login', (req, res) => {
 
 })
 
+router.get("/", (req, res) => {
+  User.find()
+      .then(users => res.json(users))
+      .catch(err => res.status(404).json({ nousersfound: "No users found"}))
+});
+
 
 module.exports = router;
-
-
-
-
 
