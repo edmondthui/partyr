@@ -18,6 +18,7 @@ class Party extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchUsers();
     this.socket = io(config[process.env.NODE_ENV].endpoint);
 
     this.socket.on('init', (msg) => {
@@ -49,7 +50,8 @@ class Party extends React.Component {
 
     this.socket.emit('message', {
       username: this.state.username,
-      message: this.state.message
+      message: this.state.message,
+      partyId: this.props.party._id
     })
 
     this.setState({
@@ -63,52 +65,62 @@ class Party extends React.Component {
     this.chat.scrollIntoView({ behavior: 'smooth' });
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      this.socket.emit('join', {
+        partyId: this.props.party._id
+      })
+      this.setState({
+        chat: []
+      })
+    }
     this.scrollToBottom();
   }
 
-  render() {
 
+  render() {
     let chatMessages = this.state.chat.map((msg, idx) => {
-      debugger
+      let color;
+      this.props.users.forEach(user => {
+        if (user.username === msg.username) {
+          color = user.color
+        }
+      })
       return (
-        //if statement to have your messages send on the right side of the chat and
-        // other people's messages on the left.
         this.props.user.username === msg.username ? (
-        <li className="self">
-          <div key={idx} className="self">
-            <p className="self">{msg.username}</p>
-            <p className="self">{msg.message}</p>
+        <li key={idx} className="self">
+          <div>
+            <p>{msg.username}</p>
+            <p className="msg" style={{borderColor: this.props.user.color}}>{msg.message}</p>
           </div>
         </li>
         ) : (
-        <li className="other">
-          <div key={idx} className="other">
-            <p className="other">{msg.username}</p>
-            <p className="other">{msg.message}</p>
-          </div>
-        </li>
+          <li key={idx} className="other" >
+            <div>
+              <p>{msg.username}</p>
+              <p className="msg" style={{borderColor: color}}>{msg.message}</p>
+            </div>
+          </li>
         )
-        // <div key={idx} className="message">
-        //   <p>{msg.username}</p>
-        //   <p>{msg.message}</p>
-        // </div>
-      );
+      )
     })
     return (    
-
-      <div className = "chat-box-container">
-        <div className="party-chat-title">
-          <h1>Party Chat</h1>
+      <div>
+        <div className = "chat-box-container">
+          <div className="party-chat-title">
+            <h1>Party Chat</h1>
+          </div>
+          <div className = "chat-messages">
+            {chatMessages}
+            <div ref={el => (this.chat = el)}></div>
+          </div>
+          <div className = "chat-bar">
+          </div>
         </div>
-        <div className = "chat-messages">
-          {chatMessages}
-          <div ref={el => (this.chat = el)}></div>
-        </div>
-        <div className = "chat-bar">
-          <input onChange={this.update} className="live-chat-input" value={this.state.message}/>
-          <button onClick={this.handleSubmit} className="live-chat-submit">Submit</button>
-        </div>
+        <form>
+            <input onChange={this.update} className="live-chat-input" value={this.state.message}/>
+            <button onClick={this.handleSubmit} className="live-chat-submit">Submit</button>
+        </form>
       </div>
 
 

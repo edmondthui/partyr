@@ -69,7 +69,7 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.session-form input[type="submit"] {
+.session-form input[type="submit"], .demo-btn {
   display: block;
   width: 50%;
   height: 40px;
@@ -83,7 +83,7 @@
   transition: 0.5s;
 }
 
-.signup-form input[type="submit"]:hover {
+.signup-form input[type="submit"]:hover, .demo-btn:hover {
   background-color: #f32b60;
   transition: 0.3s;
 }

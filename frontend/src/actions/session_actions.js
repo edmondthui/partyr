@@ -6,28 +6,34 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const REMOVE_SESSION_ERRORS = 'REMOVE_SESSION_ERRORS';
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
 
-export const receiveCurrentUser = currentUser => ({
+const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
 });
 
-export const receiveUserSignIn = () => ({
+const receiveUserSignIn = () => ({
   type: RECEIVE_USER_SIGN_IN
 });
   
-export const receiveSessionErrors = errors => ({
+const receiveSessionErrors = errors => ({
   type: RECEIVE_SESSION_ERRORS,
   errors
 });
 
-export const removeSessionErrors = () => ({
+const removeSessionErrors = () => ({
   type: REMOVE_SESSION_ERRORS
 });
 
-export const logoutUser = () => ({
+const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT
 });
+
+const receiveUsers = (users) => ({
+  type: RECEIVE_ALL_USERS,
+  users
+})
 
 export const signup = user => dispatch => (
   APIUtil.signup(user).then(() => (
@@ -60,3 +66,6 @@ export const clearSessionErrors = () => dispatch => {
   return dispatch(removeSessionErrors())
 };
 
+export const fetchUsers = () => dispatch => {
+  APIUtil.fetchUsers().then(users => dispatch(receiveUsers(users)))
+}
