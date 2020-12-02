@@ -28,11 +28,12 @@ class Party extends React.Component {
       <div>
         <h1>OISFJOEIFJ</h1>
       </div>
+
       <div className="parties-index">
         {parties}
       </div>
 
-      <div>
+      <div className="livechat-container">
         <Livechat/>
       </div>
     

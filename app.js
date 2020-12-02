@@ -31,7 +31,7 @@ mongoose
 app.get("/", (req, res) => res.send("Hello World"));
   
 io.on('connection', function(socket){ 
-  Message.find().sort({createdAt: -1}).limit(20).exec((err, messages) => {
+  Message.find().sort({createdAt: -1}).exec((err, messages) => {
     if (err) {
       return json(err)
     }
