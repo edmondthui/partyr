@@ -49,7 +49,8 @@ class Party extends React.Component {
 
     this.socket.emit('message', {
       username: this.state.username,
-      message: this.state.message
+      message: this.state.message,
+      partyId: this.props.party._id
     })
 
     this.setState({
@@ -63,14 +64,19 @@ class Party extends React.Component {
     this.chat.scrollIntoView({ behavior: 'smooth' });
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      debugger;
+      this.socket.emit('join', {
+        partyId: this.props.party._id
+      })
+    }
     this.scrollToBottom();
   }
 
-  render() {
 
+  render() {
     let chatMessages = this.state.chat.map((msg, idx) => {
-      debugger
       return (
         //if statement to have your messages send on the right side of the chat and
         // other people's messages on the left.

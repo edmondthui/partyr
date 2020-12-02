@@ -34,7 +34,7 @@ class Party extends React.Component {
       </div>
 
       <div className="livechat-container">
-        <Livechat/>
+        <Livechat />
       </div>
     
     </div>
