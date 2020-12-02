@@ -7,7 +7,17 @@
   background-color: black;
 }
 
-.NavBar2 {
+.NavBar h1 {
+  font-size: 40px;
+  font-family: 'Fredoka One', cursive;
+  color: white;
+  text-align: center;
+  position: absolute;
+  left: calc(50% - 70px);
+  letter-spacing: 0.5px;
+}
+
+.NavBarRGB {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -58,7 +68,7 @@
   100% { background-color: rgb(250, 30, 206)}
 }
 
-.NavBar h1 {
+.NavBarRGB h1 {
   font-size: 40px;
   font-family: 'Fredoka One', cursive;
   color: white;
