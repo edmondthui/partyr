@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { fetchParties } from '../../actions/party_actions';
-import Parties from "./parties";
+import PartyIndex from "./party_index";
 
 const mapStateToProps = (state) => {
   return {
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Parties);
+export default connect(mapStateToProps, mapDispatchToProps)(PartyIndex);

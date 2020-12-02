@@ -1,9 +1,9 @@
 import React from "react";
-import Livechat from '../livechat/livechat_container'
+import Livechat from '../../livechat/livechat_container'
 import './dashboard.css'
-import Map from '../map/party_map'
+import Map from '../../map/party_map'
 
-class Party extends React.Component {
+class Dashboard extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -43,4 +43,4 @@ class Party extends React.Component {
   }
 }
 
-export default Party;
+export default Dashboard;
