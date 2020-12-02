@@ -35,6 +35,6 @@ class PartyMap extends React.Component {
 
 
 
-export default GoogleApiWrapper({
+export default withRouter(GoogleApiWrapper({
   apiKey: keys.mapsApiKey
-})(PartyMap)
+})(PartyMap));

@@ -23,7 +23,12 @@ const PartySchema = new Schema({
     default: Date.now,
   },
   location: {
-    type: String
+      lat: {
+        type: String
+      },
+      lng: {
+        type: String
+      },
   },
   items: [{
     type: Schema.Types.ObjectId,
