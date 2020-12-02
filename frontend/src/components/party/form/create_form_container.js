@@ -21,7 +21,7 @@ const mapStateToProps = (state, { location }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     createParty: party => dispatch(createParty(party)),
-    clearPartyError: () => dispatch(clearPartyErrors())
+    clearPartyErrors: () => dispatch(clearPartyErrors())
   }
 }
 
