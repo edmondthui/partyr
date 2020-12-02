@@ -10,7 +10,6 @@ import Livechat from './livechat/livechat_container';
 import Parties from './party/index_container';
 import CreatePartyForm from './party/form/create_form_container';
 
-
 const App = () => (
   <div>
     <NavBarContainer />

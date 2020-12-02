@@ -66,6 +66,7 @@ class CreatePartyForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     let party = {
       host: this.state.host,

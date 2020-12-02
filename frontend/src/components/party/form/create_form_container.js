@@ -5,16 +5,7 @@ import CreatePartyForm from './create_party_form';
 const mapStateToProps = (state, { location }) => {
   return {
     errors: state.errors.party,
-    user: state.session.user,
-    party: {
-      host: '', //id of the user
-      title: '',
-      description: '',
-      date: '',
-      lat: new URLSearchParams(location.search).get("lat"), 
-      lng: new URLSearchParams(location.search).get("lng"), 
-      items: ''
-    }
+    user: state.session.user
   };
 }
 
