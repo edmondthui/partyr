@@ -9,8 +9,10 @@ class PartyIndex extends React.Component {
   componentWillMount() {
   }
 
-
   render() {
+    return(
+      <div></div>
+    )
   }
 }
 
