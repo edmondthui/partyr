@@ -6,7 +6,6 @@ export const RECEIVE_PARTY_ERRORS = "RECEIVE_PARTY_ERRORS";
 export const REMOVE_PARTY_ERRORS = "REMOVE_PARTY_ERRORS";
 
 const receiveParty = party => {
-  debugger
   return {
   type: RECEIVE_PARTY,
   party
@@ -18,7 +17,6 @@ const receiveAllParties = parties => ({
 })
 
 const receivePartyErrors = errors => {
-  debugger
   return {
   type: RECEIVE_PARTY_ERRORS,
   errors
@@ -37,15 +35,13 @@ export const fetchParties = () => dispatch => {
     .then(party => dispatch(receiveAllParties(party)))
 }
 
-export const createParty = partyData => dispatch => {
-  debugger
+export const createParty = partyData => dispatch => { 
   return APIUtil.createParty(partyData)
     .then(party => {
-      debugger
       dispatch(receiveParty(party))
     })
     .catch(err => {
-      debugger
+      debugger;
       dispatch(receivePartyErrors(err.response.data))
     })
 }

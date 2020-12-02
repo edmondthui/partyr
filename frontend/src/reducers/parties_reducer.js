@@ -3,10 +3,10 @@ import { RECEIVE_PARTY, RECEIVE_ALL_PARTIES } from '../actions/party_actions';
 const partiesReducer = (state={ all: {}, party: {} }, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
-
+  debugger;
   switch(action.type){
     case RECEIVE_ALL_PARTIES:
-      newState.all = action.parties.data;
+      newState.all = action.parties ? action.parties.data : {};
       return newState;
     case RECEIVE_PARTY:
       newState.party = action.party.data;

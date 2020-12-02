@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import './party_form.css';
 const keys = require('../../../config/keys')
@@ -66,7 +65,6 @@ class CreatePartyForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     let party = {
       host: this.state.host,
