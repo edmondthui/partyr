@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
+import './party_form.css';
 const keys = require('../../../config/keys')
 
 class CreatePartyForm extends React.Component {
@@ -16,7 +17,8 @@ class CreatePartyForm extends React.Component {
       items: ''
     }
 
-    this.handleClick = this.handleClick.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleMapClick = this.handleMapClick.bind(this)
   }
 
   componentWillMount() {
@@ -42,15 +44,15 @@ class CreatePartyForm extends React.Component {
           center: {lat: position.coords.latitude, lng: position.coords.longitude},
           zoom: 13
         }
-      this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleClick}></Map> })
+      this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleMapClick}></Map> })
       })
     } else {
-      this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleClick}></Map> })
+      this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleMapClick}></Map> })
     }
 
   }
 
-  handleClick(e, map, coord) {
+  handleMapClick(e, map, coord) {
     this.setState({
       lat: coord.latLng.lat(),
       lng: coord.latLng.lng()
@@ -122,9 +124,10 @@ class CreatePartyForm extends React.Component {
             <div className="input-wrapper">
               <label htmlFor="input-date">Date</label>
               <input 
-                type="date"
+                type="datetime-local"
                 id="input-date"
                 value={party.date}
+                min={Date.now}
                 onChange={this.update('date')} />
             </div>
           </div>
@@ -144,6 +147,7 @@ class CreatePartyForm extends React.Component {
         <div>
           {this.state.map}
         </div>
+        {this.renderErrors()}
       </div>
     )
   }

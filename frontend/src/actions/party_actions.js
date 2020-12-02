@@ -35,8 +35,12 @@ export const fetchParties = () => dispatch => {
 
 export const createParty = partyData => dispatch => {
   return APIUtil.createParty(partyData)
-    .then(party => dispatch(receiveParty(party)))
-    .catch(err => dispatch(receivePartyErrors(err.response.data)))
+    .then(party => {
+      dispatch(receiveParty(party))
+    })
+    .catch(err => {
+      dispatch(receivePartyErrors(err.response.data))
+    })
 }
 
 export const clearPartyErrors = () => dispatch => {
