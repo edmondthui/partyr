@@ -61,7 +61,8 @@ router.post('/party',
         title: req.body.title,
         description: req.body.description,
         date: req.body.date,
-        location: req.body.location,
+        lat: req.body.lat,
+        lng: req.body.lng,
         items: req.body.items,
         color: '#' + randColor
       });
