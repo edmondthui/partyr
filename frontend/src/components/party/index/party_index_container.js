@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { fetchParties } from '../../actions/party_actions';
+import { fetchParties } from '../../../actions/party_actions';
 import PartyIndex from "./party_index";
 
 const mapStateToProps = (state) => {
