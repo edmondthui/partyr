@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import {Map, GoogleApiWrapper} from 'google-maps-react';
+import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 class CreatePartyForm extends React.Component {
   constructor(props) {
@@ -35,10 +35,10 @@ class CreatePartyForm extends React.Component {
     }
 
     this.map = <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle}></Map>
-    this.map.addListener("click", (e) => {
-      let position = {lat: e.latLng.lat(), lng: e.latLng.lng()}
-      this.handleClick(position);
-    })
+    // this.map.addListener("click", (e) => {
+    //   let position = {lat: e.latLng.lat(), lng: e.latLng.lng()}
+    //   this.handleClick(position);
+    // })
   }
 
   handleClick(position) {
@@ -85,17 +85,53 @@ class CreatePartyForm extends React.Component {
   }
 
   render() {
+    const party = this.state;
 
     return (
-      <div>
-        {this.map}
-        <label>Latitude:
-          <input type="text" value={this.state.lat} onChange={this.update("lat")} disabled />
-        </label>
+      <div className="party-form-container">
+        <form className="party-form" onSubmit={this.handleSubmit}>
+          <div className="title">
+            <div className="input-wrapper">
+              <label htmlFor="input-title">Title</label>
+              <input 
+                type="text"
+                id="input-title"
+                value={party.title}
+                onChange={this.update('title')} />
+            </div>
+          </div>
+          <div className="description">
+            <div className="input-wrapper">
+              <label htmlFor="input-description">description</label>
+              <textarea 
+                id="input-description"
+                value={party.description}
+                onChange={this.update('description')} />
+            </div>
+          </div>
+          <div className="date">
+            <div className="input-wrapper">
+              <label htmlFor="input-date">Date</label>
+              <input 
+                type="date"
+                id="input-date"
+                value={party.date}
+                onChange={this.update('date')} />
+            </div>
+          </div>
+          <div className="location">
+            <h3>Location:</h3>
+            {this.map}
+            <label>Latitude:
+              <input type="text" value={this.state.lat} onChange={this.update("lat")} disabled />
+            </label>
 
-        <label>Longitude:
-          <input type="text" value={this.state.lng} onChange={this.update("lng")} disabled />
-        </label>
+            <label>Longitude:
+              <input type="text" value={this.state.lng} onChange={this.update("lng")} disabled />
+            </label>
+          </div>
+          <button className="submit-btn">Create Party!</button>
+        </form>
       </div>
     )
   }
