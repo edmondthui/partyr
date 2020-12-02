@@ -79,26 +79,31 @@ class Party extends React.Component {
 
 
   render() {
-      let chatMessages = this.state.chat.map((msg, idx) => {
-        return (
-          this.props.user.username === msg.username ? (
-          <li key={idx} className="self">
+    let chatMessages = this.state.chat.map((msg, idx) => {
+      let color;
+      this.props.users.forEach(user => {
+        if (user.username === msg.username) {
+          color = user.color
+        }
+      })
+      return (
+        this.props.user.username === msg.username ? (
+        <li key={idx} className="self">
+          <div>
+            <p>{msg.username}</p>
+            <p className="msg" style={{borderColor: this.props.user.color}}>{msg.message}</p>
+          </div>
+        </li>
+        ) : (
+          <li key={idx} className="other" >
             <div>
               <p>{msg.username}</p>
-              <p className="msg" style={{borderColor: this.props.user.color}}>{msg.message}</p>
+              <p className="msg" style={{borderColor: color}}>{msg.message}</p>
             </div>
           </li>
-          ) : (
-            <li key={idx} className="other" >
-              <div>
-                <p>{msg.username}</p>
-                <p className="msg">{msg.message}</p>
-                {/* style={{borderColor: this.props.users.filter(user => user.username === msg.username)[0].color}} */}
-              </div>
-            </li>
-          )
-        );
-      })
+        )
+      )
+    })
     return (    
       <div>
         <div className = "chat-box-container">
