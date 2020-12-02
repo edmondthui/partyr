@@ -66,15 +66,26 @@
   justify-content: flex-end;
   align-items: flex-end;
   color: black;
-  background-color: skyblue;
-  border-radius: 15px;
+  /* background-color: skyblue; */
+  /* border-radius: 15px; */
+  padding-left: 5px;
 }
+
+.self .msg {
+  border-right: 5px solid;
+}
+
 .other {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   color: black;
-  background-color: lightpink;
-  border-radius: 15px;
+  /* background-color: lightpink; */
+  /* border-radius: 15px; */
+  padding-right: 5px;
+}
+
+.other .msg {
+  border-left: 5px solid;
 }
 

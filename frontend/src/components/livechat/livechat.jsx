@@ -67,40 +67,38 @@ class Party extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      this.setState({
-        chat: [],
-        username: this.props.user.username,
-        message: ""
-      })
       this.socket.emit('join', {
         partyId: this.props.party._id
       })
-
+      this.setState({
+        chat: []
+      })
     }
     this.scrollToBottom();
   }
 
 
   render() {
-    let chatMessages = this.state.chat.map((msg, idx) => {
-      return (
-        this.props.user.username === msg.username ? (
-        <li key={idx} className="self" style={{backgroundColor: this.props.user.color}}>
-          <div className="self" style={{backgroundColor: this.props.user.color}}>
-            <p className="self" style={{backgroundColor: this.props.user.color}}>{msg.username}</p>
-            <p className="self" style={{backgroundColor: this.props.user.color}}>{msg.message}</p>
-          </div>
-        </li>
-        ) : (
-          <li key={idx} className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>
-            <div className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>
-              <p className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>{msg.username}</p>
-              <p className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>{msg.message}</p>
+      let chatMessages = this.state.chat.map((msg, idx) => {
+        return (
+          this.props.user.username === msg.username ? (
+          <li key={idx} className="self">
+            <div>
+              <p>{msg.username}</p>
+              <p className="msg" style={{borderColor: this.props.user.color}}>{msg.message}</p>
             </div>
           </li>
-        )
-      );
-    })
+          ) : (
+            <li key={idx} className="other" >
+              <div>
+                <p>{msg.username}</p>
+                <p className="msg">{msg.message}</p>
+                {/* style={{borderColor: this.props.users.filter(user => user.username === msg.username)[0].color}} */}
+              </div>
+            </li>
+          )
+        );
+      })
     return (    
       <div>
         <div className = "chat-box-container">
