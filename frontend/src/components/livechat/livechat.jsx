@@ -33,6 +33,7 @@ class Party extends React.Component {
         chat: [...this.state.chat, msg]
       })
     })
+
   }
 
   update(e) {
@@ -66,10 +67,12 @@ class Party extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps !== this.props) {
+    debugger;
+    if (prevProps.users !== this.props.users) {
       this.socket.emit('join', {
         partyId: this.props.party._id
       })
+
       this.setState({
         chat: []
       })

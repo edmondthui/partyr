@@ -4,7 +4,6 @@ import {
 } from '../actions/party_actions';
 
 const partyErrorsReducer = (oldState = [], action) => {
-  debugger;
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_PARTY_ERRORS:
