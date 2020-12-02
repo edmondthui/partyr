@@ -1,9 +1,20 @@
-.index-container {
+.dashboard-container {
   display: flex;
   justify-content: space-between;
 }
 
-.parties-index {
+.left-sidebar {
   display: flex;
   flex-direction: column;
+  width: calc(100vw/6);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw/3);
+}
+
+.right-sidebar {
+  width: calc(100vw/2);
 }

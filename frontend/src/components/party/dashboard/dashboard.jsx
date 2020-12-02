@@ -1,8 +1,9 @@
 import React from "react";
-import Livechat from '../../livechat/livechat_container'
-import './dashboard.css'
-import Map from '../../map/party_map'
-import PartyIndex from '../index/party_index_container'
+import { Link } from 'react-router-dom';
+import Livechat from '../../livechat/livechat_container';
+import './dashboard.css';
+import Map from '../../map/party_map';
+import PartyIndex from '../index/party_index_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -14,19 +15,25 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    return (
-    <div className="index-container">
+    const { user } = this.props;
 
-      <div>
-        <h1>John Johnson</h1>
+    return (
+    <div className="dashboard-container">
+
+      <div className="left-sidebar">
+        <p>{user.username}</p>
+        <h1>Upcoming Parties</h1>
+        <Link to="/new_party">Host New Party</Link>
       </div>
 
-      <div className="parties-index">
+      <div className="main-content">
         <Map />
         <PartyIndex />
       </div>
-      <div className="livechat-container">
-        <Livechat />
+      <div className="right-sidebar">
+        <div className="livechat-container">
+          <Livechat />
+        </div>
       </div>
     
     </div>
