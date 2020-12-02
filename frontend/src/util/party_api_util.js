@@ -7,3 +7,7 @@ export const fetchParties = () => {
 export const fetchParty = (partyId) => {
   return axios.get(`/api/parties/party/${partyId}`)
 }
+
+export const createParty = (partyData) => {
+  return axios.post(`/api/parties/party`, partyData)
+}
