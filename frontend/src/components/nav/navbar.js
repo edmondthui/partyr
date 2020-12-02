@@ -36,7 +36,17 @@ class NavBar extends React.Component {
       return (
         <div className='NavBarRGB'>
           <div></div>
-          <h1><Link to={'/'}>Partyr</Link></h1>
+          <h1 className="nav-h1">
+            <Link to={'/'}>
+              <div className="nav-letter">P</div>
+              <div className="nav-letter2">A</div>
+              <div className="nav-letter3">R</div>
+              <div className="nav-letter">T</div>
+              <div className="nav-letter2">Y</div>
+              <div className="nav-letter">R</div>
+              <div className="nav-letter4">!</div>
+            </Link>
+          </h1>
           { this.getLinks() }
         </div>
       );
