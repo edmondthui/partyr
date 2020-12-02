@@ -5,7 +5,7 @@ const mapStateToProps = (state) => {
   debugger;
   return {
     user: state.session.user,
-    party: state.parties.all[0] ? state.parties.all[0] : {}
+    party: state.parties.all[1] ? state.parties.all[1] : {}
   };
 };
 

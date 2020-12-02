@@ -66,10 +66,15 @@ class Party extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      debugger;
+      this.setState({
+        chat: [],
+        username: this.props.user.username,
+        message: ""
+      })
       this.socket.emit('join', {
         partyId: this.props.party._id
       })
+
     }
     this.scrollToBottom();
   }
@@ -102,19 +107,22 @@ class Party extends React.Component {
       );
     })
     return (    
-
-      <div className = "chat-box-container">
-        <div className="party-chat-title">
-          <h1>Party Chat</h1>
+      <div>
+        <div className = "chat-box-container">
+          <div className="party-chat-title">
+            <h1>Party Chat</h1>
+          </div>
+          <div className = "chat-messages">
+            {chatMessages}
+            <div ref={el => (this.chat = el)}></div>
+          </div>
+          <div className = "chat-bar">
+          </div>
         </div>
-        <div className = "chat-messages">
-          {chatMessages}
-          <div ref={el => (this.chat = el)}></div>
-        </div>
-        <div className = "chat-bar">
-          <input onChange={this.update} className="live-chat-input" value={this.state.message}/>
-          <button onClick={this.handleSubmit} className="live-chat-submit">Submit</button>
-        </div>
+        <form>
+            <input onChange={this.update} className="live-chat-input" value={this.state.message}/>
+            <button onClick={this.handleSubmit} className="live-chat-submit">Submit</button>
+        </form>
       </div>
 
 
