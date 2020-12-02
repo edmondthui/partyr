@@ -85,15 +85,15 @@ class Party extends React.Component {
     let chatMessages = this.state.chat.map((msg, idx) => {
       return (
         this.props.user.username === msg.username ? (
-        <li className="self" style={{backgroundColor: this.props.user.color}}>
-          <div key={idx} className="self" style={{backgroundColor: this.props.user.color}}>
+        <li key={idx} className="self" style={{backgroundColor: this.props.user.color}}>
+          <div className="self" style={{backgroundColor: this.props.user.color}}>
             <p className="self" style={{backgroundColor: this.props.user.color}}>{msg.username}</p>
             <p className="self" style={{backgroundColor: this.props.user.color}}>{msg.message}</p>
           </div>
         </li>
         ) : (
-          <li className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>
-            <div key={idx} className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>
+          <li key={idx} className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>
+            <div className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>
               <p className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>{msg.username}</p>
               <p className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>{msg.message}</p>
             </div>
