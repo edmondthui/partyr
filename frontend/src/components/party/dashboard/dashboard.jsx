@@ -2,6 +2,7 @@ import React from "react";
 import Livechat from '../../livechat/livechat_container'
 import './dashboard.css'
 import Map from '../../map/party_map'
+import PartyIndex from '../index/party_index_container'
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -13,16 +14,6 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    let parties = this.props.parties.map((party) => (
-      <div>
-        <div>{party.title}</div>
-        <div>{party.description}</div>
-        <div>{party.items}</div>
-        <div>{party.location}</div>
-        <div>{party.guests}</div>
-        <br/>
-      </div>
-    ));
     return (
     <div className="index-container">
 
@@ -32,7 +23,7 @@ class Dashboard extends React.Component {
 
       <div className="parties-index">
         <Map />
-        {parties}
+        <PartyIndex />
       </div>
       <div className="livechat-container">
         <Livechat />
