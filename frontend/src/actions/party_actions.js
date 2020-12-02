@@ -5,20 +5,24 @@ export const RECEIVE_ALL_PARTIES = "RECEIVE_PARTY";
 export const RECEIVE_PARTY_ERRORS = "RECEIVE_PARTY_ERRORS";
 export const REMOVE_PARTY_ERRORS = "REMOVE_PARTY_ERRORS";
 
-const receiveParty = party => ({
+const receiveParty = party => {
+  debugger
+  return {
   type: RECEIVE_PARTY,
   party
-})
+}}
 
 const receiveAllParties = parties => ({
   type: RECEIVE_ALL_PARTIES,
   parties
 })
 
-const receivePartyErrors = errors => ({
+const receivePartyErrors = errors => {
+  debugger
+  return {
   type: RECEIVE_PARTY_ERRORS,
   errors
-})
+}}
 
 const removePartyErrors = () => ({
   type: REMOVE_PARTY_ERRORS
