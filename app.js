@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const users = require("./routes/api/users");
 const parties = require("./routes/api/parties");
+const items = require("./routes/api/items")
 const http = require('http').Server(app);
 const io = require('socket.io')(http, {
   cors: {
@@ -64,6 +65,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/parties", parties);
+app.use("/api/items", items);
 
 
 const port = process.env.PORT || 5000;
