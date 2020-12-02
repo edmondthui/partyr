@@ -15,4 +15,4 @@ const partiesReducer = (state={ all: {}, party: {} }, action) => {
   }
 }
 
-export default partiesReducer;
+export default partiesReducer;// 

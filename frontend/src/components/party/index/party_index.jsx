@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Parties extends React.Component {
+class PartyIndex extends React.Component {
   constructor(props) {
     super(props);
 
@@ -14,4 +14,4 @@ class Parties extends React.Component {
   }
 }
 
-export default Parties
+export default PartyIndex;

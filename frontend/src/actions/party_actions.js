@@ -35,9 +35,11 @@ export const fetchParties = () => dispatch => {
     .then(party => dispatch(receiveAllParties(party)))
 }
 
-export const createParty = partyData => dispatch => { 
+export const createParty = partyData => dispatch => {
+  debugger 
   return APIUtil.createParty(partyData)
     .then(party => {
+      debugger
       dispatch(receiveParty(party))
     })
     .catch(err => {

@@ -28,10 +28,10 @@ const PartySchema = new Schema({
   lng: {
     type: String,
   },
-  items: [{
-    type: Schema.Types.ObjectId,
-    ref: "item", 
-  }],
+  // items: [{
+  //   type: Schema.Types.ObjectId,
+  //   ref: "item", 
+  // }],
   color: {
     type: String
   }
