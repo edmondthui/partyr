@@ -32,13 +32,23 @@ class NavBar extends React.Component {
   }
 
   render() {
-    return (
-      <div className='NavBar'>
-        <div></div>
-        <h1><Link to={'/'}>Partyr</Link></h1>
-        { this.getLinks() }
-      </div>
-    );
+    if (this.props.loggedIn) {
+      return (
+        <div className='NavBarRGB'>
+          <div></div>
+          <h1><Link to={'/'}>Partyr</Link></h1>
+          { this.getLinks() }
+        </div>
+      );
+    } else {
+      return (
+        <div className='NavBar'>
+          <div></div>
+          <h1><Link to={'/'}>Partyr</Link></h1>
+          { this.getLinks() }
+        </div>
+      );
+    }
   }
 }
 
