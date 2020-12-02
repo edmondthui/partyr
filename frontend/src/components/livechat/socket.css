@@ -65,7 +65,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  color: white;
+  color: black;
   background-color: skyblue;
   border-radius: 15px;
 }
@@ -73,7 +73,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  color: white;
+  color: black;
   background-color: lightpink;
   border-radius: 15px;
 }
+

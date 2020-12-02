@@ -18,6 +18,7 @@ class Party extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchUsers();
     this.socket = io(config[process.env.NODE_ENV].endpoint);
 
     this.socket.on('init', (msg) => {
@@ -81,24 +82,25 @@ class Party extends React.Component {
 
 
   render() {
+    //declare a const here
     let chatMessages = this.state.chat.map((msg, idx) => {
       return (
         //if statement to have your messages send on the right side of the chat and
         // other people's messages on the left.
         this.props.user.username === msg.username ? (
-        <li className="self">
-          <div key={idx} className="self">
-            <p className="self">{msg.username}</p>
-            <p className="self">{msg.message}</p>
+        <li className="self" style={{backgroundColor: this.props.user.color}}>
+          <div key={idx} className="self" style={{backgroundColor: this.props.user.color}}>
+            <p className="self" style={{backgroundColor: this.props.user.color}}>{msg.username}</p>
+            <p className="self" style={{backgroundColor: this.props.user.color}}>{msg.message}</p>
           </div>
         </li>
         ) : (
-        <li className="other">
-          <div key={idx} className="other">
-            <p className="other">{msg.username}</p>
-            <p className="other">{msg.message}</p>
-          </div>
-        </li>
+          <li className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>
+            <div key={idx} className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>
+              <p className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>{msg.username}</p>
+              <p className="other" style={{backgroundColor: this.props.users.filter(user => user.username === msg.username)[0].color}}>{msg.message}</p>
+            </div>
+          </li>
         )
         // <div key={idx} className="message">
         //   <p>{msg.username}</p>
