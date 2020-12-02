@@ -20,10 +20,13 @@ const PartySchema = new Schema({
   },
   date: {
     type: Date,
-    default: Date.now,
+    require: true
   },
-  location: {
-    type: String
+  lat: {
+    type: String,
+  },
+  lng: {
+    type: String,
   },
   items: [{
     type: Schema.Types.ObjectId,
@@ -36,3 +39,5 @@ const PartySchema = new Schema({
 
 const Party = mongoose.model("party", PartySchema);
 module.exports = Party;
+
+
