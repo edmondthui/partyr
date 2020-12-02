@@ -67,7 +67,6 @@ class Party extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    debugger;
     if (prevProps.party !== this.props.party) {
       this.setState({
         chat: []
