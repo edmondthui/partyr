@@ -25,15 +25,16 @@ class HostedParties extends React.Component {
     let parties = this.props.parties.filter(party => party.hostId === this.props.user.id)
     debugger;
     let hostedParties = parties.map(party => (
-        <div>
+        <div className='hosted-party-card'>
           <Map party={party}/>
-          <div>{party.title}</div>
-          <div>{party.date}</div>
-          <div>{party.description}</div>
+          <div>Party: {party.title}</div>
+          <div>Date: {party.date}</div>
+          <div>Description: <br />
+            {party.description}</div>
           {/* <div>{party.items}</div> */}
-          <div>{party.lat}</div>
-          <div>{party.lng}</div>
-          <div>{party.guests ? party.guests.length : 0}</div>
+          {/* <div>{party.lat}</div>
+          <div>{party.lng}</div> */}
+          <div>No. of attendees: {party.guests ? party.guests.length : 0}</div>
         </div>
     ))
       return (
