@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(96deg, #ff007b, #e80c0c, #ffa100, #04d776, #00e5f7, #04d776, #ffa100, #e80c0c, #ff007b);
+  background: linear-gradient(100deg, #ff007b, #e80c0c, #ffa100, #04d776, #00e5f7, #04d776, #ffa100, #e80c0c, #ff007b);
   background-size: 1000% 1000%;
 
   -webkit-animation: splash-background 20s ease infinite;
@@ -61,13 +61,12 @@
 }
 
 .cta-btn {
-  background: linear-gradient(96deg, #ff007b, #e80c0c, #ffa100, #04d776, #00e5f7, #04d776, #ffa100, #e80c0c, #ff007b);
-  /* background: linear-gradient(to right, crimson,pink,springgreen, #2196f3, #f3db21 ); */
-  background-size: 200% 200%;
-  animation: rainbow 2s ease-in-out infinite;
+  background: linear-gradient(100deg, #ff007b, #e80c0c, #ffa100, #04d776, #00e5f7, #04d776, #ffa100, #e80c0c, #ff007b);
+  background-size: 300% 300%;
+  animation: rainbow 5s ease-in-out infinite;
   background-clip: text;
   -webkit-background-clip:text;
-  transition: color 2s ease-in-out;
+  transition: color 1s ease-in-out;
   background-color: #02040f;
 }
 
@@ -84,28 +83,9 @@
   100%{background-position:left}
 }
 
-.parrot{
+.parrot {
   width: 300px;
   height: 300px;
   margin-top: -100px;
   margin-bottom: 60px;
 }
-/* .cta-btn {
-  display: block;
-  width: 200px;
-  height: 50px;
-  border-radius: 50px;
-  font-size: 28px;
-  font-weight: 600;
-  background-color: #02040f;
-  color: white;
-  transition: 0.2s;
-  padding-top: 5px;
-  text-align: center;
-}
-
-.cta-btn:hover {
-  box-shadow: 0px 0px 10px 3px rgba(255, 218, 139, 0.8);
-  transition: 0.3s;
-  transform: scale(1.03);
-} */
