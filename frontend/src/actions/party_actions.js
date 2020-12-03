@@ -55,7 +55,7 @@ export const clearPartyErrors = () => dispatch => {
   return dispatch(removePartyErrors())
 }
 
-export const putParty = partyId => dispatch => {
-  return APIUtil.putParty(partyId)
+export const putParty = partyData => dispatch => {
+  return APIUtil.putParty(partyData)
     .then(party => dispatch(updateParty(party)))
 }

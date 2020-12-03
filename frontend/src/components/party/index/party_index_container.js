@@ -9,7 +9,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  debugger
   return {
   fetchParties: () => dispatch(fetchParties()),
   putParty: (party)=> dispatch(putParty(party))

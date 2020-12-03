@@ -12,6 +12,7 @@ export const createParty = (partyData) => {
   return axios.post(`/api/parties/party`, partyData)
 }
 
-export const putParty = (partyId) => {
-  return axios.put(`/api/parties/party/${partyId}`)
+export const putParty = (partyData) => {
+  debugger;
+  return axios.put(`/api/parties/party/${partyData.id}`, partyData)
 }
