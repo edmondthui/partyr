@@ -27,8 +27,10 @@ class PartyIndex extends React.Component {
           </div>
         ))}
       </div>
-    )
-    map = <Map party={this.state.parties.length > 0 ? this.state.parties[0] : []}/>
+    );
+
+    map = <Map party={this.state.parties.length > 0 ? this.state.parties[0] : []}/>;
+    
     return (
       <div className="party-index-container">
         <div>
