@@ -68,7 +68,7 @@ class Dashboard extends React.Component {
         <PartyIndex parties={this.state.parties}/>
         <div>
               <button onClick={this.removeParty}>X</button>
-              <button onClick={this.joinParty}>YEEEEEEEEEEEET</button>
+              <button onClick={this.joinParty}>JOIN PARTY!</button>
         </div>
       </div>
 
