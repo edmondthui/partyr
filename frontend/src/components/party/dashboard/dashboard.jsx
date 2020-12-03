@@ -10,8 +10,8 @@ class Dashboard extends React.Component {
     this.state = {
       parties: []
     }
-    this.removeParty = this.removeParty.bind(this)
-    this.joinParty = this.joinParty.bind(this)
+    this.removeParty = this.removeParty.bind(this);
+    this.joinParty = this.joinParty.bind(this);
   }
 
   componentDidMount() {
@@ -26,12 +26,12 @@ class Dashboard extends React.Component {
 
   componentDidUpdate(prevProps) {
     if( prevProps.parties.length !== this.props.parties.length ) {
-      this.setState({parties: this.props.parties})
+      this.setState({ parties: this.props.parties })
     }
   }
 
   removeParty() {
-    let [, ...parties] = this.state.parties
+    let [, ...parties] = this.state.parties;
     this.setState({
       parties: parties
     })
@@ -39,7 +39,7 @@ class Dashboard extends React.Component {
 
   joinParty() {
     if (this.state.parties.length > 0) {
-      let joinParty = this.state.parties[0]
+      let joinParty = this.state.parties[0];
       let party = {
         id: joinParty._id,
         guests: joinParty.guests.length > 0 ? (joinParty.guests.includes(this.props.user.id) ? joinParty.guests : joinParty.guests.concat(this.props.user.id)) : [this.props.user.id],
@@ -53,6 +53,7 @@ class Dashboard extends React.Component {
 
   render() {
     const { user } = this.props;
+    
     return (
     <div className="dashboard-container">
 
@@ -66,9 +67,9 @@ class Dashboard extends React.Component {
 
       <div className="main-content">
         <PartyIndex parties={this.state.parties}/>
-        <div>
-              <button onClick={this.removeParty}>X</button>
-              <button onClick={this.joinParty}>YEEEEEEEEEEEET</button>
+        <div className="join-btn-container">
+          <button className="decline-btn"onClick={this.removeParty}>X</button>
+          <button className="join-btn"onClick={this.joinParty}>YEEEEEEEEEEEET</button>
         </div>
       </div>
 
