@@ -17,9 +17,16 @@ class CreatePartyForm extends React.Component {
       map: null,
       marker: null
     }
+
     this.mapStyles = {
       width: "500px",
       height: "500px",
+    }
+
+    this.containerStyle = {
+      position: "relative",
+      width: "100%",
+      height: "100%",
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,14 +41,6 @@ class CreatePartyForm extends React.Component {
       zoom: 13
     }
 
-
-
-    const containerStyle = {
-      position: 'relative',  
-      width: '100%',
-      height: '100%'
-    }
-
     navigator.permissions && navigator.permissions.query({name: 'geolocation'}).then(PermissionStatus => {
       if (PermissionStatus.state === "granted") {
         geolocation.getCurrentPosition(position => {
@@ -49,10 +48,10 @@ class CreatePartyForm extends React.Component {
             center: {lat: position.coords.latitude, lng: position.coords.longitude},
             zoom: 13
           }
-          this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={containerStyle} onClick={this.handleMapClick}></Map> })
+          this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={this.containerStyle} onClick={this.handleMapClick}></Map> })
         })
       } else {
-        this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={containerStyle} onClick={this.handleMapClick}></Map> })
+        this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={this.containerStyle} onClick={this.handleMapClick}></Map> })
       }
     })
 
@@ -65,7 +64,7 @@ class CreatePartyForm extends React.Component {
     this.setState({
       lat: lat,
       lng: lng,
-      map: <Map google={this.props.google} center={{lat: lat, lng: lng}} style={this.mapStyles} onClick={this.handleMapClick}>{marker}</Map>
+      map: <Map google={this.props.google} center={{lat: lat, lng: lng}} style={this.mapStyles} containerStyle={this.containerStyle} onClick={this.handleMapClick}>{marker}</Map>
     })
   }
 
