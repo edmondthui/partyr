@@ -10,7 +10,7 @@ import Livechat from './livechat/livechat_container';
 import Dashboard from './party/dashboard/dashboard_container';
 import CreatePartyForm from './party/form/create_form_container';
 import PartyShow from './party/show/party_show_container'
-import UpcomingParties from './party/upcoming-parties/upcoming_parties_container'
+import UpcomingParties from './party/upcoming_parties/upcoming_parties_container'
 import HostedParties from './party/hosted-parties/hosted_parties_container'
 
 
