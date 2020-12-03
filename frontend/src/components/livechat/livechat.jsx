@@ -67,12 +67,19 @@ class Party extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.party._id !== this.props.party._id ) {
+    debugger;
+    if (prevProps.party !== this.props.party ) {
       this.socket.emit('join', {
         partyId: this.props.party._id
       })
     }
     // this.scrollToBottom(); Comment back in when css is nice right now its too annoying
+  }
+
+  componentWillUnmount() {
+    this.setState({
+      chat: []
+    })
   }
 
 

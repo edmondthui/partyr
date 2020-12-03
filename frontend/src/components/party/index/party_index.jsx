@@ -16,10 +16,16 @@ class PartyIndex extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if( prevProps.parties.length === 0 && this.props.parties.length > 0) {
+    if( prevProps.parties !== this.props.parties ) {
       debugger
       this.setState({parties: this.props.parties})
     }
+  }
+
+  componentWillUnmount() {
+    this.setState({
+      parties: []
+    })
   }
 
   removeParty() {
