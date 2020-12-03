@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 const DocumentSchema = new Schema(
   {
-    description: {
-      type: String,
+    uploader: {
+      type: Schema.Types.ObjectId,
+      ref: "users",
     },
     fileLink: {
       type: String,
