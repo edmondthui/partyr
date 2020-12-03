@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path');
 const mongoose = require('mongoose');
 const express = require("express");
@@ -5,10 +6,13 @@ const app = express();
 const db = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const http = require('http').Server(app);
+
 const users = require("./routes/api/users");
 const parties = require("./routes/api/parties");
 const items = require("./routes/api/items")
-const http = require('http').Server(app);
+const documentUpload = require("./routes/api/documentUpload")
+
 const io = require('socket.io')(http, {
   cors: {
     origin: '*',
@@ -66,6 +70,7 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("/api/parties", parties);
 app.use("/api/items", items);
+app.use("/api/document", documentUpload);
 
 
 const port = process.env.PORT || 5000;
