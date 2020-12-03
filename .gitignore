@@ -1,8 +1,5 @@
 /node_modules
 /config/keys_dev.js
 /frontend/node_modules
-<<<<<<< HEAD
 .env
-=======
-.env
->>>>>>> master
+/frontend/.eslintcache
