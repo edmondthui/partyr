@@ -29,9 +29,11 @@ class Party extends React.Component {
     })
 
     this.socket.on('new-msg', (msg) => {
-      this.setState({
-        chat: [...this.state.chat, msg]
-      })
+      if (msg.partyId === this.props.party._id) {
+        this.setState({
+          chat: [...this.state.chat, msg]
+        })
+      }
     })
   }
 
