@@ -18,13 +18,13 @@ class UpcomingParties extends React.Component {
     let upcomingParties = parties.map(party => (
       <div>
         <Map party={party}/>
-        <div>{party.title}</div>
-        <div>{party.date}</div>
-        <div>{party.description}</div>
-        {/* <div>{party.items}</div> */}
-        <div>{party.lat}</div>
-        <div>{party.lng}</div>
-        <div>{party.guests ? party.guests.length : 0}</div>
+          <div>{party.title}</div>
+          <div>{party.date}</div>
+          <div>{party.description}</div>
+          {/* <div>{party.items}</div> */}
+          <div>{party.lat}</div>
+          <div>{party.lng}</div>
+          <div>{party.guests ? party.guests.length : 0}</div>
       </div>
     ))
     debugger;
