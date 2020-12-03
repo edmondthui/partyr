@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const DocumentSchema = new Schema(
   {
+    uploader: {
+      type: Schema.Types.ObjectId,
+      ref: "users",
+    },
     description: {
       type: String,
     },

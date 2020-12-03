@@ -14,6 +14,10 @@ class newDocUpload extends React.Component {
         this.handleSelectedFile = this.handleSelectedFile.bind(this)
     };
 
+    componentWillUnmount() {
+      this.props.clearPartyErrors();
+    }
+
     handleSelectedFile(e){
         e.preventDefault();
         this.setState({
@@ -33,15 +37,27 @@ class newDocUpload extends React.Component {
         this.props.uploadDocument(data)
     }
 
+    renderErrors() {
+      return(
+        <ul className="errors">
+          {Object.keys(this.props.errors).map((error, i) => (
+            <li key={`upload-error-${i}`}>
+              {this.props.errors[error]}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
     render() {
       return (
         <div className="upload-doc-container">
+          <label> Upload Photo</label>
           <form className="upload-doc-form" onSubmit={this.handleUpload}>
             <div>
               <label htmlFor="doc-description">Description:</label>
               <input 
                 type="text"
-                class="form-control"
                 name="doc-description"
                 onChange={this.update}
               />
@@ -55,9 +71,9 @@ class newDocUpload extends React.Component {
                 onChange={this.handleSelectedFile}
               />
             </div>
-
             <button type="submit" onSubmit={this.handleUpload}></button>
           </form>
+          {this.renderErrors()}
         </div>
       )
     }

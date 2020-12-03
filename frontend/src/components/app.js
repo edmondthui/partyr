@@ -9,6 +9,7 @@ import SignupFormContainer from './session/signup_form_container';
 import Livechat from './livechat/livechat_container';
 import Dashboard from './party/dashboard/dashboard_container';
 import CreatePartyForm from './party/form/create_form_container';
+import Documents from './upload/document_container';
 
 const App = () => (
   <div>
@@ -21,6 +22,7 @@ const App = () => (
       <ProtectedRoute exact path="/livechattest" component={Livechat} />
       <ProtectedRoute exact path="/dashboard" component={Dashboard} />
       <ProtectedRoute exact path="/new_party" component={CreatePartyForm} />
+      <ProtectedRoute exact path="/photos" component={Documents} />
     </Switch>
   </div>
 );
