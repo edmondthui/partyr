@@ -32,12 +32,10 @@ class Dashboard extends React.Component {
         <Map />
         <PartyIndex />
       </div>
+
       <div className="right-sidebar">
-        <div className="livechat-container">
-          <Livechat />
-        </div>
+        <Livechat />
       </div>
-    
     </div>
     )
   }

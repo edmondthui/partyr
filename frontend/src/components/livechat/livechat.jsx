@@ -1,6 +1,6 @@
 import React from 'react'
 import io from 'socket.io-client'
-import './socket.css'
+import './livechat.css'
 import config from './config'
 
 class Party extends React.Component {
@@ -33,7 +33,6 @@ class Party extends React.Component {
         chat: [...this.state.chat, msg]
       })
     })
-
   }
 
   update(e) {
@@ -107,25 +106,26 @@ class Party extends React.Component {
     }
 
     return (    
-      <div>
-        <div className = "chat-box-container">
-          <div className="party-chat-title">
-            <h1>Party Chat</h1>
-          </div>
-          <div className = "chat-messages">
+      <div className="chat-container">
+        <div className="chat-title-container">
+          <h1 className="chat-title">{this.props.party.title} Chat Room</h1>
+        </div>
+        <div className="chat-msg-container">
+          <div className="chat-messages">
             {chatMessages}
             <div ref={el => (this.chat = el)}></div>
           </div>
-          <div className = "chat-bar">
-          </div>
         </div>
-        <form>
-            <input onChange={this.update} className="live-chat-input" value={this.state.message}/>
-            <button onClick={this.handleSubmit} className="live-chat-submit">Submit</button>
+        <form className="chat-input-container">
+          <div className="left">
+            <p>Enter your message</p>
+            <input onChange={this.update} className="chat-input" value={this.state.message}/>
+          </div>
+          <div className="right">
+            <button onClick={this.handleSubmit} className="chat-submit-btn">Submit</button>
+          </div>
         </form>
       </div>
-
-
     )
   }
 
