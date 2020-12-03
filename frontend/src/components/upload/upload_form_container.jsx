@@ -64,7 +64,6 @@ class newDocUpload extends React.Component {
     }
 }
 
-
 const mapStateToProps = (state) => {
   return {
     errors: state.errors.party,
