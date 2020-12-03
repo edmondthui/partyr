@@ -81,7 +81,7 @@
 .party-index-container {
   height: calc(100vh - 60px - 100px);
   width: 100%;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   overflow: auto;
 }
 
@@ -89,11 +89,11 @@
   display: block;
   height: 100px;
   width: 100%;
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-color: #fdfbfc;
 }
 
 .party-btn {
@@ -102,14 +102,33 @@
   height: 70px;
   border-radius: 50px;
   font-weight: 600;
+  background-color: white;
+  box-shadow: 0px 0px 10px 1px #dbdbdb90;
 }
 
 .decline-btn {
   font-size: 36px;
+  margin-right: 10px;
+  color: #f32b60;
+  transition: 0.2s;
+}
+
+.decline-btn:hover {
+  background-color: #f32b60;
+  color: white;
+  transition: 0.2s;
 }
 
 .join-btn {
   font-size: 32px;
+  color: #1be9b6;
+  transition: 0.2s;
+}
+
+.join-btn:hover {
+  background-color: #1be9b6;
+  color: white;
+  transition: 0.2s;
 }
 
 .right-sidebar {
