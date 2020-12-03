@@ -18,18 +18,30 @@ class UpcomingParties extends React.Component {
     let parties = this.props.parties.filter(party => party.guests.includes(this.props.user.id));
     let upcomingParties = parties.map(party => (
       <div className="party-card">
-        <Map party={party}/>
-          <div>Title: {party.title}</div>
-          <div>Date: {party.date}</div>
-          <div>Description: {party.description}</div>
+        <Map className="upparty" party={party}/>
+          <div>
+            <span className="party-info">Title: </span>
+            <span className="party-res">{party.title}</span>
+          </div>
+          <div>
+            <span className="party-info">Date: </span>
+            <span className="party-res">{party.date}</span>
+          </div>
+          <div>
+            <span className="party-info">Description: </span>
+            <span className="party-res">{party.description}</span>
+          </div>
+          <div>
+            <span className="party-info">No. of attendees: </span>
+            <span className="party-res">{party.guests ? party.guests.length : 0}</span>
+          </div>
           {/* <div>{party.items}</div> */}
           {/* <div>{party.lat}</div>
           <div>{party.lng}</div> */}
-          <div>No. of attendees: {party.guests ? party.guests.length : 0}</div>
         </div>
     ))
     return(
-      <div>
+      <div className="test">
         {upcomingParties}
       </div>
     )

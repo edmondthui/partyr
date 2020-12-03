@@ -1,13 +1,18 @@
 .party-card{
-  border: solid 3px #00ac9f;
+  border: solid 5px #00ac9f;
   margin-bottom: 2px;
-  display: flex;
-  justify-content: center;
   align-items: center;
   margin: auto;
-  
+  width: 510px;
+  border-radius: 7px;
+  align-items: center;
 }
 
 .party-info{
-padding: 10px;
+/* padding: 10px; */
+  font-size: 20px;
+}
+.party-response{
+/* padding: 10px; */
+  font-size: 15px;
 }
