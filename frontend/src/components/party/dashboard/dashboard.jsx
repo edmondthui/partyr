@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import Livechat from '../../livechat/livechat_container';
 import './dashboard.css';
-import Map from '../../map/party_map';
 import PartyIndex from '../index/party_index_container';
 
 class Dashboard extends React.Component {
@@ -29,7 +28,7 @@ class Dashboard extends React.Component {
       </div>
 
       <div className="main-content">
-        <Map />
+
         <PartyIndex />
       </div>
       <div className="right-sidebar">

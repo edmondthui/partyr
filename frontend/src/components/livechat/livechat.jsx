@@ -67,7 +67,6 @@ class Party extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    debugger;
     if (prevProps.party !== this.props.party ) {
       this.socket.emit('join', {
         partyId: this.props.party._id

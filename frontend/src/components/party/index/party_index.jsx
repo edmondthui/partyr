@@ -1,5 +1,6 @@
 import React from 'react';
 import PartyIndexItem from './party_index_item'
+import Map from '../../map/party_map';
 
 class PartyIndex extends React.Component {
   constructor(props) {
@@ -17,7 +18,6 @@ class PartyIndex extends React.Component {
 
   componentDidUpdate(prevProps) {
     if( prevProps.parties !== this.props.parties ) {
-      debugger
       this.setState({parties: this.props.parties})
     }
   }
@@ -41,6 +41,7 @@ class PartyIndex extends React.Component {
 
   render() {
     let parties = null;
+    let map = null;
     if (this.state.parties.length > 0) {
       parties = <div className="party-index">
         {this.state.parties.map((party,idx) => (
@@ -53,9 +54,13 @@ class PartyIndex extends React.Component {
           </div>
         ))}
       </div>
+      map = <Map party={this.state.parties[0]}/>
     }
     return (
       <div>
+        <div>
+          {map}
+        </div>
         {parties}
       </div>
     )
