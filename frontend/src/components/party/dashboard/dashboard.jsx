@@ -61,12 +61,10 @@ class Dashboard extends React.Component {
               <button onClick={this.joinParty}>YEEEEEEEEEEEET</button>
         </div>
       </div>
+
       <div className="right-sidebar">
-        <div className="livechat-container">
-          <Livechat party={this.state.parties.length > 0 ? this.state.parties[0] : []}/>
-        </div>
+        <Livechat party={this.state.parties.length > 0 ? this.state.parties[0] : []}/>
       </div>
-    
     </div>
     )
   }
