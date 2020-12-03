@@ -17,6 +17,11 @@ class UpcomingParties extends React.Component {
   render() {
     let parties = this.props.parties.filter(party => party.guests.includes(this.props.user.id));
     let upcomingParties = parties.map(party => {
+      const numberGuest = party.guests.length > 0 ? (
+        `${party.guests.length} ${party.guests.length > 1 ? "guests are": "guest is"} joining this party`
+      ) : (
+        "No one is joining this party yet :("
+      )
       const partyDate = new Date(party.date);
       return (
         <div className="party-card">
@@ -39,7 +44,7 @@ class UpcomingParties extends React.Component {
               <span>{partyDate.getHours() < 10 ? "0" : ""}{partyDate.getHours()}:{partyDate.getMinutes() < 10 ? "0" : ""}{partyDate.getMinutes()}</span>
             </div>
             <div>
-              {party.guests.length} {party.guests.length > 1 ? "guests are": "guest is"} joining
+              {numberGuest}
             </div>
           </div>
         </div>
