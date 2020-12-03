@@ -66,13 +66,12 @@ class Party extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    debugger;
     if (prevProps.party !== this.props.party ) {
       this.socket.emit('join', {
         partyId: this.props.party._id
       })
     }
-    // this.scrollToBottom(); Comment back in when css is nice right now its too annoying
+    this.scrollToBottom();
   }
 
   componentWillUnmount() {
@@ -94,17 +93,17 @@ class Party extends React.Component {
         })
         return (
           this.props.user.username === msg.username ? (
-          <li key={idx} className="self">
-            <div>
-              <p>{msg.username}</p>
-              <p className="msg" style={{borderColor: this.props.user.color}}>{msg.message}</p>
-            </div>
-          </li>
-          ) : (
-            <li key={idx} className="other" >
+            <li key={idx} className="self msg-item">
               <div>
-                <p>{msg.username}</p>
-                <p className="msg" style={{borderColor: color}}>{msg.message}</p>
+                <p className="chat-username">{msg.username}</p>
+                <p className="chat-msg" style={{borderColor: this.props.user.color}}>{msg.message}</p>
+              </div>
+            </li>
+          ) : (
+            <li key={idx} className="other msg-item" >
+              <div>
+                <p className="chat-username">{msg.username}</p>
+                <p className="chat-msg" style={{borderColor: color}}>{msg.message}</p>
               </div>
             </li>
           )
@@ -118,15 +117,19 @@ class Party extends React.Component {
           <h1 className="chat-title">{this.props.party.title} Chat Room</h1>
         </div>
         <div className="chat-msg-container">
-          <div className="chat-messages">
+          <ul className="chat-messages">
             {chatMessages}
             <div ref={el => (this.chat = el)}></div>
-          </div>
+          </ul>
         </div>
         <form className="chat-input-container">
           <div className="left">
-            <p>Enter your message</p>
-            <input onChange={this.update} className="chat-input" value={this.state.message}/>
+            <p className="prompt">Enter your message</p>
+            <input
+              type="text"
+              onChange={this.update} 
+              id="chat-input" 
+              value={this.state.message}/>
           </div>
           <div className="right">
             <button onClick={this.handleSubmit} className="chat-submit-btn">Submit</button>

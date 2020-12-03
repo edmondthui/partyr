@@ -17,7 +17,6 @@ class PartyIndex extends React.Component {
 
   componentDidUpdate(prevProps) {
     if( prevProps.parties !== this.props.parties ) {
-      debugger
       this.setState({parties: this.props.parties})
     }
   }
