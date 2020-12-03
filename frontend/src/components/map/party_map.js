@@ -49,7 +49,7 @@ class PartyMap extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.party !== this.props.party) {
+    if (prevProps !== this.props) {
       let mapOptions = {
         center: { lat: this.props.party.lat, lng: this.props.party.lng },
         zoom: 13,
