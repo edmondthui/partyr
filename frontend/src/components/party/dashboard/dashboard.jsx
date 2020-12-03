@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if( prevProps.parties.length !== this.props.parties.length ) {
+    if( prevProps.parties !== this.props.parties ) {
       this.setState({ parties: this.props.parties })
     }
   }
@@ -63,8 +63,8 @@ class Dashboard extends React.Component {
       <div className="left-sidebar">
         <div className="propic"></div>
         <h1 className="username">{user.username}</h1>
-        <h2 className="hosted">Hosted Parties</h2>
-        <h2 className="upcoming">Upcoming Parties</h2>
+        <Link to="/hosted-parties" className="hosted">Hosted Parties</Link>
+        <Link to="/upcoming-parties" className="upcoming">Upcoming Parties</Link>
         <Link to="/new_party" className="new-party-btn">Host New Party</Link>
       </div>
 
