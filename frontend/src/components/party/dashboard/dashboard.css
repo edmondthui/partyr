@@ -23,7 +23,6 @@
 }
 
 .left-sidebar h1 {
-  /* font-family: 'Raleway', sans-serif; */
   font-size: 1.4em;
   font-weight: 800;
 }
@@ -33,7 +32,6 @@
 }
 
 .left-sidebar h2 {
-  /* font-family: 'Raleway', sans-serif; */
   font-size: 1.4em;
   font-weight: 700;
   display: block;
@@ -78,6 +76,40 @@
   width: calc(100% / 2);
   background-color: #fdfbfc;
   overflow: auto;
+}
+
+.party-index-container {
+  height: calc(100vh - 60px - 100px);
+  width: 100%;
+  border: 1px solid blue;
+  overflow: auto;
+}
+
+.party-btn-container {
+  display: block;
+  height: 100px;
+  width: 100%;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.party-btn {
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.decline-btn {
+  font-size: 36px;
+}
+
+.join-btn {
+  font-size: 32px;
 }
 
 .right-sidebar {
