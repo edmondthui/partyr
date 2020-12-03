@@ -1,5 +1,5 @@
 import React from 'react';
-import { uploadDocument} from '../../actions/document_actions';
+import { uploadPhoto} from '../../actions/photo_actions';
 import { connect } from 'react-redux';
 import './upload.css';;
 
@@ -30,7 +30,7 @@ class newDocUpload extends React.Component {
         e.preventDefault();
         const data = new FormData(e.target);
         data.append("file", this.state.selectedFile, this.state.uploader);
-        this.props.uploadDocument(data).then(() => this.props.history.push("/dashboard"))
+        this.props.uploadPhoto(data).then(() => this.props.history.push("/dashboard"))
     }
 
     renderErrors() {
@@ -75,7 +75,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    uploadDocument: docData => dispatch(uploadDocument(docData)),
+    uploadPhoto: photo => dispatch(uploadPhoto(photo)),
   }
 }
 

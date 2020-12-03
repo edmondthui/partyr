@@ -11,7 +11,7 @@ const http = require('http').Server(app);
 const users = require("./routes/api/users");
 const parties = require("./routes/api/parties");
 const items = require("./routes/api/items")
-const documentUpload = require("./routes/api/documentUpload")
+const photoUpload = require("./routes/api/photoUpload")
 
 const io = require('socket.io')(http, {
   cors: {
@@ -70,7 +70,7 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("/api/parties", parties);
 app.use("/api/items", items);
-app.use("/api/document", documentUpload);
+app.use("/api/photo", photoUpload);
 
 
 const port = process.env.PORT || 5000;

@@ -20,7 +20,7 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     this.props.fetchParties();
-    this.props.fetchDocuments();
+    this.props.fetchPhotos();
   }
 
   componentWillUnmount() {
@@ -61,7 +61,7 @@ class Dashboard extends React.Component {
 
   showPic() {
     const user = this.props.user
-    const photoObj = this.props.documents.filter(doc => doc.uploader === user.id)[0]
+    const photoObj = this.props.photos.filter(doc => doc.uploader === user.id)[0]
     if (!photoObj) return null
     const photo = photoObj.fileLink; 
     return (
@@ -75,7 +75,7 @@ class Dashboard extends React.Component {
     <div className="dashboard-container">
       <div className="left-sidebar">
         <div className="propic">
-          {this.props.documents.length>0 ? this.showPic() : null}
+          {this.props.photos.length>0 ? this.showPic() : null}
         </div>
         <h1 className="username">{user.username}</h1>
         <Link to="/upload-pic" className="upload-link">Upload Profile Pic</Link>
