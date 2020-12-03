@@ -77,6 +77,12 @@ class PartyIndexItem extends React.Component {
     const { party } = this.state;
     const partyDate = new Date(party.date);
 
+    const numberGuest = party.guests.length > 0 ? (
+      `${party.guests.length} ${party.guests.length > 1 ? "guests are": "guest is"} joining this party`
+    ) : (
+      "No one is joining this party yet :("
+    )
+
     return (
       <div className="party-index-item">
         <div className="party-title">{party.title}</div>
@@ -93,7 +99,7 @@ class PartyIndexItem extends React.Component {
         </div>
         <div className="party-description">{party.description}</div>
         <div className="number-guest">
-          {party.guests.length} {party.guests.length > 1 ? "guests are": "guest is"} joining
+        {numberGuest}
         </div>
         <br/>
       </div>
