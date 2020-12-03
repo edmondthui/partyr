@@ -6,7 +6,6 @@ import { faTimes, faHeart } from '@fortawesome/free-solid-svg-icons';
 import Livechat from '../../livechat/livechat_container';
 import './dashboard.css';
 import PartyIndex from '../index/party_index';
-import PhotoUploadForm from '../../upload/upload_form_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -60,7 +59,12 @@ class Dashboard extends React.Component {
 
   }
 
+  showPic() {
+    
+  }
+
   render() {
+    // if (this.props.documents.length<1) return null;
     const { user } = this.props;
     // const photoObj = this.props.documents.filter(doc => doc.uploader === user.id)[0]
     // const photo = photoObj.fileLink; 
@@ -70,7 +74,7 @@ class Dashboard extends React.Component {
         <div className="propic">
           {/* <img src={photo} alt="profile-pic"/> */}
         </div>
-        <PhotoUploadForm/>
+        <Link to="/upload-pic" className="upload-link">Upload Profile Pic</Link>
         <h1 className="username">{user.username}</h1>
         <Link to="/hosted-parties" className="hosted">Hosted Parties</Link>
         <Link to="/upcoming-parties" className="upcoming">Upcoming Parties</Link>

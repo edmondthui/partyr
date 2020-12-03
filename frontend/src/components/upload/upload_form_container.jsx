@@ -29,7 +29,7 @@ class newDocUpload extends React.Component {
         e.preventDefault();
         const data = new FormData(e.target);
         data.append("file", this.state.selectedFile, this.state.uploader);
-        this.props.uploadDocument(data)
+        this.props.uploadDocument(data).then(() => this.props.history.push("/dashboard"))
     }
 
     renderErrors() {
