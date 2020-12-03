@@ -9,7 +9,7 @@ class PartyIndexItem extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.party != this.props.party) {
+    if (prevProps.party !== this.props.party) {
       this.setState({party: this.props.party})
     }
 
