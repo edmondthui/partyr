@@ -60,24 +60,25 @@ class Dashboard extends React.Component {
   }
 
   showPic() {
+    const user = this.props.user
     const photoObj = this.props.documents.filter(doc => doc.uploader === user.id)[0]
+    if (!photoObj) return null
     const photo = photoObj.fileLink; 
     return (
-      <img src={photo} alt="profile-pic"/>
+      <img className="uploaded-pic" src={photo} alt="profile-pic"/>
     )
   }
 
   render() {
     const { user } = this.props;
-
     return (
     <div className="dashboard-container">
       <div className="left-sidebar">
         <div className="propic">
-          {this.props.documents.length<1 ? this.showPic() : null}
+          {this.props.documents.length>0 ? this.showPic() : null}
         </div>
-        <Link to="/upload-pic" className="upload-link">Upload Profile Pic</Link>
         <h1 className="username">{user.username}</h1>
+        <Link to="/upload-pic" className="upload-link">Upload Profile Pic</Link>
         <Link to="/hosted-parties" className="hosted">Hosted Parties</Link>
         <Link to="/upcoming-parties" className="upcoming">Upcoming Parties</Link>
         <Link to="/new_party" className="new-party-btn">Host New Party</Link>

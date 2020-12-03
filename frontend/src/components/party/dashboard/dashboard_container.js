@@ -4,7 +4,6 @@ import { fetchParties, putParty } from '../../../actions/party_actions';
 import { fetchDocuments } from '../../../actions/document_actions';
 
 const mapStateToProps = state => {
-  const user = state.session.user
   return {
     parties: Object.values(state.parties.all),
     user: state.session.user,
