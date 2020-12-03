@@ -68,11 +68,13 @@ class Party extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.party !== this.props.party ) {
+    if (prevProps.party !== this.props.party && !Array.isArray(this.props.party)) {
+      debugger;
       this.socket.emit('join', {
         partyId: this.props.party._id
-      })
+      },
       this.setState({chat: []})
+      )
     }
     this.scrollToBottom();
   }

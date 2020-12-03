@@ -9,7 +9,7 @@ const AWS = require("aws-sdk");
 const storage = multer.memoryStorage();
 const upload = multer({storage: storage});
 
-router.get("/test", (req, res) => res.json({ msg: "This is the docs route" }));
+//router.get("/test", (req, res) => res.json({ msg: "This is the docs route" }));
 
 //index
 router.get("/", (req, res) => {
@@ -28,6 +28,7 @@ router.get("/:id", (req, res) => {
 
 //create - to upload
 router.post("/upload", upload.single("file"), function(req, res) {
+    console.log(req.body)
     const file = req.file;
     const s3FileUrl = process.env.AWS_Uploaded_File_URL_LINK;
     
@@ -37,9 +38,6 @@ router.post("/upload", upload.single("file"), function(req, res) {
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
         region: process.env.AWS_REGION
     });
-
-    console.log(process.env.AWS_ACCESS_KEY_ID);
-    console.log(process.env.AWS_SECRET_ACCESS_KEY);
 
     //uploading params
     let params = {
@@ -56,7 +54,7 @@ router.post("/upload", upload.single("file"), function(req, res) {
         } else {
             res.send({ data });
             let fileToUpload = {
-                description: req.body.description,
+                uploader: req.file.originalname,
                 fileLink: s3FileUrl + file.originalname,
                 s3_key: params.Key
         };
