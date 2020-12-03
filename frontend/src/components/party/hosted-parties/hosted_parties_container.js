@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import HostedParties from "./hosted-parties";
+import HostedParties from "./hosted_parties";
 import { fetchParties } from "../../../actions/party_actions";
 
 const mapStateToProps = (state) => {
