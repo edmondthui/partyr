@@ -1,5 +1,6 @@
 import React from "react";
 import Map from '../../map/party_map';
+import './hosted_parties';
 
 class HostedParties extends React.Component {
   constructor(props) {
