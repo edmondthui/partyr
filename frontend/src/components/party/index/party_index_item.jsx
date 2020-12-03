@@ -1,4 +1,7 @@
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
+const keys = require("../../../config/keys.js")
 
 class PartyIndexItem extends React.Component {
   constructor(props) {
@@ -6,29 +9,100 @@ class PartyIndexItem extends React.Component {
     this.state = {
       party: this.props.party
     }
+
+    this.mapStyles = {
+      width: "350px",
+      height: "250px",
+    }
+
+    this.containerStyle = {
+      position: 'relative',  
+      width: '100%',
+      height: '100%',
+    }
+  }
+
+  componentDidMount() {
+    let mapOptions = {
+      center: { lat: this.props.party.lat, lng: this.props.party.lng},
+      zoom: 13
+    }
+
+  this.setState({ map: (
+    <Map google={this.props.google} 
+      initialCenter={mapOptions.center} 
+      zoom={mapOptions.zoom} 
+      style={this.mapStyles} 
+      containerStyle={this.containerStyle}>
+      {<Marker position={{
+        lat: this.props.party.lat, 
+        lng: this.props.party.lng
+      }} 
+      text="Party Location"/>}
+    </Map> )})
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.party !== this.props.party) {
-      this.setState({party: this.props.party})
+      let mapOptions = {
+        center: { lat: this.props.party.lat, lng: this.props.party.lng},
+        zoom: 13
+      }
+      this.setState({ map: (
+        <Map google={this.props.google} 
+          center={mapOptions.center} 
+          zoom={mapOptions.zoom} 
+          style={this.mapStyles} 
+          containerStyle={this.containerStyle}>
+          {<Marker position={{
+            lat: this.props.party.lat, 
+            lng: this.props.party.lng
+          }} 
+          text="Party Location"/>}
+          </Map> ), party: this.props.party})
+      if (this.props.party.length === 0) {
+        this.setState({ map: (
+          <div>
+            <p>Out of parties :(</p>
+            <Link to="/new_party">Why not host a new one?</Link>
+          </div>
+        )})
+      }
+      // this.setState({party: this.props.party})
     }
 
   }
 
   render() {
+    const { party } = this.state;
+    const partyDate = new Date(party.date);
+
     return (
       <div className="party-index-item">
-        <div>{this.state.party.title}</div>
-        <div>{this.state.party.date}</div>
-        <div>{this.state.party.description}</div>
-        {/* <div>{party.items}</div> */}
-        <div>{this.state.party.lat}</div>
-        <div>{this.state.party.lng}</div>
-        <div>{this.state.party.guests.length}</div>
+        <div className="party-title">{party.title}</div>
+        <div className="party-index-map-container">
+          {this.state.map}
+        </div>
+        <div className="party-date">
+          <h3>Date</h3>
+          {partyDate.toDateString()}
+          </div>
+        <div className="party-time">
+          <h3>Time</h3>
+          <p>{partyDate.getHours() < 10 ? "0" : ""}{partyDate.getHours()}:{partyDate.getMinutes() < 10 ? "0" : ""}{partyDate.getMinutes()}</p>
+        </div>
+        <div className="party-description">{party.description}</div>
+        <div className="number-guest">
+          {party.guests.length} {party.guests.length > 1 ? "guests are": "guest is"} joining
+        </div>
         <br/>
       </div>
     )
   }
 }
 
-export default PartyIndexItem;
+
+export default GoogleApiWrapper({
+  apiKey: keys.mapsApiKey
+})(PartyIndexItem);
+// export default PartyIndexItem;
