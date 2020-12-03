@@ -21,7 +21,7 @@ class HostedParties extends React.Component {
   }
 
   render() {
-    let parties = this.props.parties.filter(party => party.hostId === this.props.user.id)
+    let parties = this.props.parties.filter(party => party.host === this.props.user.id)
     let hostedParties = parties.map(party => (
         <div className='hosted-party-card'>
           <Map party={party}/>

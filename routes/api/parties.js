@@ -57,7 +57,7 @@ router.post('/party',
       }
       const randColor = (Math.floor(Math.random()*16777216)).toString(16).padStart(0, 6)
       const newParty = new Party({
-        host: req.body.hostId,
+        host: req.body.host,
         title: req.body.title,
         description: req.body.description,
         date: req.body.date,
