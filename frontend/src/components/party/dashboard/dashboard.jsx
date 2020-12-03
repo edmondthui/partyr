@@ -13,7 +13,6 @@ class Dashboard extends React.Component {
     super(props);
     this.state = {
       parties: [],
-      documents: this.props.documents
     }
     this.removeParty = this.removeParty.bind(this);
     this.joinParty = this.joinParty.bind(this);
@@ -21,9 +20,7 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     this.props.fetchParties();
-    this.props.fetchDocuments().then((res) => {
-      this.setState({documents: this.props.documents})
-    })
+    this.props.fetchDocuments();
   }
 
   componentWillUnmount() {
@@ -60,12 +57,15 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const { user } = this.props;
-    // console.log("documents @ state",this.state.documents)    
+    // const { user } = this.props;
+    // const photoObj = this.props.documents.filter(doc => doc.uploader === user.id)[0]
+    // const photo = photoObj.fileLink; 
     return (
     <div className="dashboard-container">
       <div className="left-sidebar">
-      <div className="propic">{}</div>
+        <div className="propic">
+          {/* <img src={photo} alt="profile-pic"/> */}
+        </div>
         <PhotoUploadForm/>
         <h1 className="username">{user.username}</h1>
         <Link to="/hosted-parties" className="hosted">Hosted Parties</Link>

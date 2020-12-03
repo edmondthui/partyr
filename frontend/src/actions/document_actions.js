@@ -28,7 +28,10 @@ const removeDocumentErrors = () => ({
 
 export const fetchDocuments = () => dispatch => {
   return APIUtil.fetchDocuments()
-    .then(doc => dispatch(receiveAllDocument(doc)))
+    .then(docs => {
+      dispatch(receiveAllDocument(docs))
+    })
+
 }
 
 export const fetchDocument = docId => dispatch => {

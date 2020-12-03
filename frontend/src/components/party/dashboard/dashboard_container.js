@@ -8,7 +8,7 @@ const mapStateToProps = state => {
   return {
     parties: Object.values(state.parties.all),
     user: state.session.user,
-    documents: Object.values(state.documents.all).filter(doc => doc.uploader === user.id)
+    documents: Object.values(state.documents.all)
   }
 }
 
