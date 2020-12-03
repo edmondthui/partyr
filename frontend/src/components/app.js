@@ -10,6 +10,9 @@ import Livechat from './livechat/livechat_container';
 import Dashboard from './party/dashboard/dashboard_container';
 import CreatePartyForm from './party/form/create_form_container';
 import PartyShow from './party/show/party_show_container'
+import UpcomingParties from './party/upcoming-parties/upcoming_parties_container'
+import HostedParties from './party/hosted-parties/hosted_parties_container'
+
 
 const App = () => (
   <div>
@@ -23,6 +26,8 @@ const App = () => (
       <ProtectedRoute exact path="/dashboard" component={Dashboard} />
       <ProtectedRoute exact path="/new_party" component={CreatePartyForm} />
       <ProtectedRoute exact path="/party/:partyId" component={PartyShow} />
+      <ProtectedRoute exact path="/upcoming-parties" component={UpcomingParties} />
+      <ProtectedRoute exact path="/hosted-parties" component={HostedParties} />
     </Switch>
   </div>
 );

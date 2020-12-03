@@ -60,8 +60,8 @@ class Dashboard extends React.Component {
       <div className="left-sidebar">
         <div className="propic"></div>
         <h1 className="username">{user.username}</h1>
-        <h2 className="hosted">My Parties</h2>
-        <h2 className="upcoming">Upcoming Parties</h2>
+        <Link to="/hosted-parties" className="hosted">Hosted Parties</Link>
+        <Link to="/upcoming-parties" className="upcoming">Upcoming Parties</Link>
         <Link to="/new_party" className="new-party-btn">Host New Party</Link>
       </div>
 
