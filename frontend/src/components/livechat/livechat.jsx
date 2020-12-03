@@ -70,6 +70,7 @@ class Party extends React.Component {
       this.socket.emit('join', {
         partyId: this.props.party._id
       })
+      this.setState({chat: []})
     }
     this.scrollToBottom();
   }

@@ -56,6 +56,7 @@
   border: 1px solid #aaaaaa;
   border-radius: 3px;
   margin-top: 5px;
+  padding-left: 10px;
 }
 
 .chat-input-container .right {
