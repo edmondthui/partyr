@@ -11,14 +11,18 @@ class PartyMap extends React.Component {
     }
   }
   componentDidMount() {
+<<<<<<< HEAD
 
     const geolocation = navigator.geolocation;
 
+=======
+>>>>>>> master
     let mapOptions = {
       center: { lat: 37.7758, lng: -122.435},
       zoom: 13
     }
 
+<<<<<<< HEAD
     const mapStyles = {
       width: "500px",
       height: "500px",
@@ -39,6 +43,21 @@ class PartyMap extends React.Component {
         }
         this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleClick}></Map> })
       })
+=======
+  this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={this.containerStyle}>{<Marker position={{lat: this.props.party.lat, lng: this.props.party.lng}} text="Party Location"/>}</Map> })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.party !== this.props.party) {
+      let mapOptions = {
+        center: { lat: this.props.party.lat, lng: this.props.party.lng},
+        zoom: 13
+      }
+      this.setState({ map: <Map google={this.props.google} center={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={this.containerStyle}>{<Marker position={{lat: this.props.party.lat, lng: this.props.party.lng}} text="Party Location"/>}</Map> })
+      if (this.props.party.length === 0) {
+        this.setState({ map: <div>OUT OF PARTIES</div>})
+      }
+>>>>>>> master
     }
   }
   render() {
