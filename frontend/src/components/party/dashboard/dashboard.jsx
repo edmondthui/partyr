@@ -38,15 +38,17 @@ class Dashboard extends React.Component {
   }
 
   joinParty() {
-    let joinParty = this.state.parties[0]
-    let party = {
-      id: joinParty._id,
-      guests: joinParty.guests.length > 0 ? (joinParty.guests.includes(this.props.user.id) ? joinParty.guests : joinParty.guests.concat(this.props.user.id)) : [this.props.user.id],
-      title: joinParty.title,
-      description: joinParty.description,
-      date: joinParty.date
+    if (this.state.parties.length > 0) {
+      let joinParty = this.state.parties[0]
+      let party = {
+        id: joinParty._id,
+        guests: joinParty.guests.length > 0 ? (joinParty.guests.includes(this.props.user.id) ? joinParty.guests : joinParty.guests.concat(this.props.user.id)) : [this.props.user.id],
+        title: joinParty.title,
+        description: joinParty.description,
+        date: joinParty.date
+      }
+      this.props.putParty(party);
     }
-    this.props.putParty(party);
   }
 
   render() {
