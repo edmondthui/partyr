@@ -1,6 +1,6 @@
 import React from 'react';
 import './partymap.css';
-import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
+import {Map, GoogleApiWrapper} from 'google-maps-react';
 const keys = require("../../config/keys.js")
 
 class PartyMap extends React.Component {
@@ -9,20 +9,10 @@ class PartyMap extends React.Component {
     this.state= {
       map: null
     }
-
-    this.mapStyles = {
-      width: "500px",
-      height: "500px",
-    }
-    this.containerStyle = {
-      position: 'relative',  
-      width: '100%',
-      height: '100%'
-    }
   }
   componentDidMount() {
     let mapOptions = {
-      center: { lat: this.props.party.lat, lng: this.props.party.lng},
+      center: { lat: 37.7758, lng: -122.435},
       zoom: 13
     }
 
@@ -41,7 +31,6 @@ class PartyMap extends React.Component {
       }
     }
   }
-
   render() {
     return (
       <div className="map-container">
