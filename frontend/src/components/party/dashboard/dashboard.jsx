@@ -31,7 +31,9 @@ class Dashboard extends React.Component {
 
   componentDidUpdate(prevProps) {
     if( prevProps.parties !== this.props.parties ) {
-      this.setState({ parties: this.props.parties })
+      let unjoinedParties = this.props.parties.filter(party => !party.guests.includes(this.props.user.id))
+      // this.setState({ parties: this.props.parties })
+      this.setState({ parties: unjoinedParties })
     }
   }
 
@@ -53,7 +55,9 @@ class Dashboard extends React.Component {
         date: joinParty.date
       }
       this.props.putParty(party);
+      this.props.fetchParties();
     }
+
   }
 
   render() {
