@@ -84,6 +84,12 @@
   100%{background-position:left}
 }
 
+.parrot{
+  width: 300px;
+  height: 300px;
+  margin-top: -100px;
+  margin-bottom: 60px;
+}
 /* .cta-btn {
   display: block;
   width: 200px;
