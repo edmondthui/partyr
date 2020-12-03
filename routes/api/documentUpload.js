@@ -9,6 +9,8 @@ const AWS = require("aws-sdk");
 const storage = multer.memoryStorage();
 const upload = multer({storage: storage});
 
+router.get("/test", (req, res) => res.json({ msg: "This is the docs route" }));
+
 //index
 router.get("/", (req, res) => {
   Document.find()
@@ -58,7 +60,7 @@ router.post("/upload", upload.single("file"), function(req, res) {
                 fileLink: s3FileUrl + file.originalname,
                 s3_key: params.Key
         };
-        let document = new DOCUMENT(fileToUpload);
+        let document = new Document(fileToUpload);
 
         document.save(function(error, newFile) {
             if (error) throw error;
@@ -74,14 +76,12 @@ router.post("/upload", upload.single("file"), function(req, res) {
                 res.status(404).json(err);
             }
 
-                    //finding bucket
+            //finding bucket
             let s3Bucket = new AWS.S3({
                 accessKeyId: process.env.AWS_ACCESS_KEY_ID,
                 secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
                 region: process.env.AWS_REGION
             });
-
-
 
             let params = {
                 Bucket: process.env.AWS_BUCKET_NAME,
