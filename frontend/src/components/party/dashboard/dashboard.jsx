@@ -6,12 +6,14 @@ import { faTimes, faHeart } from '@fortawesome/free-solid-svg-icons';
 import Livechat from '../../livechat/livechat_container';
 import './dashboard.css';
 import PartyIndex from '../index/party_index';
+import PhotoUploadForm from '../../upload/upload_form_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      parties: []
+      parties: [],
+      documents: this.props.documents
     }
     this.removeParty = this.removeParty.bind(this);
     this.joinParty = this.joinParty.bind(this);
@@ -19,6 +21,9 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     this.props.fetchParties();
+    this.props.fetchDocuments().then((res) => {
+      this.setState({documents: this.props.documents})
+    })
   }
 
   componentWillUnmount() {
@@ -56,12 +61,12 @@ class Dashboard extends React.Component {
 
   render() {
     const { user } = this.props;
-    
+    // console.log("documents @ state",this.state.documents)    
     return (
     <div className="dashboard-container">
-
       <div className="left-sidebar">
-        <div className="propic"></div>
+      <div className="propic">{}</div>
+        <PhotoUploadForm/>
         <h1 className="username">{user.username}</h1>
         <Link to="/hosted-parties" className="hosted">Hosted Parties</Link>
         <Link to="/upcoming-parties" className="upcoming">Upcoming Parties</Link>

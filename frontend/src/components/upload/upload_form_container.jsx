@@ -6,7 +6,7 @@ class newDocUpload extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            description: "",
+            uploader: this.props.user.id,
             selectedFile: null
         };
         this.handleUpload = this.handleUpload.bind(this);
@@ -17,7 +17,6 @@ class newDocUpload extends React.Component {
     handleSelectedFile(e){
         e.preventDefault();
         this.setState({
-           description: e.target.value,
            selectedFile: e.target.files[0]
         });
     };
@@ -29,7 +28,7 @@ class newDocUpload extends React.Component {
     handleUpload(e) {
         e.preventDefault();
         const data = new FormData(e.target);
-        data.append("file",this.state.selectedFile, this.state.description);
+        data.append("file", this.state.selectedFile, this.state.uploader);
         this.props.uploadDocument(data)
     }
 
@@ -48,17 +47,7 @@ class newDocUpload extends React.Component {
     render() {
       return (
         <div className="upload-doc-container">
-          <label> Upload Photo</label>
           <form className="upload-doc-form" onSubmit={this.handleUpload}>
-            <div>
-              <label htmlFor="doc-title">Title:</label>
-              <input 
-                type="text"
-                name="doc-title"
-                onChange={this.update}
-              />
-            </div>
-
             <div className="uploading-doc">
               <input
                 type="file"
@@ -67,7 +56,7 @@ class newDocUpload extends React.Component {
                 onChange={this.handleSelectedFile}
               />
             </div>
-            <button type="submit" onSubmit={this.handleUpload}> Submit </button>
+            <button type="submit" onSubmit={this.handleUpload}> Upload Photo </button>
           </form>
           {this.renderErrors()}
         </div>

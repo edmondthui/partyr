@@ -7,9 +7,6 @@ const DocumentSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "users",
     },
-    description: {
-      type: String,
-    },
     fileLink: {
       type: String,
     },
