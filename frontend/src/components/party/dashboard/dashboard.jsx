@@ -25,7 +25,7 @@ class Dashboard extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if( prevProps.parties.length !== this.props.parties.length ) {
+    if( prevProps.parties !== this.props.parties ) {
       this.setState({ parties: this.props.parties })
     }
   }
