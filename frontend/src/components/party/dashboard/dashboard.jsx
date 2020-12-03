@@ -21,9 +21,11 @@ class Dashboard extends React.Component {
     <div className="dashboard-container">
 
       <div className="left-sidebar">
-        <p>{user.username}</p>
-        <h1>Upcoming Parties</h1>
-        <Link to="/new_party">Host New Party</Link>
+        <div className="propic"></div>
+        <h1 className="username">{user.username}</h1>
+        <h2 className="hosted">My Parties</h2>
+        <h2 className="upcoming">Upcoming Parties</h2>
+        <Link to="/new_party" className="new-party-btn">Host New Party</Link>
       </div>
 
       <div className="main-content">
