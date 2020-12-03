@@ -16,32 +16,37 @@ class UpcomingParties extends React.Component {
 
   render() {
     let parties = this.props.parties.filter(party => party.guests.includes(this.props.user.id));
-    let upcomingParties = parties.map(party => (
-      <div className="party-card">
-        <Map className="upparty" party={party}/>
+    let upcomingParties = parties.map(party => {
+      const partyDate = new Date(party.date);
+      return (
+        <div className="party-card">
           <div>
-            <span className="party-info">Title: </span>
-            <span className="party-res">{party.title}</span>
+            <Map party={party}/>
           </div>
-          <div>
-            <span className="party-info">Date: </span>
-            <span className="party-res">{party.date}</span>
+          <div className="party-info-container">
+            <div>
+              <p className="party-title">{party.title}</p>
+            </div>
+            <div>
+              <p className="party-description">{party.description}</p>
+            </div>
+            <div>
+              <span>Date: </span>
+              <span>{partyDate.toDateString()}</span>
+            </div>
+            <div>
+              <span>Time: </span>
+              <span>{partyDate.getHours() < 10 ? "0" : ""}{partyDate.getHours()}:{partyDate.getMinutes() < 10 ? "0" : ""}{partyDate.getMinutes()}</span>
+            </div>
+            <div>
+              {party.guests.length} {party.guests.length > 1 ? "guests are": "guest is"} joining
+            </div>
           </div>
-          <div>
-            <span className="party-info">Description: </span>
-            <span className="party-res">{party.description}</span>
-          </div>
-          <div>
-            <span className="party-info">No. of attendees: </span>
-            <span className="party-res">{party.guests ? party.guests.length : 0}</span>
-          </div>
-          {/* <div>{party.items}</div> */}
-          {/* <div>{party.lat}</div>
-          <div>{party.lng}</div> */}
         </div>
-    ))
+      )
+    })
     return(
-      <div className="test">
+      <div className="all-parties">
         {upcomingParties}
       </div>
     )

@@ -22,21 +22,38 @@ class HostedParties extends React.Component {
 
   render() {
     let parties = this.props.parties.filter(party => party.host === this.props.user.id)
-    let hostedParties = parties.map(party => (
-        <div className='hosted-party-card'>
-          <Map party={party}/>
-          <div>Party: {party.title}</div>
-          <div>Date: {party.date}</div>
-          <div>Description: <br />
-            {party.description}</div>
-          {/* <div>{party.items}</div> */}
-          {/* <div>{party.lat}</div>
-          <div>{party.lng}</div> */}
-          <div>No. of attendees: {party.guests ? party.guests.length : 0}</div>
-        </div>
-    ))
+    let hostedParties = parties.map(party => {
+      const partyDate = new Date(party.date);
       return (
-        <div>
+        <div className="party-card">
+          <div>
+            <Map party={party}/>
+          </div>
+          <div className="party-info-container">
+            <div>
+              <span className="party-title">{party.title}</span>
+            </div>
+            <div>
+              <span className="party-info">Description: </span>
+              <span className="party-description">{party.description}</span>
+            </div>
+            <div>
+              <span>Date: </span>
+              <span>{partyDate.toDateString()}</span>
+            </div>
+            <div>
+              <span>Time: </span>
+              <span>{partyDate.getHours() < 10 ? "0" : ""}{partyDate.getHours()}:{partyDate.getMinutes() < 10 ? "0" : ""}{partyDate.getMinutes()}</span>
+            </div>
+            <div>
+              {party.guests.length} {party.guests.length > 1 ? "guests are": "guest is"} joining
+            </div>
+          </div>
+        </div>
+      )
+    })
+      return (
+        <div className="all-parties">
           {hostedParties}
         </div>
       )

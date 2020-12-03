@@ -1,12 +1,30 @@
-.hosted-party-card{
-  border: solid 3px #00ac9f;
-  margin-bottom: 2px;
+.party-card {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
 }
 
-.hosted-party-info{
-padding: 10px;
+.map-container {
+  width: 500px;
+  height: 500px;
+}
+
+.party-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 100px;
+  width: 50%;
+}
+
+.all-parties:last-child{
+  margin-bottom: 50px;
+}
+
+.party-card {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.party-title {
+  font-size: 16px;
 }

@@ -83,7 +83,6 @@ class CreatePartyForm extends React.Component {
       date: this.state.date,
       lat: this.state.lat,
       lng: this.state.lng,
-      items: this.state.items
     }
     this.props.createParty(party).then(() => this.props.history.push("/dashboard"));
   }
