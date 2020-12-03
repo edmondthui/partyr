@@ -27,7 +27,6 @@ class UpcomingParties extends React.Component {
           <div>{party.guests ? party.guests.length : 0}</div>
       </div>
     ))
-    debugger;
     return(
       <div>
         {upcomingParties}
