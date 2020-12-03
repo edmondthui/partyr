@@ -3,6 +3,7 @@ import { fetchParty } from "../../../actions/party_actions"
 import PartyShow from './party_show';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
   return ({
     party: state.parties[ownProps.match.params.partyId]
   });

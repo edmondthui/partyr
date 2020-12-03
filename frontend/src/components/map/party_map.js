@@ -1,6 +1,6 @@
 import React from 'react';
 import './partymap.css';
-import {Map, GoogleApiWrapper, Marker} from 'google-maps-react';
+import {Map, GoogleApiWrapper} from 'google-maps-react';
 const keys = require("../../config/keys.js")
 
 class PartyMap extends React.Component {
@@ -9,54 +9,39 @@ class PartyMap extends React.Component {
     this.state= {
       map: null
     }
+  }
+  componentDidMount() {
 
-    this.mapStyles = {
+    const geolocation = navigator.geolocation;
+
+    let mapOptions = {
+      center: { lat: 37.7758, lng: -122.435},
+      zoom: 13
+    }
+
+    const mapStyles = {
       width: "500px",
       height: "500px",
     }
-    this.containerStyle = {
+
+    const containerStyle = {
       position: 'relative',  
       width: '100%',
       height: '100%'
     }
-  }
-  componentDidMount() {
-
-    let mapOptions = {
-      center: { lat: this.props.party.lat, lng: this.props.party.lng},
-      zoom: 13
-    }
-
-  this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={this.containerStyle}>{<Marker position={{lat: this.props.party.lat, lng: this.props.party.lng}} text="Party Location"/>}</Map> })
-
-    // navigator.permissions && navigator.permissions.query({name: 'geolocation'}).then(PermissionStatus => {
-    //   if (PermissionStatus.state === "granted") {
-    //     geolocation.getCurrentPosition(position => {
-    //       mapOptions = {
-    //         center: {lat: position.coords.latitude, lng: position.coords.longitude},
-    //         zoom: 13
-    //       }
-    //       this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleClick}></Map> })
-    //     })
-    //   } else {
-    //     this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleClick}></Map> })
-    //   }
-    // })
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.party !== this.props.party) {
-      let mapOptions = {
-        center: { lat: this.props.party.lat, lng: this.props.party.lng},
-        zoom: 13
-      }
-      debugger;
-      this.setState({ map: <Map google={this.props.google} center={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={this.containerStyle}>{<Marker position={{lat: this.props.party.lat, lng: this.props.party.lng}} text="Party Location"/>}</Map> })
+    
+    this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleClick}></Map> })
+    if (geolocation) {
+      geolocation.getCurrentPosition(position => {
+        mapOptions = {
+          center: {lat: position.coords.latitude, lng: position.coords.longitude},
+          zoom: 13
+        }
+        this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleClick}></Map> })
+      })
     }
   }
-
   render() {
-    debugger;
     return (
       <div className="map-container">
         {this.state.map}

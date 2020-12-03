@@ -1,4 +1,4 @@
-import { RECEIVE_PARTY, RECEIVE_ALL_PARTIES } from '../actions/party_actions';
+import { RECEIVE_PARTY, RECEIVE_ALL_PARTIES, UPDATE_PARTY } from '../actions/party_actions';
 
 const partiesReducer = (state={ all: {}, party: {} }, action) => {
   Object.freeze(state);
@@ -10,9 +10,12 @@ const partiesReducer = (state={ all: {}, party: {} }, action) => {
     case RECEIVE_PARTY:
       newState.party = action.party.data;
       return newState;
+    case UPDATE_PARTY:
+      newState.party = action.party.data;
+      return newState;
     default:
       return state;
   }
 }
 
-export default partiesReducer;// 
+export default partiesReducer;
