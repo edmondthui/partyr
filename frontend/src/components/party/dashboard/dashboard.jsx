@@ -56,7 +56,6 @@ class Dashboard extends React.Component {
       this.props.putParty(party);
       this.props.fetchParties();
     }
-
   }
 
   showPic() {

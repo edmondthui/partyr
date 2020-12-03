@@ -3,6 +3,7 @@ import { uploadPhoto} from '../../actions/photo_actions';
 import { connect } from 'react-redux';
 import './upload.css';;
 
+
 class newDocUpload extends React.Component {
     constructor(props){
         super(props);

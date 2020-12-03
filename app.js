@@ -75,8 +75,6 @@ app.use("/api/photo", photoUpload);
 
 const port = process.env.PORT || 5000;
 
-// app.listen(port, () => console.log(`Server is running on port ${port}`));
-
 http.listen(port, () => {
   console.log('listening on:' + port)
 })

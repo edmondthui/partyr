@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+
 const PhotoSchema = new Schema(
   {
     uploader: {
@@ -17,6 +18,7 @@ const PhotoSchema = new Schema(
   timestamps: true,
   }
 );
+
 
 const Photo = mongoose.model("photos", PhotoSchema);
 module.exports = Photo;

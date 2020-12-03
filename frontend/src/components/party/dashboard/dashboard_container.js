@@ -3,6 +3,7 @@ import Dashboard from './dashboard';
 import { fetchParties, putParty } from '../../../actions/party_actions';
 import { fetchPhotos } from '../../../actions/photo_actions';
 
+
 const mapStateToProps = state => {
   return {
     parties: Object.values(state.parties.all),

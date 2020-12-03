@@ -31,7 +31,6 @@ export const fetchPhotos = () => dispatch => {
     .then(docs => {
       dispatch(receiveAllPhoto(docs))
     })
-
 }
 
 export const fetchPhoto = docId => dispatch => {

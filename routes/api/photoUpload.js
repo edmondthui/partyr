@@ -1,10 +1,9 @@
-// require("dotenv").config();
+
 const express = require("express");
 const router = express.Router(); 
 const Photo = require("../../models/Photos");
 const multer = require("multer");
 const AWS = require("aws-sdk");
-//const passport = require("passport");
 
 const storage = multer.memoryStorage();
 const upload = multer({storage: storage});

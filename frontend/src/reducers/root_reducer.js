@@ -13,4 +13,5 @@ const RootReducer = combineReducers({
   photos
 });
 
+
 export default RootReducer;

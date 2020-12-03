@@ -15,4 +15,5 @@ const PhotoErrorsReducer = (oldState = [], action) => {
   }
 };
 
+
 export default PhotoErrorsReducer;

@@ -4,8 +4,8 @@ export const fetchPhotos = () => {
   return axios.get('/api/photo/')
 }
 
-export const fetchPhoto = (docId) => {
-  return axios.get(`/api/photo/${docId}`)
+export const fetchPhoto = (id) => {
+  return axios.get(`/api/photo/${id}`)
 }
 
 export const uploadPhoto = (docData) => {
