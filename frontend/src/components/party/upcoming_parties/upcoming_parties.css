@@ -1,4 +1,4 @@
-.party-card{
+/* .party-card{
   border: solid 5px #00ac9f;
   margin-bottom: 2px;
   align-items: center;
@@ -9,10 +9,38 @@
 }
 
 .party-info{
-/* padding: 10px; */
+padding: 10px;
   font-size: 20px;
 }
 .party-response{
-/* padding: 10px; */
+padding: 10px;
   font-size: 15px;
+} */
+
+.party-card {
+  display: flex;
+  margin: 0 auto;
+}
+
+.map-container {
+  width: 500px;
+  height: 500px;
+}
+
+.all-parties:last-child{
+  margin-bottom: 50px;
+}
+
+.party-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 100px;
+  width: 50%;
+}
+
+.party-card {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
