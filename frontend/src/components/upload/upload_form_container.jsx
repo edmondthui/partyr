@@ -1,6 +1,7 @@
 import React from 'react';
 import { uploadDocument} from '../../actions/document_actions';
 import { connect } from 'react-redux';
+import './upload.css';;
 
 class newDocUpload extends React.Component {
     constructor(props){
@@ -48,7 +49,8 @@ class newDocUpload extends React.Component {
       return (
         <div className="upload-doc-container">
           <form className="upload-doc-form" onSubmit={this.handleUpload}>
-            <div className="uploading-doc">
+            <label> Upload Party Profile~</label>
+            <div className="uploading-picture">
               <input
                 type="file"
                 name=""
