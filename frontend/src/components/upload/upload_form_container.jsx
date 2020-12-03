@@ -1,5 +1,5 @@
 import React from 'react';
-import { uploadDocument, clearDocumentErrors } from '../../actions/document_actions';
+import { uploadDocument} from '../../actions/document_actions';
 import { connect } from 'react-redux';
 
 class newDocUpload extends React.Component {
@@ -13,10 +13,6 @@ class newDocUpload extends React.Component {
         this.update = this.update.bind(this)
         this.handleSelectedFile = this.handleSelectedFile.bind(this)
     };
-
-    componentWillUnmount() {
-      this.props.clearPartyErrors();
-    }
 
     handleSelectedFile(e){
         e.preventDefault();
@@ -55,10 +51,10 @@ class newDocUpload extends React.Component {
           <label> Upload Photo</label>
           <form className="upload-doc-form" onSubmit={this.handleUpload}>
             <div>
-              <label htmlFor="doc-description">Description:</label>
+              <label htmlFor="doc-title">Title:</label>
               <input 
                 type="text"
-                name="doc-description"
+                name="doc-title"
                 onChange={this.update}
               />
             </div>
@@ -71,7 +67,7 @@ class newDocUpload extends React.Component {
                 onChange={this.handleSelectedFile}
               />
             </div>
-            <button type="submit" onSubmit={this.handleUpload}></button>
+            <button type="submit" onSubmit={this.handleUpload}> Submit </button>
           </form>
           {this.renderErrors()}
         </div>
@@ -90,7 +86,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     uploadDocument: docData => dispatch(uploadDocument(docData)),
-    clearDocumentErrors: () => dispatch(clearDocumentErrors())
   }
 }
 

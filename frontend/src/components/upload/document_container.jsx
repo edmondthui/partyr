@@ -8,22 +8,22 @@ class DocumentUploaded extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            documents: []
+            documents: this.props.documents
         }
     }
 
     componentDidMount(){
         this.props.fetchDocuments().then((res) => {
-            this.setState({documents: res.documents.data})
+            this.setState({documents: this.props.documents})
         })
     }
 
     render(){
         const allDocs = this.state.documents.map((document, i) => {
             return (
-                <li key={`all-docs-${i}`}><a href={document.fileLink} target="_blank"> 
-                View: {document.description}
-                </a></li>
+                <li key={`all-docs-${i}`}>
+                    <img src={document.fileLink} alt={document.description}/>
+                </li>
             )
         })
 
@@ -42,7 +42,8 @@ class DocumentUploaded extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.session.user
+    user: state.session.user,
+    documents: Object.values(state.documents.all)
   };
 }
 
