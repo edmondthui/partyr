@@ -1,5 +1,6 @@
 import React from 'react'
 import Map from '../../map/party_map';
+import './upcoming_parties.css'
 
 class UpcomingParties extends React.Component {
   constructor(props) {
@@ -16,19 +17,31 @@ class UpcomingParties extends React.Component {
   render() {
     let parties = this.props.parties.filter(party => party.guests.includes(this.props.user.id));
     let upcomingParties = parties.map(party => (
-      <div>
-        <Map party={party}/>
-          <div>{party.title}</div>
-          <div>{party.date}</div>
-          <div>{party.description}</div>
+      <div className="party-card">
+        <Map className="upparty" party={party}/>
+          <div>
+            <span className="party-info">Title: </span>
+            <span className="party-res">{party.title}</span>
+          </div>
+          <div>
+            <span className="party-info">Date: </span>
+            <span className="party-res">{party.date}</span>
+          </div>
+          <div>
+            <span className="party-info">Description: </span>
+            <span className="party-res">{party.description}</span>
+          </div>
+          <div>
+            <span className="party-info">No. of attendees: </span>
+            <span className="party-res">{party.guests ? party.guests.length : 0}</span>
+          </div>
           {/* <div>{party.items}</div> */}
-          <div>{party.lat}</div>
-          <div>{party.lng}</div>
-          <div>{party.guests ? party.guests.length : 0}</div>
-      </div>
+          {/* <div>{party.lat}</div>
+          <div>{party.lng}</div> */}
+        </div>
     ))
     return(
-      <div>
+      <div className="test">
         {upcomingParties}
       </div>
     )

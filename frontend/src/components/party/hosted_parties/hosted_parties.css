@@ -1,0 +1,12 @@
+.hosted-party-card{
+  border: solid 3px #00ac9f;
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.hosted-party-info{
+padding: 10px;
+}
