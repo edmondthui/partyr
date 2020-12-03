@@ -61,7 +61,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    // const { user } = this.props;
+    const { user } = this.props;
     // const photoObj = this.props.documents.filter(doc => doc.uploader === user.id)[0]
     // const photo = photoObj.fileLink; 
     return (
