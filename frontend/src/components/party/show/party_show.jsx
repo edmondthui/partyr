@@ -12,7 +12,6 @@ class PartyShow extends React.Component {
   }
 
   render() {
-    debugger;
     const party = this.props.party
     return (
       <div>
