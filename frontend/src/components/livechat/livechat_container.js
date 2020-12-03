@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { fetchUsers } from '../../actions/session_actions'
 
 const mapStateToProps = (state) => {
-  debugger;
   return {
     user: state.session.user,
     users: state.users.all,

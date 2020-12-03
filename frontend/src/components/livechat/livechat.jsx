@@ -67,46 +67,51 @@ class Party extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    debugger;
-    if (prevProps.party !== this.props.party) {
-      this.setState({
-        chat: []
-      })
+    if (prevProps.party !== this.props.party ) {
       this.socket.emit('join', {
         partyId: this.props.party._id
       })
-
     }
     // this.scrollToBottom(); Comment back in when css is nice right now its too annoying
   }
 
+  componentWillUnmount() {
+    this.setState({
+      chat: []
+    })
+  }
+
 
   render() {
-    let chatMessages = this.state.chat.map((msg, idx) => {
-      let color;
-      this.props.users.forEach(user => {
-        if (user.username === msg.username) {
-          color = user.color
-        }
-      })
-      return (
-        this.props.user.username === msg.username ? (
-        <li key={idx} className="self">
-          <div>
-            <p>{msg.username}</p>
-            <p className="msg" style={{borderColor: this.props.user.color}}>{msg.message}</p>
-          </div>
-        </li>
-        ) : (
-          <li key={idx} className="other" >
+    let chatMessages = null;
+    if (this.props.users.length > 0) {
+      chatMessages = this.state.chat.map((msg, idx) => {
+        let color;
+        this.props.users.forEach(user => {
+          if (user.username === msg.username) {
+            color = user.color
+          }
+        })
+        return (
+          this.props.user.username === msg.username ? (
+          <li key={idx} className="self">
             <div>
               <p>{msg.username}</p>
-              <p className="msg" style={{borderColor: color}}>{msg.message}</p>
+              <p className="msg" style={{borderColor: this.props.user.color}}>{msg.message}</p>
             </div>
           </li>
+          ) : (
+            <li key={idx} className="other" >
+              <div>
+                <p>{msg.username}</p>
+                <p className="msg" style={{borderColor: color}}>{msg.message}</p>
+              </div>
+            </li>
+          )
         )
-      )
-    })
+      })
+    }
+
     return (    
       <div>
         <div className = "chat-box-container">

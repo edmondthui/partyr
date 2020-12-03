@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import './party_form.css';
 const keys = require('../../../config/keys')
 
@@ -13,7 +13,13 @@ class CreatePartyForm extends React.Component {
       date: '',
       lat: '',
       lng: '',
-      items: ''
+      items: '',
+      map: null,
+      marker: null
+    }
+    this.mapStyles = {
+      width: "500px",
+      height: "500px",
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,14 +28,13 @@ class CreatePartyForm extends React.Component {
 
   componentWillMount() {
     const geolocation = navigator.geolocation;
+
     let mapOptions = {
       center: { lat: 37.7758, lng: -122.435},
       zoom: 13
     }
-    const mapStyles = {
-      width: "500px",
-      height: "500px",
-    }
+
+
 
     const containerStyle = {
       position: 'relative',  
@@ -37,24 +42,30 @@ class CreatePartyForm extends React.Component {
       height: '100%'
     }
 
-    if (geolocation) {
-      geolocation.getCurrentPosition(position => {
-        mapOptions = {
-          center: {lat: position.coords.latitude, lng: position.coords.longitude},
-          zoom: 13
-        }
-      this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleMapClick}></Map> })
-      })
-    } else {
-      this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleMapClick}></Map> })
-    }
+    navigator.permissions && navigator.permissions.query({name: 'geolocation'}).then(PermissionStatus => {
+      if (PermissionStatus.state === "granted") {
+        geolocation.getCurrentPosition(position => {
+          mapOptions = {
+            center: {lat: position.coords.latitude, lng: position.coords.longitude},
+            zoom: 13
+          }
+          this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={containerStyle} onClick={this.handleMapClick}></Map> })
+        })
+      } else {
+        this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={containerStyle} onClick={this.handleMapClick}></Map> })
+      }
+    })
 
   }
 
   handleMapClick(e, map, coord) {
+    let lat = coord.latLng.lat();
+    let lng = coord.latLng.lng();
+    let marker = <Marker position={{lat: lat, lng: lng}} text="Party Location"/>
     this.setState({
-      lat: coord.latLng.lat(),
-      lng: coord.latLng.lng()
+      lat: lat,
+      lng: lng,
+      map: <Map google={this.props.google} center={{lat: lat, lng: lng}} style={this.mapStyles} onClick={this.handleMapClick}>{marker}</Map>
     })
   }
 
