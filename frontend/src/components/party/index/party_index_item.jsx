@@ -16,15 +16,19 @@ class PartyIndexItem extends React.Component {
   }
 
   render() {
+    const { party } = this.state;
+    const partyDate = new Date(party.date);
+    // debugger
     return (
       <div className="party-index-item">
-        <div>{this.state.party.title}</div>
-        <div>{this.state.party.date}</div>
-        <div>{this.state.party.description}</div>
+        <div className="party-title">{party.title}</div>
+        <div className="party-date">{partyDate.toDateString()}</div>
+        <div className="party-time">{partyDate.getHours()}:{partyDate.getMinutes()}</div>
+        <div className="party-description">{party.description}</div>
         {/* <div>{party.items}</div> */}
-        <div>{this.state.party.lat}</div>
-        <div>{this.state.party.lng}</div>
-        <div>{this.state.party.guests.length}</div>
+        <div className="number-guest">
+          {party.guests.length} {party.guests.length > 1 ? "guests are": "guest is"} joining
+        </div>
         <br/>
       </div>
     )

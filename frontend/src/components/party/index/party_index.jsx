@@ -1,6 +1,6 @@
 import React from 'react';
 import PartyIndexItem from './party_index_item'
-import Map from '../../map/party_map';
+import PartyIndexMap from './party_index_map';
 
 class PartyIndex extends React.Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class PartyIndex extends React.Component {
       </div>
     );
 
-    map = <Map party={this.state.parties.length > 0 ? this.state.parties[0] : []}/>;
+    map = <PartyIndexMap party={this.state.parties.length > 0 ? this.state.parties[0] : []}/>;
     
     return (
       <div className="party-index-container">
