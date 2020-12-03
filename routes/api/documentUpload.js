@@ -9,7 +9,7 @@ const AWS = require("aws-sdk");
 const storage = multer.memoryStorage();
 const upload = multer({storage: storage});
 
-router.get("/test", (req, res) => res.json({ msg: "This is the docs route" }));
+//router.get("/test", (req, res) => res.json({ msg: "This is the docs route" }));
 
 //index
 router.get("/", (req, res) => {

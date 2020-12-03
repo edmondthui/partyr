@@ -50,13 +50,11 @@ class PartyMap extends React.Component {
         center: { lat: this.props.party.lat, lng: this.props.party.lng},
         zoom: 13
       }
-      debugger;
       this.setState({ map: <Map google={this.props.google} center={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={this.containerStyle}>{<Marker position={{lat: this.props.party.lat, lng: this.props.party.lng}} text="Party Location"/>}</Map> })
     }
   }
 
   render() {
-    debugger;
     return (
       <div className="map-container">
         {this.state.map}
