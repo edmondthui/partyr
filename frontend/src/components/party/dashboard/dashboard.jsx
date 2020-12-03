@@ -6,7 +6,6 @@ import { faTimes, faHeart } from '@fortawesome/free-solid-svg-icons';
 import Livechat from '../../livechat/livechat_container';
 import './dashboard.css';
 import PartyIndex from '../index/party_index';
-import PhotoUploadForm from '../../upload/upload_form_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -16,11 +15,12 @@ class Dashboard extends React.Component {
     }
     this.removeParty = this.removeParty.bind(this);
     this.joinParty = this.joinParty.bind(this);
+    this.showPic = this.showPic.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchParties();
-    this.props.fetchDocuments();
+    this.props.fetchPhotos();
   }
 
   componentWillUnmount() {
@@ -56,21 +56,28 @@ class Dashboard extends React.Component {
       this.props.putParty(party);
       this.props.fetchParties();
     }
+  }
 
+  showPic() {
+    const user = this.props.user
+    const photoObj = this.props.photos.filter(doc => doc.uploader === user.id)[0]
+    if (!photoObj) return null
+    const photo = photoObj.fileLink; 
+    return (
+      <img className="uploaded-pic" src={photo} alt="profile-pic"/>
+    )
   }
 
   render() {
     const { user } = this.props;
-    // const photoObj = this.props.documents.filter(doc => doc.uploader === user.id)[0]
-    // const photo = photoObj.fileLink; 
     return (
     <div className="dashboard-container">
       <div className="left-sidebar">
         <div className="propic">
-          {/* <img src={photo} alt="profile-pic"/> */}
+          {this.props.photos.length>0 ? this.showPic() : null}
         </div>
-        <PhotoUploadForm/>
         <h1 className="username">{user.username}</h1>
+        <Link to="/upload-pic" className="upload-link">Upload Profile Pic</Link>
         <Link to="/hosted-parties" className="hosted">Hosted Parties</Link>
         <Link to="/upcoming-parties" className="upcoming">Upcoming Parties</Link>
         <Link to="/new_party" className="new-party-btn">Host New Party</Link>

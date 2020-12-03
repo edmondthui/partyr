@@ -12,7 +12,7 @@ import CreatePartyForm from './party/form/create_form_container';
 import PartyShow from './party/show/party_show_container';
 import UpcomingParties from './party/upcoming_parties/upcoming_parties_container';
 import HostedParties from './party/hosted_parties/hosted_parties_container';
-
+import UploadPic from './upload/upload_form_container';
 
 const App = () => (
   <div>
@@ -28,6 +28,7 @@ const App = () => (
       <ProtectedRoute exact path="/party/:partyId" component={PartyShow} />
       <ProtectedRoute exact path="/upcoming-parties" component={UpcomingParties} />
       <ProtectedRoute exact path="/hosted-parties" component={HostedParties} />
+      <ProtectedRoute exact path="/upload-pic" component={UploadPic} />
     </Switch>
   </div>
 );

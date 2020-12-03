@@ -1,10 +1,9 @@
-// require("dotenv").config();
+
 const express = require("express");
 const router = express.Router(); 
-const Document = require("../../models/Documents");
+const Photo = require("../../models/Photos");
 const multer = require("multer");
 const AWS = require("aws-sdk");
-//const passport = require("passport");
 
 const storage = multer.memoryStorage();
 const upload = multer({storage: storage});
@@ -13,7 +12,7 @@ const upload = multer({storage: storage});
 
 //index
 router.get("/", (req, res) => {
-  Document.find()
+  Photo.find()
     .sort({createdAt: 1})
     .then(docs => res.status(200).send(docs))
     .catch(err => res.status(404).json(err))
@@ -21,7 +20,7 @@ router.get("/", (req, res) => {
 
 //show
 router.get("/:id", (req, res) => {
-    Document.findById(req.params.id)
+    Photo.findById(req.params.id)
         .then(doc => res.json(doc))
         .catch(err => res.status(404).json(err))
 });
@@ -58,9 +57,9 @@ router.post("/upload", upload.single("file"), function(req, res) {
                 fileLink: s3FileUrl + file.originalname,
                 s3_key: params.Key
         };
-        let document = new Document(fileToUpload);
+        let photo = new Photo(fileToUpload);
 
-        document.save(function(error, newFile) {
+        photo.save(function(error, newFile) {
             if (error) throw error;
         });
     }
@@ -68,7 +67,7 @@ router.post("/upload", upload.single("file"), function(req, res) {
 
     // to remove
     router.delete("/:id", (req, res) => {
-        Document.findByIdAndRemove(req.params.id, function (err, result) {
+        Photo.findByIdAndRemove(req.params.id, function (err, result) {
 
             if (err) {
                 res.status(404).json(err);
@@ -90,7 +89,7 @@ router.post("/upload", upload.single("file"), function(req, res) {
                 if (err) {
                     res.status(500).json(err);
                 } else {
-                    res.send({ status:"200", response:"deleted document" });
+                    res.send({ status:"200", response:"deleted Photo" });
 
                 }
             });

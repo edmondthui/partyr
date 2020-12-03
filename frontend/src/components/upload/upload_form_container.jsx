@@ -1,6 +1,8 @@
 import React from 'react';
-import { uploadDocument} from '../../actions/document_actions';
+import { uploadPhoto} from '../../actions/photo_actions';
 import { connect } from 'react-redux';
+import './upload.css';;
+
 
 class newDocUpload extends React.Component {
     constructor(props){
@@ -29,7 +31,7 @@ class newDocUpload extends React.Component {
         e.preventDefault();
         const data = new FormData(e.target);
         data.append("file", this.state.selectedFile, this.state.uploader);
-        this.props.uploadDocument(data)
+        this.props.uploadPhoto(data).then(() => this.props.history.push("/dashboard"))
     }
 
     renderErrors() {
@@ -48,7 +50,8 @@ class newDocUpload extends React.Component {
       return (
         <div className="upload-doc-container">
           <form className="upload-doc-form" onSubmit={this.handleUpload}>
-            <div className="uploading-doc">
+            <label> Upload Party Profile~</label>
+            <div className="uploading-picture">
               <input
                 type="file"
                 name=""
@@ -64,7 +67,6 @@ class newDocUpload extends React.Component {
     }
 }
 
-
 const mapStateToProps = (state) => {
   return {
     errors: state.errors.party,
@@ -74,7 +76,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    uploadDocument: docData => dispatch(uploadDocument(docData)),
+    uploadPhoto: photo => dispatch(uploadPhoto(photo)),
   }
 }
 

@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const DocumentSchema = new Schema(
+
+const PhotoSchema = new Schema(
   {
     uploader: {
       type: Schema.Types.ObjectId,
@@ -18,5 +19,6 @@ const DocumentSchema = new Schema(
   }
 );
 
-const Document = mongoose.model("documents", DocumentSchema);
-module.exports = Document;
+
+const Photo = mongoose.model("photos", PhotoSchema);
+module.exports = Photo;
