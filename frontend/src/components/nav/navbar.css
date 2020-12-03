@@ -120,7 +120,7 @@
   float: right;
   width: 90px;
   height: 30px;
-  background-color: white;
+  background-color: black;
   border-radius: 30px;
   margin-right: 15px;
   font-size: 18px;
@@ -137,7 +137,7 @@
 }
 
 .signup, .logout {
-  color: #f32b60;
+  color: #ff8f1f;
 }
 
 .signup:hover, .logout:hover {
