@@ -73,10 +73,13 @@ class Dashboard extends React.Component {
     return (
     <div className="dashboard-container">
       <div className="left-sidebar">
+        <h1 className="username">
+          Hello!<br />
+          {user.username}
+        </h1>
         <div className="propic">
           {this.props.photos.length>0 ? this.showPic() : null}
         </div>
-        <h1 className="username">{user.username}</h1>
         <Link to="/upload-pic" className="upload-link">Upload Profile Pic</Link>
         <Link to="/hosted-parties" className="hosted">Hosted Parties</Link>
         <Link to="/upcoming-parties" className="upcoming">Upcoming Parties</Link>
