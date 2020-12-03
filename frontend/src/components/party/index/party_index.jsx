@@ -8,12 +8,6 @@ class PartyIndex extends React.Component {
     this.state= {
       parties: []
     }
-    this.removeParty = this.removeParty.bind(this)
-    this.joinParty = this.joinParty.bind(this)
-  }
-
-  componentWillMount() {
-    this.props.fetchParties()
   }
 
   componentDidUpdate(prevProps) {
@@ -22,40 +16,17 @@ class PartyIndex extends React.Component {
     }
   }
 
-  componentWillUnmount() {
-    this.setState({
-      parties: []
-    })
-  }
-
-  removeParty() {
-    let [, ...parties] = this.state.parties
-    this.setState({
-      parties: parties
-    })
-  }
-
-  joinParty() {
-    console.log("JOIN")
-  }
-
   render() {
     let parties = null;
     let map = null;
-    if (this.state.parties.length > 0) {
-      parties = <div className="party-index">
-        {this.state.parties.map((party,idx) => (
-          <div>
-            <PartyIndexItem party={party} key={idx}/>
-            <div>
-              <button onClick={this.removeParty}>X</button>
-              <button onClick={this.joinParty}>YEEEEEEEEEEEET</button>
-            </div>
-          </div>
-        ))}
-      </div>
-      map = <Map party={this.state.parties[0]}/>
-    }
+    parties = <div className="party-index">
+      {this.state.parties.map((party,idx) => (
+        <div>
+          <PartyIndexItem party={party} key={idx}/>
+        </div>
+      ))}
+    </div>
+    map = <Map party={this.state.parties.length > 0 ? this.state.parties[0] : []}/>
     return (
       <div>
         <div>
