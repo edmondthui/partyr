@@ -110,7 +110,11 @@ class CreatePartyForm extends React.Component {
 
     return (
       <div className="party-form-container">
+        <div className="map-container">
+          {this.state.map}
+        </div>
         <form className="party-form" onSubmit={this.handleSubmit}>
+          <h1>Create a party</h1>
           <div className="title">
             <div className="input-wrapper">
               <label htmlFor="input-title">Title</label>
@@ -154,9 +158,6 @@ class CreatePartyForm extends React.Component {
           </div>
           <button className="submit-btn">Create Party!</button>
         </form>
-        <div>
-          {this.state.map}
-        </div>
         {this.renderErrors()}
       </div>
     )

@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
-import { fetchParty } from "../../../actions/party_actions"
+import { fetchParty } from '../../../actions/party_actions';
 import PartyShow from './party_show';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return ({
-    party: state.parties[ownProps.match.params.partyId]
+    party : state.parties.party
   });
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchParty: (id) => dispatch(fetchParty(id))
+  fetchParty: (id) => dispatch(fetchParty(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PartyShow);

@@ -21,3 +21,14 @@
   appearance: none;
   border: none;
 }
+
+.party-form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  align-items: center;
+}
+
+.party-form {
+  margin-left: 50px;
+}

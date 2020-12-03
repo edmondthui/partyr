@@ -19,16 +19,18 @@ class PartyIndex extends React.Component {
   render() {
     let parties = null;
     let map = null;
-    parties = <div className="party-index">
-      {this.state.parties.map((party,idx) => (
-        <div>
-          <PartyIndexItem party={party} key={idx}/>
-        </div>
-      ))}
-    </div>
+    parties = (
+      <div className="party-index">
+        {this.state.parties.map((party, idx) => (
+          <div>
+            <PartyIndexItem party={party} key={`item-${idx}`}/>
+          </div>
+        ))}
+      </div>
+    )
     map = <Map party={this.state.parties.length > 0 ? this.state.parties[0] : []}/>
     return (
-      <div>
+      <div className="party-index-container">
         <div>
           {map}
         </div>
