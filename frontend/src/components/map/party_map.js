@@ -21,27 +21,12 @@ class PartyMap extends React.Component {
     }
   }
   componentDidMount() {
-
     let mapOptions = {
       center: { lat: this.props.party.lat, lng: this.props.party.lng},
       zoom: 13
     }
 
   this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={this.containerStyle}>{<Marker position={{lat: this.props.party.lat, lng: this.props.party.lng}} text="Party Location"/>}</Map> })
-
-    // navigator.permissions && navigator.permissions.query({name: 'geolocation'}).then(PermissionStatus => {
-    //   if (PermissionStatus.state === "granted") {
-    //     geolocation.getCurrentPosition(position => {
-    //       mapOptions = {
-    //         center: {lat: position.coords.latitude, lng: position.coords.longitude},
-    //         zoom: 13
-    //       }
-    //       this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleClick}></Map> })
-    //     })
-    //   } else {
-    //     this.setState({ map: <Map google={this.props.google} initialCenter={mapOptions.center} zoom={mapOptions.zoom} style={mapStyles} containerStyle={containerStyle} onClick={this.handleClick}></Map> })
-    //   }
-    // })
   }
 
   componentDidUpdate(prevProps) {
@@ -51,6 +36,9 @@ class PartyMap extends React.Component {
         zoom: 13
       }
       this.setState({ map: <Map google={this.props.google} center={mapOptions.center} zoom={mapOptions.zoom} style={this.mapStyles} containerStyle={this.containerStyle}>{<Marker position={{lat: this.props.party.lat, lng: this.props.party.lng}} text="Party Location"/>}</Map> })
+      if (this.props.party.length === 0) {
+        this.setState({ map: <div>OUT OF PARTIES</div>})
+      }
     }
   }
 

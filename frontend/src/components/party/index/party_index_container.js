@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { fetchParties } from '../../../actions/party_actions';
+import { fetchParties, putParty } from '../../../actions/party_actions';
 import PartyIndex from "./party_index";
 
 const mapStateToProps = (state) => {
@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-  fetchParties: () => dispatch(fetchParties())
+  fetchParties: () => dispatch(fetchParties()),
+  putParty: (party)=> dispatch(putParty(party))
   };
 };
 

@@ -16,16 +16,16 @@ router.get("/parties", (req, res) => {
 router.get("/party/:id", (req, res) => {
     Party.findById(req.params.id)
         .then(party => res.json(party))
-        .catch(err => res.status(404).json({nopartyfound: "No Party Found"}))
+        .catch(err => res.status(404).json({nopartyfound: "No party found"}))
 });
 
 router.put("/party/:id", (req, res) => {
   console.log(req.body)
   Party.findByIdAndUpdate(req.params.id, {...req.body}, {new: true},
-    function (err, result) {
+    (err, result) => {
       console.log(result)
       if (err) {
-        res.status(404).json(err);
+        res.status(404).json({ updatepartyfailed: "Update party failed"});
       } else {
         const updateParty = {...req.body};
         res.json(updateParty);

@@ -1,6 +1,6 @@
 import React from 'react'
 import io from 'socket.io-client'
-import './socket.css'
+import './livechat.css'
 import config from './config'
 
 class Party extends React.Component {
@@ -33,7 +33,6 @@ class Party extends React.Component {
         chat: [...this.state.chat, msg]
       })
     })
-
   }
 
   update(e) {
@@ -71,8 +70,9 @@ class Party extends React.Component {
       this.socket.emit('join', {
         partyId: this.props.party._id
       })
+      this.setState({chat: []})
     }
-    // this.scrollToBottom(); Comment back in when css is nice right now its too annoying
+    this.scrollToBottom();
   }
 
   componentWillUnmount() {
@@ -94,17 +94,17 @@ class Party extends React.Component {
         })
         return (
           this.props.user.username === msg.username ? (
-          <li key={idx} className="self">
-            <div>
-              <p>{msg.username}</p>
-              <p className="msg" style={{borderColor: this.props.user.color}}>{msg.message}</p>
-            </div>
-          </li>
-          ) : (
-            <li key={idx} className="other" >
+            <li key={idx} className="self msg-item">
               <div>
-                <p>{msg.username}</p>
-                <p className="msg" style={{borderColor: color}}>{msg.message}</p>
+                <p className="chat-username">{msg.username}</p>
+                <p className="chat-msg" style={{borderColor: this.props.user.color}}>{msg.message}</p>
+              </div>
+            </li>
+          ) : (
+            <li key={idx} className="other msg-item" >
+              <div>
+                <p className="chat-username">{msg.username}</p>
+                <p className="chat-msg" style={{borderColor: color}}>{msg.message}</p>
               </div>
             </li>
           )
@@ -113,25 +113,30 @@ class Party extends React.Component {
     }
 
     return (    
-      <div>
-        <div className = "chat-box-container">
-          <div className="party-chat-title">
-            <h1>Party Chat</h1>
-          </div>
-          <div className = "chat-messages">
+      <div className="chat-container">
+        <div className="chat-title-container">
+          <h1 className="chat-title">{this.props.party.title} Chat Room</h1>
+        </div>
+        <div className="chat-msg-container">
+          <ul className="chat-messages">
             {chatMessages}
             <div ref={el => (this.chat = el)}></div>
-          </div>
-          <div className = "chat-bar">
-          </div>
+          </ul>
         </div>
-        <form>
-            <input onChange={this.update} className="live-chat-input" value={this.state.message}/>
-            <button onClick={this.handleSubmit} className="live-chat-submit">Submit</button>
+        <form className="chat-input-container">
+          <div className="left">
+            <p className="prompt">Enter your message</p>
+            <input
+              type="text"
+              onChange={this.update} 
+              id="chat-input" 
+              value={this.state.message}/>
+          </div>
+          <div className="right">
+            <button onClick={this.handleSubmit} className="chat-submit-btn">Submit</button>
+          </div>
         </form>
       </div>
-
-
     )
   }
 

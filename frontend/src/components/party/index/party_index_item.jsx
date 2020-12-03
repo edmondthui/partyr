@@ -3,19 +3,28 @@ import React from 'react';
 class PartyIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      party: this.props.party
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.party != this.props.party) {
+      this.setState({party: this.props.party})
+    }
+
   }
 
   render() {
-    const { party } = this.props;
     return (
       <div className="party-index-item">
-        <div>{party.title}</div>
-        <div>{party.date}</div>
-        <div>{party.description}</div>
+        <div>{this.state.party.title}</div>
+        <div>{this.state.party.date}</div>
+        <div>{this.state.party.description}</div>
         {/* <div>{party.items}</div> */}
-        <div>{party.lat}</div>
-        <div>{party.lng}</div>
-        {/* <div>{party.guests}</div> */}
+        <div>{this.state.party.lat}</div>
+        <div>{this.state.party.lng}</div>
+        <div>{this.state.party.guests.length}</div>
         <br/>
       </div>
     )
