@@ -21,7 +21,9 @@ class HostedParties extends React.Component {
   }
 
   render() {
-    let parties = this.props.parties.filter(party => party.hostId === this.props.user.hostId)
+    debugger;
+    let parties = this.props.parties.filter(party => party.hostId === this.props.user.id)
+    debugger;
     let hostedParties = parties.map(party => (
         <div>
           <Map party={party}/>
