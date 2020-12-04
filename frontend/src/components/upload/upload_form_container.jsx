@@ -61,11 +61,9 @@ class newDocUpload extends React.Component {
               />
             </div>
 
-            <div className="upload-submit">
-              <p onSubmit={this.handleUpload} className="upload-btn"> 
-                Upload Your Profile
-              </p>
-            </div>
+            <button onSubmit={this.handleUpload} className="upload-btn"> 
+              Upload Your Profile
+            </button>
 
           </form>
           {this.renderErrors()}
