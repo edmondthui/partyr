@@ -12,11 +12,11 @@ Never have an unorganized party again. With Partyr, you can organize parties, wo
 Partyr is built with the MERN Stack, consisting of MongoDB, Express, React, and Node. Learn more about the technology used in this project [here](https://github.com/edmondthui/partyr/wiki/Technologies-and-Technical-Challenges).
 
 # Functionality & MVP
-- [ ] User Auth
-- [ ] Hosting parties (CRUD functionalities)
-- [ ] Finding and joining parties
-- [ ] Party info with live chat
-- [ ] User dashboard
+- [x] User Auth
+- [x] Hosting parties (CRUD functionalities)
+- [x] Finding and joining parties
+- [x] Party info with live chat
+- [x] User dashboard
 # Bonus Features
 - [ ] Mobile compatibility 
 - [ ] Virtual party feature

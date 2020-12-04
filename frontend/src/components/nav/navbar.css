@@ -170,6 +170,20 @@
   transition: 0.2s;
 }
 
+.github-link {
+  font-size: 30px;
+  margin-left: 15px;
+}
+
+.github-link {
+  font-size: 30px;
+  margin-left: 15px;
+}
+
+.logged-out {
+  color: white;
+}
+
 /* MOBILE COMPATABILITY */
 
 @media only screen and (max-width: 600px) {
@@ -183,6 +197,10 @@
 
   .gradient-bg h1, .gradient-bg p {
     padding: 0px 10px;
+  }
+
+  .signup-from {
+    height: 90%
   }
 
 

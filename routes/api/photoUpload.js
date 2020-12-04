@@ -27,7 +27,6 @@ router.get("/:id", (req, res) => {
 
 //create - to upload
 router.post("/upload", upload.single("file"), function(req, res) {
-    console.log(req.body)
     const file = req.file;
     const s3FileUrl = process.env.AWS_Uploaded_File_URL_LINK;
     

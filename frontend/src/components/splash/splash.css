@@ -97,4 +97,8 @@
     display: none;
   }
 
+  .button-container .cta-btn, .button-container {
+    display: none;
+  }
+
 }

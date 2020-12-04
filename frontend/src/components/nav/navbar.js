@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './navbar.css'
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -35,7 +37,11 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className='NavBarRGB'>
-          <div></div>
+          <div>
+            <a href="https://github.com/edmondthui/partyr" className="github-link">
+              <FontAwesomeIcon icon={ faGithub }/>
+            </a>
+          </div>
           <h1 className="nav-h1">
             <Link to={'/'}>
               <div className="nav-letter">P</div>
@@ -53,7 +59,11 @@ class NavBar extends React.Component {
     } else {
       return (
         <div className='NavBar'>
-          <div></div>
+          <div>
+            <a href="https://github.com/edmondthui/partyr" className="github-link logged-out">
+              <FontAwesomeIcon icon={ faGithub }/>
+            </a>
+          </div>
           <h1><Link to={'/'}>Partyr</Link></h1>
           {this.getLinks()}
         </div>
