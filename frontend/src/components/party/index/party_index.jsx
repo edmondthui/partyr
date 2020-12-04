@@ -34,7 +34,6 @@ class PartyIndex extends React.Component {
   }
 
   render() {
-
     return (
       <div className="party-index-container">
         <div className="party-index">
