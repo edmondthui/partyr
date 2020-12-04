@@ -1,7 +1,8 @@
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
-const keys = require("../../../config/keys.js")
+require('dotenv').config()
+
 
 class PartyIndexItem extends React.Component {
   constructor(props) {
