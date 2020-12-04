@@ -23,6 +23,11 @@
   align-items: center;
 }
 
+.party-index-item:hover {
+  cursor: grab; 
+  /* this is so it shows a hand on the party cards can change if anyone doesn't like it */
+}
+
 .party-index-map-container {
   display: block;
   width: 350px;
