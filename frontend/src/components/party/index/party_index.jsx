@@ -35,7 +35,6 @@ class PartyIndex extends React.Component {
 
   render() {
     let parties = null
-    debugger;
     parties = (
       <div className="party-index">
         {this.state.parties.map((party, idx) => (
@@ -45,7 +44,6 @@ class PartyIndex extends React.Component {
         ))}
       </div>
     );
-    debugger;
     return (
       <div className="party-index-container">
         {parties}
