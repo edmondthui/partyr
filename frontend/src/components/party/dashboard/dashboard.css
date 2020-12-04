@@ -174,3 +174,17 @@
   margin-left: 3px;
   margin-right: 1px;
 }
+
+
+/* MOBILE COMPATIBILITY */
+
+
+@media only screen and (max-width: 600px) {
+  .right-sidebar, .left-sidebar {
+    display: none;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+}
