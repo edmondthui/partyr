@@ -173,8 +173,22 @@
 /* MOBILE COMPATABILITY */
 
 @media only screen and (max-width: 600px) {
-  .NavBar h1 a {
-    display: none;
+  .NavBar h1 {
+    left: 10px;
   }
+
+  .gradient-bg .session-form-container {
+    width: 90%;
+  }
+
+  .gradient-bg h1, .gradient-bg p {
+    padding: 0px 10px;
+  }
+
+
+  /* .NavBarRight .logout {
+    display: none;
+  } */
+  /* Eventually make a sandwich button or something that pops out to log out and see chat and profile */
 
 }
