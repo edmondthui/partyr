@@ -14,17 +14,17 @@ class PartyIndex extends React.Component {
 
   onSwipe(direction) {
     if (direction === "right") {
-      this.props.joinParty()
       this.setState({parties: [, ...this.state.parties]})
+      this.props.joinParty()
     }
     else {
-      this.props.removeParty()
       this.setState({parties: [, ...this.state.parties]})
+      this.props.removeParty()
     }
   }
 
   componentDidUpdate(prevProps) {
-    if( prevProps !== this.props ) {
+    if( prevProps.parties !== this.props.parties ) {
       this.setState({parties: this.props.parties})
     }
   }
@@ -34,21 +34,16 @@ class PartyIndex extends React.Component {
   }
 
   render() {
-    let parties = null
-    debugger;
-    parties = (
-      <div className="party-index">
-        {this.state.parties.map((party, idx) => (
-          <TinderCard onSwipe={this.onSwipe} >
-            <PartyIndexItem party={party} key={`item-${idx}`}/>
-          </TinderCard>
-        ))}
-      </div>
-    );
-    debugger;
+
     return (
       <div className="party-index-container">
-        {parties}
+        <div className="party-index">
+          {this.state.parties.map((party, idx) => (
+            <TinderCard onSwipe={this.onSwipe} >
+              <PartyIndexItem party={party} key={`item-${idx}`}/>
+            </TinderCard>
+          ))}
+        </div>
       </div>
     )
   }
