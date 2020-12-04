@@ -25,11 +25,9 @@
 .uploaded-pic {
   width: 150px;
   height: 150px;
-}
-
-.uploaded-pic {
   object-fit: cover;
 }
+
 
 .username {
   font-size: 1.4em;
@@ -113,13 +111,6 @@
   overflow: auto;
 }
 
-.party-index-container {
-  height: calc(100vh - 60px - 100px);
-  width: 100%;
-  /* border: 1px solid blue; */
-  overflow: auto;
-}
-
 .party-btn-container {
   display: block;
   height: 100px;
@@ -128,7 +119,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #fdfbfc;
+  /* background-color: #fdfbfc; */
+  /* background-color: #4c4cc0; */
 }
 
 .party-btn {
