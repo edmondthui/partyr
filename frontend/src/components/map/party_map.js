@@ -11,8 +11,8 @@ class PartyMap extends React.Component {
     };
 
     this.mapStyles = {
-      width: "500px",
-      height: "500px",
+      width: "600px",
+      height: "400px",
     };
     this.containerStyle = {
       position: "relative",

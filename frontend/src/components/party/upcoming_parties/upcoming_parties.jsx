@@ -23,35 +23,38 @@ class UpcomingParties extends React.Component {
         "No one is joining this party yet :("
       )
       const partyDate = new Date(party.date);
+      
       return (
-        <div className="party-card">
+        <div className="party-card" style={{borderColor: `${party.color}`}}>
           <div>
             <Map party={party}/>
           </div>
           <div className="party-info-container">
-            <div>
-              <p className="party-title">{party.title}</p>
+            <div className="party-title">
+              <p>{party.title}</p>
             </div>
-            <div>
-              <p className="party-description">{party.description}</p>
+            <div className="party-description">
+              <p>{party.description}</p>
             </div>
-            <div>
-              <span>Date: </span>
-              <span>{partyDate.toDateString()}</span>
+            <div className="party-date">
+              <div class="strong">Date: </div>
+              <div>{partyDate.toDateString()}</div>
             </div>
-            <div>
-              <span>Time: </span>
-              <span>{partyDate.getHours() < 10 ? "0" : ""}{partyDate.getHours()}:{partyDate.getMinutes() < 10 ? "0" : ""}{partyDate.getMinutes()}</span>
+            <div className="party-time">
+              <div class="strong">Time: </div>
+              <div>{partyDate.getHours() < 10 ? "0" : ""}{partyDate.getHours()}:{partyDate.getMinutes() < 10 ? "0" : ""}{partyDate.getMinutes()}</div>
             </div>
-            <div>
+            <div className="number-guest">
               {numberGuest}
             </div>
           </div>
         </div>
       )
     })
+
     return(
       <div className="all-parties">
+        <h1 className="page-title" style={{borderColor: `${this.props.user.color}`}}>{this.props.user.username}'s Upcoming Parties</h1>
         {upcomingParties}
       </div>
     )
