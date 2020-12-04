@@ -30,7 +30,7 @@ class Dashboard extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if( prevProps.parties !== this.props.parties ) {
+    if( prevProps !== this.props) {
       let unjoinedParties = this.props.parties.filter(party => !party.guests.includes(this.props.user.id))
       this.setState({ parties: unjoinedParties })
     }
