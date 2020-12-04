@@ -23,6 +23,11 @@
 }
 
 .uploaded-pic {
+  width: 150px;
+  height: 150px;
+}
+
+.uploaded-pic {
   object-fit: cover;
 }
 
