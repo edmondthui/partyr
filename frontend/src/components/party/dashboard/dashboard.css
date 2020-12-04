@@ -135,6 +135,10 @@
   /* background-color: #4c4cc0; */
 }
 
+.party-btn-container .party-btn {
+  pointer-events: auto;
+}
+
 .party-btn {
   display: block;
   width: 70px;
