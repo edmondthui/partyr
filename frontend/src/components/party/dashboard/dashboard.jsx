@@ -86,6 +86,8 @@ class Dashboard extends React.Component {
       </div>
 
       <div className="main-content">
+        <div className="overlay"></div>
+        <div className="blur"></div>
         <PartyIndex parties={this.state.parties} joinParty={this.joinParty} removeParty={this.removeParty}/>
         <div className="party-btn-container">
           <button className="party-btn decline-btn"onClick={this.removeParty}>
