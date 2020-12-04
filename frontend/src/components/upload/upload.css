@@ -1,10 +1,50 @@
 .upload-doc-container {
-    height: 200px;
+    height: 500px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.uploading-picture > input {
-    border: none;
+.upload-doc-form{
+    width: 400px;
+    height: 300px;
+    margin: 0 auto 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-right: 7px solid;
+    background-color:#f8f8f8;
+}
+
+.uploading-picture{
+    padding-top:5px;
+}
+
+
+.uploading-picture{
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 70px;
+}
+
+.Upload-heading {
+    font-weight: bold;
+}
+
+.upload-descrp{
+    font-size: 12px;
+}
+
+
+.upload-btn{
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.upload-btn:hover{
+    -webkit-filter: brightness(90%);
 }

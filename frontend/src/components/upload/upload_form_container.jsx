@@ -49,8 +49,9 @@ class newDocUpload extends React.Component {
     render() {
       return (
         <div className="upload-doc-container">
-          <form className="upload-doc-form" onSubmit={this.handleUpload}>
-            <label> Upload Party Profile~</label>
+          <form className="upload-doc-form" onSubmit={this.handleUpload} style={{borderColor: this.props.user.color}}>
+            <h3 className="Upload-heading"> Get ready to hangout with your friends!</h3>
+
             <div className="uploading-picture">
               <input
                 type="file"
@@ -59,7 +60,11 @@ class newDocUpload extends React.Component {
                 onChange={this.handleSelectedFile}
               />
             </div>
-            <button type="submit" onSubmit={this.handleUpload}> Upload Photo </button>
+
+            <button onSubmit={this.handleUpload} className="upload-btn"> 
+              Upload Your Profile
+            </button>
+
           </form>
           {this.renderErrors()}
         </div>
