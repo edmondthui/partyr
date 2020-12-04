@@ -6,10 +6,17 @@ const passport = require("passport");
 
 //router.get("/test", (req, res) => res.json({ msg: "This is the parties route" }));
 
+function shuffle(parties) {
+    for (let i = 0; i < parties.length - 1; i++) {
+        const j = Math.floor(Math.random() * (i));
+        [parties[i], parties[j]] = [parties[j], parties[i]];
+    }
+    return parties;
+}
+
 router.get("/parties", (req, res) => {
     Party.find()
-        .sort({date: -1})
-        .then(parties => res.json(parties))
+        .then(parties => res.json(shuffle(parties)))
         .catch(err => res.status(404).json({ nopartiesfound: "No parties found"}))
 });
 
@@ -20,10 +27,8 @@ router.get("/party/:id", (req, res) => {
 });
 
 router.put("/party/:id", (req, res) => {
-  console.log(req.body)
   Party.findByIdAndUpdate(req.params.id, {...req.body}, {new: true},
     (err, result) => {
-      console.log(result)
       if (err) {
         res.status(404).json({ updatepartyfailed: "Update party failed"});
       } else {
@@ -55,7 +60,7 @@ router.post('/party',
       if (!isValid) {
         return res.status(400).json(errors);
       }
-      console.log(req.body)
+
       const randColor = (Math.floor(Math.random()*16777216)).toString(16).padStart(0, 6)
       const newParty = new Party({
         host: req.body.host,
