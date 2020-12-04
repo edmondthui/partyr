@@ -1,11 +1,11 @@
 .party-form-container {
-  width: 60%;
+  width: 920px;
   margin: 20px auto;
   padding: 20px;
   border-radius: 15px;
   background-color: white;
   box-shadow: 0px 0px 10px 2px #c9c9c990;
-  /* border: 1px solid rgb(126, 126, 126); */
+
 }
 
 .party-form-container .map-container{
@@ -20,6 +20,7 @@
   height: 400px;
   width: 400px;
   margin-left: 50px;
+  margin-right: auto;
 }
 
 .party-form-title {
@@ -64,7 +65,8 @@
 
 .party-form-container {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: space-between;
   margin-top: 100px;
   align-items: center;
 }
@@ -102,4 +104,35 @@
 
 .description .input-wrapper {
   height: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+  .party-form-container {
+    width: 90%;
+    flex-direction:column;
+    overflow: auto;
+  }
+
+  .party-form {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .party-form-container .map-container {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .party-form-container .map-container div:first-child {
+    width: 100% !important;
+  }
+
+  .gm-control-active {
+    display: none !important;
+  }
+
+  .gmnoprint {
+    display: none;
+  }
+
 }
