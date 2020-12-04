@@ -1,6 +1,7 @@
 .party-index-container {
   border: 1px solid red;
   margin-top: 50px;
+  overflow: hidden;
 }
 
 .party-index {
@@ -17,7 +18,7 @@
   border: 1px solid orange;
   border-radius: 15px;
   margin: 0 auto 10px auto;
-  position: absolute;
+  /* position: absolute; */
   /* left: calc(100% / 6 + 200px); */
   display: flex;
   flex-direction: column;
