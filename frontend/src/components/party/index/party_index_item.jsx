@@ -1,8 +1,6 @@
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
-require('dotenv').config()
-
 
 class PartyIndexItem extends React.Component {
   constructor(props) {

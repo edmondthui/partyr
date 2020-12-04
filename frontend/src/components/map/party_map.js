@@ -1,8 +1,6 @@
 import React from "react";
 import "./partymap.css";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
-require('dotenv').config()
-
 
 class PartyMap extends React.Component {
   constructor(props) {
