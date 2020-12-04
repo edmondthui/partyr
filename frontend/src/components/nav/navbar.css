@@ -175,13 +175,13 @@
   margin-left: 15px;
 }
 
-.github-link {
-  font-size: 30px;
-  margin-left: 15px;
-}
-
 .logged-out {
   color: white;
+}
+
+.developers-link {
+  font-size: 30px;
+  margin-left: 15px;  
 }
 
 /* MOBILE COMPATABILITY */

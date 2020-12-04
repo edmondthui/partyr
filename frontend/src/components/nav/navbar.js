@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './navbar.css'
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faUsers } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
+
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -41,6 +45,9 @@ class NavBar extends React.Component {
             <a href="https://github.com/edmondthui/partyr" className="github-link">
               <FontAwesomeIcon icon={ faGithub }/>
             </a>
+            <Link to="/developers" className="developers-link">
+              <FontAwesomeIcon icon={ faUsers } />
+            </Link>
           </div>
           <h1 className="nav-h1">
             <Link to={'/'}>
@@ -63,8 +70,13 @@ class NavBar extends React.Component {
             <a href="https://github.com/edmondthui/partyr" className="github-link logged-out">
               <FontAwesomeIcon icon={ faGithub }/>
             </a>
+            <Link to="/developers" className="developers-link logged-out">
+              <FontAwesomeIcon icon={ faUsers } />
+            </Link>
           </div>
+
           <h1><Link to={'/'}>Partyr</Link></h1>
+          
           {this.getLinks()}
         </div>
       );
