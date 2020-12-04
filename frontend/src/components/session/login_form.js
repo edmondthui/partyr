@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './session.css';
 
 class LoginForm extends React.Component {
@@ -65,6 +65,7 @@ class LoginForm extends React.Component {
               placeholder="Password"
             />
             <input type="submit" value="Submit" />
+            <p class="change-form">Don't have an account? <Link to="/signup">Sign up</Link> here</p>
             {this.renderErrors()}
           </form>
         </div>
