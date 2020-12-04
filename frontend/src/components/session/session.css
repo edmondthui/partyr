@@ -7,14 +7,6 @@
   padding: 20px;
 }
 
-.login-form {
-  /* height: 400px; */
-}
-
-.signup-form {
-  /* height: 500px; */
-}
-
 .session-form {
   display: flex;
   flex-direction: column;
@@ -36,7 +28,6 @@
   width: 70%;
   height: 40px;
   box-shadow: 0px 0px 5px 1px #e9e3e6;
-  /* border: 1px solid #02040f; */
   margin-bottom: 15px;
   border-radius: 5px;
   padding: 5px 10px;
@@ -45,14 +36,12 @@
 .login-form input[type="text"]:focus, 
 .login-form input[type="password"]:focus {
   box-shadow: 0px 0px 8px 1px #ff8f1fa8;
-  /* border: 2px solid #f32b60; */
   transition: 0.2s;
 }
 
 .signup-form input[type="text"]:focus, 
 .signup-form input[type="password"]:focus {
   box-shadow: 0px 0px 8px 1px #f32b60a8;
-  /* border: 2px solid #f32b60; */
   transition: 0.2s;
 }
 
@@ -94,11 +83,26 @@
 }
 
 .signup-form .errors {
-  margin: 10px 0px;
+  /* margin: 10px 0px; */
   color: #f32b60;
 }
 
 .login-form .errors {
-  margin: 10px 0px;
+  /* margin: 10px 0px; */
   color: #ff8f1f;
+}
+
+p.change-form {
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.login-form p.change-form a {
+  color: #ff8f1f;
+}
+
+.signup-form p.change-form a {
+  color: #f32b60;
 }
