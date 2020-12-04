@@ -13,14 +13,15 @@
 
 .party-index-item {
   width: 400px;
-  height: 500px;
+  height: 550px;
   background-color: white;
   box-shadow: 0px 0px 10px 2px #c9c9c990;
   border-radius: 15px;
   margin: 0 auto 10px auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 0 25px;
+  border-top: 30px solid;
 }
 
 .party-index-item:hover {
@@ -32,8 +33,7 @@
   display: block;
   width: 350px;
   height: 250px;
-  /* border: 1px solid purple; */
-  margin: 20px auto;
+  margin: 15px auto;
 }
 
 .party-date, .part-time {
@@ -41,8 +41,32 @@
   flex-direction: row;
 }
 
-.party-title {
-  font-size: 24px;
+.party-index-item .party-title {
+  font-size: 30px;
   font-weight: 700;
   margin-top: 15px;
+  text-align: center;
+}
+
+.party-index-item .party-description {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.party-index-item .party-date, 
+.party-index-item .party-time {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  font-size: 18px;
+}
+
+.party-index-item .number-guest {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.party-index-item .strong {
+  font-weight: 700;
+  margin-right: 20px;
 }
