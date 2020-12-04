@@ -38,7 +38,7 @@ class PartyIndex extends React.Component {
       <div className="party-index-container">
         <div className="party-index">
           {this.state.parties.map((party, idx) => (
-            <TinderCard onSwipe={this.onSwipe} >
+            <TinderCard onSwipe={this.onSwipe}>
               <PartyIndexItem party={party} key={`item-${idx}`}/>
             </TinderCard>
           ))}

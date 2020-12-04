@@ -113,6 +113,7 @@
 
 .overlay {
   position: fixed;
+  pointer-events: none;
   height: calc(100vh - 60px);
   width: 50%;
   z-index: 1;
@@ -120,6 +121,7 @@
 }
 
 .party-btn-container {
+  pointer-events:none;
   position: absolute;
   bottom: 0px;
   height: 100px;
@@ -188,5 +190,9 @@
 
   .main-content {
     width: 100%;
+  }
+
+  .overlay {
+    width: 100%
   }
 }
