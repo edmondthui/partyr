@@ -163,5 +163,5 @@ class CreatePartyForm extends React.Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: keys.mapsApiKey
+  apiKey: process.env.REACT_APP_GOOGLE_KEY,
 })(CreatePartyForm);

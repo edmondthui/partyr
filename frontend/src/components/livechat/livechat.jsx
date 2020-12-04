@@ -20,12 +20,13 @@ class Party extends React.Component {
   componentDidMount() {
     this.props.fetchUsers();
     this.socket = io(config[process.env.NODE_ENV].endpoint);
-
     this.socket.on('init', (msg) => {
       let msgReversed = msg.reverse();
-      this.setState({
-        chat: [...this.state.chat, ...msgReversed]
-      })
+      if (this.state.chat.length === 0) {
+        this.setState({
+          chat: [...this.state.chat, ...msgReversed]
+        })
+      }
     })
 
     this.socket.on('new-msg', (msg) => {
@@ -39,12 +40,9 @@ class Party extends React.Component {
 
   update(e) {
     this.setState({
-      message: e.currentTarget.value
-    })
-
-    this.setState({
+      message: e.currentTarget.value,
       username: this.props.user.username 
-    }) 
+    })
   }
 
   handleSubmit(e) {
@@ -68,12 +66,12 @@ class Party extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.party.length !== this.props.party.length && !Array.isArray(this.props.party)) {
+    if (prevProps.party !== this.props.party) {
       this.socket.emit('join', {
         partyId: this.props.party._id
-      },
+      })
       this.setState({chat: []})
-      )
+    } else {
     }
     this.scrollToBottom();
   }
