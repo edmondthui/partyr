@@ -89,3 +89,12 @@
   margin-top: -100px;
   margin-bottom: 60px;
 }
+
+/* MOBILE COMPATIBILITY */
+
+@media only screen and (max-width: 600px) {
+  .parrot {
+    display: none;
+  }
+
+}

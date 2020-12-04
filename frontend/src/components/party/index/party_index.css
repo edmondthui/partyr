@@ -1,16 +1,8 @@
 .party-index-container {
-  height: calc(100vh - 60px - 100px);
+  height: calc(100vh - 60px);
   width: 100%;
   padding-top: 40px;
   overflow: hidden;
-}
-
-.overlay {
-  position: fixed;
-  height: calc(100vh - 60px - 100px);
-  width: 50%;
-  z-index: 1;
-  background: linear-gradient(0deg, rgba(53, 53, 53, 0.5) 0%, rgba(255, 255, 255, 0) 20%);
 }
 
 .party-index {

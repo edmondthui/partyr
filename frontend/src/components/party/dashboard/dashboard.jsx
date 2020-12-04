@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faHeart } from '@fortawesome/free-solid-svg-icons';
-
 import Livechat from '../../livechat/livechat_container';
 import './dashboard.css';
 import PartyIndex from '../index/party_index';
@@ -87,6 +86,8 @@ class Dashboard extends React.Component {
       </div>
 
       <div className="main-content">
+        <div className="overlay"></div>
+        <div className="blur"></div>
         <PartyIndex parties={this.state.parties} joinParty={this.joinParty} removeParty={this.removeParty}/>
         <div className="party-btn-container">
           <button className="party-btn decline-btn"onClick={this.removeParty}>

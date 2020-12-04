@@ -170,3 +170,11 @@
   transition: 0.2s;
 }
 
+/* MOBILE COMPATABILITY */
+
+@media only screen and (max-width: 600px) {
+  .NavBar h1 a {
+    display: none;
+  }
+
+}

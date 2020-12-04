@@ -56,7 +56,7 @@ class newDocUpload extends React.Component {
               <input
                 type="file"
                 name=""
-                id=""
+                id="image-upload-button"
                 onChange={this.handleSelectedFile}
               />
             </div>

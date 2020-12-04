@@ -35,8 +35,6 @@ class PartyIndex extends React.Component {
 
   render() {
     return (
-      <>
-      <div className="overlay"></div>
       <div className="party-index-container">
         <div className="party-index">
           {this.state.parties.map((party, idx) => (
@@ -46,7 +44,6 @@ class PartyIndex extends React.Component {
           ))}
         </div>
       </div>
-      </>
     )
   }
 }

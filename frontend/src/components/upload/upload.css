@@ -22,6 +22,9 @@
     padding-top:5px;
 }
 
+input[type=file], input[type=file]::-webkit-file-upload-button{
+    cursor:pointer;
+}
 
 .uploading-picture{
     width: 400px;
