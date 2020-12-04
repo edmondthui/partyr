@@ -21,7 +21,7 @@ const Developers = () => (
         </div>
         </div>
             
-        <div className="developer">
+        <div className="developer"style={{borderColor:"#424242"}}>
         <label className="developer-label">Ray Liang</label>
         <p>Flex Developer</p>
         <div className="developer-links">
