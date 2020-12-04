@@ -7,31 +7,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Developers = () => (
   <div className="developers-page">
     <h3 className="developer-heading">Meet Our Team!!</h3>
+
     <div className="developer-cards">
         <div className="developer" style={{borderColor:"#008000"}}>
-        <label className="developer-label">Edmond Hui</label>
-        <p>Team Lead</p>
-        <div className="developer-links">
-            <a href="https://github.com/edmondthui/" className="personal-link">
-                <FontAwesomeIcon icon={ faGithub }/>
-            </a>
-            <a href="https://www.linkedin.com/in/edmond-hui/" className="personal-link">
-                <FontAwesomeIcon icon={ faLinkedin }/>
-            </a>
-        </div>
+            <label className="developer-label">Edmond Hui</label>
+            <p>Team Lead</p>
+            <div className="developer-links">
+                <a href="https://github.com/edmondthui/" className="personal-link">
+                    <FontAwesomeIcon icon={ faGithub }/>
+                </a>
+                <a href="https://www.linkedin.com/in/edmond-hui/" className="personal-link">
+                    <FontAwesomeIcon icon={ faLinkedin }/>
+                </a>
+            </div>
         </div>
             
         <div className="developer"style={{borderColor:"#424242"}}>
-        <label className="developer-label">Ray Liang</label>
-        <p>Flex Developer</p>
-        <div className="developer-links">
-            <a href="https://github.com/bigcachemoney" className="personal-link">
-            <FontAwesomeIcon icon={ faGithub }/>
-            </a>
-            <a href="https://www.linkedin.com/in/raylanliang/" className="personal-link">
-            <FontAwesomeIcon icon={ faLinkedin }/>
-            </a>
-        </div>
+            <label className="developer-label">Ray Liang</label>
+            <p>Flex Developer</p>
+            <div className="developer-links">
+                <a href="https://github.com/bigcachemoney" className="personal-link">
+                <FontAwesomeIcon icon={ faGithub }/>
+                </a>
+                <a href="https://www.linkedin.com/in/raylanliang/" className="personal-link">
+                <FontAwesomeIcon icon={ faLinkedin }/>
+                </a>
+            </div>
         </div>
 
         <div className="developer" style={{borderColor:"#ff8f1f"}}>
@@ -59,6 +60,7 @@ const Developers = () => (
                 </a>
             </div>
         </div>
+
     </div>
   </div>
 )

@@ -3,7 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
+    height: 100hv;
+    overflow-y: scroll;
 }
 
 .developer-heading{
@@ -11,7 +12,7 @@
   font-size: 36px;
   font-weight: 800;
   text-align: center;
-  margin: 40px auto 40px auto;
+  margin: 30px auto 20px auto;
   border-bottom: 10px solid;
   padding-bottom: 5px;
 }
