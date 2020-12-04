@@ -84,7 +84,6 @@ class PartyIndexItem extends React.Component {
 
     return (
       <div className="party-index-item" style={{borderColor: `${party.color}`}}>
-        <div className="triangle" ></div>        
         <div className="party-title">
           <p>{party.title}</p>
         </div>
