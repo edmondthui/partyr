@@ -1,12 +1,23 @@
 import React from 'react';
 import PartyIndexItem from './party_index_item'
 import './party_index.css';
+import TinderCard from 'react-tinder-card'
 
 class PartyIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state= {
       parties: []
+    }
+    this.onSwipe = this.onSwipe.bind(this)
+  }
+
+  onSwipe(direction) {
+    if (direction === "right") {
+      this.props.joinParty()
+    }
+    else {
+      this.props.removeParty()
     }
   }
 
@@ -22,7 +33,9 @@ class PartyIndex extends React.Component {
     parties = (
       <div className="party-index">
         {this.state.parties.map((party, idx) => (
-          <PartyIndexItem party={party} key={`item-${idx}`}/>
+          <TinderCard onSwipe={this.onSwipe} onCardLeftScreen={() => console.log("hi")} >
+            <PartyIndexItem party={party} key={`item-${idx}`}/>
+          </TinderCard>
         ))}
       </div>
     );

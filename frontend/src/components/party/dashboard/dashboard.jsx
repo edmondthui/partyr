@@ -87,7 +87,7 @@ class Dashboard extends React.Component {
       </div>
 
       <div className="main-content">
-        <PartyIndex parties={this.state.parties}/>
+        <PartyIndex parties={this.state.parties} joinParty={this.joinParty} removeParty={this.removeParty}/>
         <div className="party-btn-container">
           <button className="party-btn decline-btn"onClick={this.removeParty}>
             <FontAwesomeIcon icon={faTimes} />
