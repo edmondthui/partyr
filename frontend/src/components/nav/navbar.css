@@ -179,11 +179,14 @@
 
   .gradient-bg .session-form-container {
     width: 90%;
-    height: 90%;
   }
 
   .gradient-bg h1, .gradient-bg p {
     padding: 0px 10px;
+  }
+
+  .signup-from {
+    height: 90%
   }
 
 
