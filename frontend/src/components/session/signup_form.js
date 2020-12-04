@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 const faker = require('faker');
 
 class SignupForm extends React.Component {
@@ -91,6 +91,7 @@ class SignupForm extends React.Component {
             />
             <input type="submit" value="Submit" />
             <button onClick={this.demoSignup} className="demo-btn">Demo Sign Up</button>
+            <p class="change-form">Already have an account? <Link to="/login">Log in</Link> here</p>
             {this.renderErrors()}
           </form>
         </div>
