@@ -84,22 +84,27 @@ class PartyIndexItem extends React.Component {
     )
 
     return (
-      <div className="party-index-item">
-        <div className="party-title">{party.title}</div>
+      <div className="party-index-item" style={{borderColor: `${party.color}`}}>
+        <div className="triangle" ></div>        
+        <div className="party-title">
+          <p>{party.title}</p>
+        </div>
         <div className="party-index-map-container">
           {this.state.map}
         </div>
         <div className="party-date">
-          <h3>Date</h3>
-          {partyDate.toDateString()}
-          </div>
-        <div className="party-time">
-          <h3>Time</h3>
-          <p>{partyDate.getHours() < 10 ? "0" : ""}{partyDate.getHours()}:{partyDate.getMinutes() < 10 ? "0" : ""}{partyDate.getMinutes()}</p>
+          <div class="strong">Date: </div>
+          <div>{partyDate.toDateString()}</div>
         </div>
-        <div className="party-description">{party.description}</div>
+        <div className="party-time">
+          <div class="strong">Time: </div>
+          <div>{partyDate.getHours() < 10 ? "0" : ""}{partyDate.getHours()}:{partyDate.getMinutes() < 10 ? "0" : ""}{partyDate.getMinutes()}</div>
+        </div>
+        <div className="party-description">
+          {party.description}
+        </div>
         <div className="number-guest">
-        {numberGuest}
+          {numberGuest}
         </div>
         <br/>
       </div>

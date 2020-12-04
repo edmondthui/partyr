@@ -117,7 +117,7 @@
   height: calc(100vh - 60px);
   width: 50%;
   z-index: 1;
-  background: linear-gradient(0deg, rgba(63, 63, 63, 0.8) 0%, rgba(255, 255, 255, 0) 30%);
+  background: linear-gradient(0deg, rgba(63, 63, 63, 0.8) 0%, rgba(255, 255, 255, 0) 25%);
 }
 
 .party-btn-container {
