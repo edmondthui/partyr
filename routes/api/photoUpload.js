@@ -26,7 +26,7 @@ router.get("/:id", (req, res) => {
 });
 
 //create - to upload
-router.post("/upload", upload.single("file"), function(req, res) {
+router.post("/upload", upload.single("file"), (req, res) => {
     const file = req.file;
     const s3FileUrl = process.env.AWS_Uploaded_File_URL_LINK;
     
@@ -46,6 +46,7 @@ router.post("/upload", upload.single("file"), function(req, res) {
         ACL: "public-read"     
     };
 
+    //uploading and checking it worked
     s3Bucket.upload(params, function(err, data) {
         if (err) {
             res.status(500).json(err);
@@ -58,45 +59,12 @@ router.post("/upload", upload.single("file"), function(req, res) {
         };
         let photo = new Photo(fileToUpload);
 
+        //checking saved
         photo.save(function(error, newFile) {
-            if (error) throw error;
+            if (error) res.status(500).json(err);
         });
     }
   });
-
-    // to remove
-    router.delete("/:id", (req, res) => {
-        Photo.findByIdAndRemove(req.params.id, function (err, result) {
-
-            if (err) {
-                res.status(404).json(err);
-            }
-
-            //finding bucket
-            let s3Bucket = new AWS.S3({
-                accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-                secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-                region: process.env.AWS_REGION
-            });
-
-            let params = {
-                Bucket: process.env.AWS_BUCKET_NAME,
-                Key: result.s3_key   
-            };
-
-            s3Bucket.deleteObject(params, (err, data) =>{
-                if (err) {
-                    res.status(500).json(err);
-                } else {
-                    res.send({ status:"200", response:"deleted Photo" });
-
-                }
-            });
-
-        });
-    });
-
-
 
 });
 

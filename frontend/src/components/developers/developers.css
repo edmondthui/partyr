@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: auto;
 }
 
 .developer-heading{
@@ -11,15 +10,18 @@
   font-size: 36px;
   font-weight: 800;
   text-align: center;
-  margin: 40px auto 40px auto;
+  margin: 30px auto 20px auto;
   border-bottom: 10px solid;
   padding-bottom: 5px;
 }
 
 .developer-cards{
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     font-size: 20px;
+    width: 535px;
+    margin-right:10px;
+    height:535px;
 }
 
 .developer {
