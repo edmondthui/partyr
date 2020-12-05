@@ -6,34 +6,40 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Developers = () => (
   <div className="developers-page">
-    <h3 className="developer-heading">Meet Our Team!!</h3>
+    <h3 className="developer-heading">Meet Our Team!</h3>
     
     <div className="developer-cards">
 
         <div className="developer-left">
             <div className="developer" style={{borderColor:"#008000"}}>
-                <label className="developer-label">Edmond Hui</label>
-                <p>Team Lead</p>
-                <div className="developer-links">
-                    <a href="https://github.com/edmondthui/" className="personal-link">
-                        <FontAwesomeIcon icon={ faGithub }/>
-                    </a>
-                    <a href="https://www.linkedin.com/in/edmond-hui/" className="personal-link">
-                        <FontAwesomeIcon icon={ faLinkedin }/>
-                    </a>
+                <img src="https://media-exp1.licdn.com/dms/image/C4D03AQG1Ov5en3sEww/profile-displayphoto-shrink_200_200/0/1607128601046?e=1612396800&v=beta&t=inokVdcVTiPUe4DSDnUrZY_5-zQ-3N7vwJrW_oRzJ_g" alt="developer-Edmond-Hui"/>
+                <div className="developer-info">
+                    <label className="developer-label">Edmond Hui</label>
+                    <p>Team Lead</p>
+                    <div className="developer-links">
+                        <a href="https://github.com/edmondthui/" className="personal-link">
+                            <FontAwesomeIcon icon={ faGithub }/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/edmond-hui/" className="personal-link">
+                            <FontAwesomeIcon icon={ faLinkedin }/>
+                        </a>
+                    </div>
                 </div>
             </div>
                 
             <div className="developer"style={{borderColor:"#424242"}}>
-                <label className="developer-label">Ray Liang</label>
-                <p>Flex Developer</p>
-                <div className="developer-links">
-                    <a href="https://github.com/bigcachemoney" className="personal-link">
-                    <FontAwesomeIcon icon={ faGithub }/>
-                    </a>
-                    <a href="https://www.linkedin.com/in/raylanliang/" className="personal-link">
-                    <FontAwesomeIcon icon={ faLinkedin }/>
-                    </a>
+                <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFU5FpvL6HXKw/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=QUb6n12umyfloeia8dHGfxamROE2ouK3QCG-kLQYNb8" alt="developer-Ray-Liang"/>
+                <div className="developer-info">
+                    <label className="developer-label">Ray Liang</label>
+                    <p>Flex Developer</p>
+                    <div className="developer-links">
+                        <a href="https://github.com/bigcachemoney" className="personal-link">
+                        <FontAwesomeIcon icon={ faGithub }/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/raylanliang/" className="personal-link">
+                        <FontAwesomeIcon icon={ faLinkedin }/>
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -41,28 +47,34 @@ const Developers = () => (
 
         <div className="developer-right">
             <div className="developer" style={{borderColor:"#ff8f1f"}}>
-                <label className="developer-label">Alexandria Wong</label>
-                <p>Frontend Lead</p>
-                <div className="developer-links">
-                    <a href="https://github.com/alexawhy" className="personal-link">
-                    <FontAwesomeIcon icon={ faGithub }/>
-                    </a>
-                    <a href="https://www.linkedin.com/in/alexandria-hy-wong/" className="personal-link">
-                    <FontAwesomeIcon icon={ faLinkedin }/>
-                    </a>
+            <img src="https://media-exp1.licdn.com/dms/image/C4D03AQHzJqAPbUPHSw/profile-displayphoto-shrink_200_200/0/1596244299366?e=1612396800&v=beta&t=uhPbHJqy-Wt0669gg17A9geUxNJmFF80l-4OIrgP_uk" alt="developer-Alexandria-Wong"/>
+                <div className="developer-info">
+                    <label className="developer-label">Alexandria Wong</label>
+                    <p>Frontend Lead</p>
+                    <div className="developer-links">
+                        <a href="https://github.com/alexawhy" className="personal-link">
+                        <FontAwesomeIcon icon={ faGithub }/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/alexandria-hy-wong/" className="personal-link">
+                        <FontAwesomeIcon icon={ faLinkedin }/>
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <div className="developer" style={{borderColor: "pink"}}>
-                <label className="developer-label">Jasmine Lok</label>
-                <p>Backend Lead</p>
-                <div className="developer-links">
-                    <a href="https://github.com/jasminellok" className="personal-link">
-                    <FontAwesomeIcon icon={ faGithub }/>
-                    </a>
-                    <a href="https://www.linkedin.com/in/jasminellok/" className="personal-link">
-                    <FontAwesomeIcon icon={ faLinkedin }/>
-                    </a>
+            <img src="https://media-exp1.licdn.com/dms/image/C5603AQE7fYPkDC_sSg/profile-displayphoto-shrink_200_200/0/1516497851265?e=1612396800&v=beta&t=z9PfpTCyjDISBEY9zYemwrFCj1gzCx0JXAessA64iOA" alt="developer-Jasmine-Lok"/>
+                <div className="developer-info">
+                    <label className="developer-label">Jasmine Lok</label>
+                    <p>Backend Lead</p>
+                    <div className="developer-links">
+                        <a href="https://github.com/jasminellok" className="personal-link">
+                        <FontAwesomeIcon icon={ faGithub }/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jasminellok/" className="personal-link">
+                        <FontAwesomeIcon icon={ faLinkedin }/>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

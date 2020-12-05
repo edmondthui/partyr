@@ -1,12 +1,12 @@
-.developers-page{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.developers-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.developer-heading{
-  font-family: 'Raleway', sans-serif;
+.developer-heading {
+  font-family: "Raleway", sans-serif;
   font-size: 36px;
   font-weight: 800;
   text-align: center;
@@ -15,22 +15,19 @@
   padding-bottom: 5px;
 }
 
-.developer-cards{
-    display: flex;
-    justify-content: space-between;
-    font-size: 20px;
-    width: 535px;
-    margin-right:10px;
-    height:535px;
+.developer-cards {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
 }
 
 .developer {
-  width: 250px;
+  width: 100%;
   margin: 0 auto;
   padding: 10px 0 10px 15px;
   border-radius: 20px;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: space-evenly;
   align-items: center;
   margin-top: 30px;
@@ -39,13 +36,27 @@
   overflow: hidden;
 }
 
+.developer img {
+  width: 200px;
+  height: 200px;
+}
+
+.developer .developer-info {
+  margin-left: 10px;
+  width: 175px;
+  flex-direction: column;
+}
+
 .developer-label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-.developer-links{
-    width: 100px;
-    display: flex;
-    justify-content: space-evenly;
+.developer-links {
+  width: 100px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
+.developer-left {
+  margin-right: 20px;
+}
