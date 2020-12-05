@@ -85,7 +85,7 @@ The live chat functionality gave us the most technical difficulty, but also allo
 
 # Wireframes
 Our team had a strong vision for what we wanted our app to look like and due to our frontend lead's strong design skills we were able to create exactly what we envisioned. We knew we wanted to make a sleek and intuitive dashboard for users to engage with. Parties will show up like cards and users can swipe or click the buttons to join or skip a party.
-![Wireframe](https://i.imgur.com/SoHpato.png)
+![Wireframe](https://i.imgur.com/PCmKYf1.png)
 
 # Group Members and Work Breakdown
 * Edmond Hui - Team Lead / Flex Developer
