@@ -81,7 +81,7 @@ render() {
 ```
 
 
-The live chat functionality gave us the most technical difficulty, but also allows us to show our collaboration skills. Each user is assigned a unique randomly generated color in the back end and this is passed to the front end where this color will display next to their name whenever they send a message. Each party also shows its own messages by filtering the messages by partyId. These functions that required both the frontend in the backend is where we struggled most, but are also features we are most proud of.
+The live chat functionality gave us the most technical difficulty, but also allows us to show our collaboration skills. Each user is assigned a unique randomly generated color in the back end and this is passed to the front end where this color will display next to their name whenever they send a message. Each party also shows its own messages by filtering the messages by partyId. These functions that required code from both the frontend and the backend. This is where we struggled most, but this is the feature we are most proud of.
 
 # Wireframes
 Our team had a strong vision for what we wanted our app to look like and due to our frontend lead's strong design skills we were able to create exactly what we envisioned. We knew we wanted to make a sleek and intuitive dashboard for users to engage with. Parties will show up like cards and users can swipe or click the buttons to join or skip a party.
