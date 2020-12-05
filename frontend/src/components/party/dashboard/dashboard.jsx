@@ -53,7 +53,10 @@ class Dashboard extends React.Component {
         date: joinParty.date
       }
       this.props.putParty(party);
-      this.props.fetchParties();
+      let [, ...parties] = this.state.parties;
+      this.setState({
+        parties: parties
+      })
     }
   }
 
