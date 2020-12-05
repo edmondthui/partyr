@@ -47,7 +47,7 @@ const Developers = () => (
 
         <div className="developer-right">
             <div className="developer" style={{borderColor:"#ff8f1f"}}>
-            <img src="https://media-exp1.licdn.com/dms/image/C4D03AQHzJqAPbUPHSw/profile-displayphoto-shrink_200_200/0/1596244299366?e=1612396800&v=beta&t=uhPbHJqy-Wt0669gg17A9geUxNJmFF80l-4OIrgP_uk" alt="developer-Alexandria-Wong"/>
+            <img src="https://media-exp1.licdn.com/dms/image/C4E03AQERwWlNzQ2T0Q/profile-displayphoto-shrink_800_800/0?e=1612396800&v=beta&t=PCD58ecm8a0Ax2xZhK0c-XSekSO60uGtbNRhRtey0ww" alt="developer-Alexandria-Wong"/>
                 <div className="developer-info">
                     <label className="developer-label">Alexandria Wong</label>
                     <p>Frontend Lead</p>
