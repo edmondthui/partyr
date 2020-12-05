@@ -52,11 +52,25 @@
 }
 
 .developer-links {
+  margin-top: 5px;
   width: 100px;
   display: flex;
   justify-content: space-evenly;
+  height: 20px;
 }
+
 
 .developer-left {
   margin-right: 20px;
+}
+
+.github:hover {
+  transition: 0.3s;
+  transform: scale(1.25);
+}
+
+.linkedin:hover {
+  transition: 0.3s;
+  transform: scale(1.25);
+  color: #0A66C2;
 }
