@@ -3,8 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100hv;
-    overflow-y: scroll;
 }
 
 .developer-heading{
@@ -19,8 +17,11 @@
 
 .developer-cards{
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     font-size: 20px;
+    width: 535px;
+    margin-right:10px;
+    height:535px;
 }
 
 .developer {

@@ -66,39 +66,6 @@ router.post("/upload", upload.single("file"), (req, res) => {
     }
   });
 
-    // to remove
-    router.delete("/:id", (req, res) => {
-        Photo.findByIdAndRemove(req.params.id, function (err, result) {
-
-            if (err) {
-                res.status(404).json(err);
-            }
-
-            //finding bucket
-            let s3Bucket = new AWS.S3({
-                accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-                secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-                region: process.env.AWS_REGION
-            });
-
-            let photo = {
-                Bucket: process.env.AWS_BUCKET_NAME,
-                Key: result.s3_key   
-            };
-
-            s3Bucket.deleteObject(photo, (err, data) =>{
-                if (err) {
-                    res.status(500).json(err);
-                } else {
-                    res.send({ data });
-                }
-            });
-
-        });
-    });
-
-
-
 });
 
 
