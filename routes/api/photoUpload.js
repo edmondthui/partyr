@@ -26,7 +26,7 @@ router.get("/:id", (req, res) => {
 });
 
 //create - to upload
-router.post("/upload", upload.single("file"), function(req, res) {
+router.post("/upload", upload.single("file"), (req, res) => {
     const file = req.file;
     const s3FileUrl = process.env.AWS_Uploaded_File_URL_LINK;
     
@@ -46,6 +46,7 @@ router.post("/upload", upload.single("file"), function(req, res) {
         ACL: "public-read"     
     };
 
+    //uploading and checking it worked
     s3Bucket.upload(params, function(err, data) {
         if (err) {
             res.status(500).json(err);
@@ -58,8 +59,9 @@ router.post("/upload", upload.single("file"), function(req, res) {
         };
         let photo = new Photo(fileToUpload);
 
+        //checking saved
         photo.save(function(error, newFile) {
-            if (error) throw error;
+            if (error) res.status(500).json(err);
         });
     }
   });
@@ -79,17 +81,16 @@ router.post("/upload", upload.single("file"), function(req, res) {
                 region: process.env.AWS_REGION
             });
 
-            let params = {
+            let photo = {
                 Bucket: process.env.AWS_BUCKET_NAME,
                 Key: result.s3_key   
             };
 
-            s3Bucket.deleteObject(params, (err, data) =>{
+            s3Bucket.deleteObject(photo, (err, data) =>{
                 if (err) {
                     res.status(500).json(err);
                 } else {
-                    res.send({ status:"200", response:"deleted Photo" });
-
+                    res.send({ data });
                 }
             });
 
