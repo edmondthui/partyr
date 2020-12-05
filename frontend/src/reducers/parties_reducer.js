@@ -14,9 +14,9 @@ const partiesReducer = (state = { all: {}, party: {} }, action) => {
     case RECEIVE_PARTY:
       newState.party = action.party ? action.party.data : {};
       return newState;
-    case UPDATE_PARTY:
-      newState.party = action.party.data;
-      return newState;
+    // case UPDATE_PARTY:
+      // newState.party = action.party.data;
+      // return newState;
     default:
       return state;
   }
