@@ -51,6 +51,7 @@
 .party-index-item .party-description {
   margin-top: 5px;
   font-size: 20px;
+  word-wrap: break-word;
 }
 
 .party-index-item .party-date, 

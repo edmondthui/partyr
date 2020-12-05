@@ -116,7 +116,7 @@ class Party extends React.Component {
     return (    
       <div className="chat-container">
         <div className="chat-title-container">
-          <h1 className="chat-title">{this.props.party.title} Chat Room</h1>
+          <h1 className="chat-title">{this.props.party.title ? (this.props.party.title.length > 45 ? this.props.party.title.slice(0, 45) + "..." : this.props.party.title) : ""} Chat Room</h1>
         </div>
         <div className="chat-msg-container">
           <ul className="chat-messages">

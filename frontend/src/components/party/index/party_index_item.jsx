@@ -85,7 +85,7 @@ class PartyIndexItem extends React.Component {
     return (
       <div className="party-index-item" style={{borderColor: `${party.color}`}}>
         <div className="party-title">
-          <p>{party.title}</p>
+          <p>{party.title.length > 45? party.title.slice(0, 45) + "..." : party.title}</p>
         </div>
         <div className="party-index-map-container">
           {this.state.map}
@@ -99,7 +99,7 @@ class PartyIndexItem extends React.Component {
           <div>{partyDate.getHours() < 10 ? "0" : ""}{partyDate.getHours()}:{partyDate.getMinutes() < 10 ? "0" : ""}{partyDate.getMinutes()}</div>
         </div>
         <div className="party-description">
-          {party.description}
+          {party.description.length > 65 ? party.description.slice(0, 65) + "..." : party.description}
         </div>
         <div className="number-guest">
           {numberGuest}
