@@ -95,29 +95,29 @@ Our team had a strong vision for what we wanted our app to look like and due to 
 
 ## November 30 
 * Build React skeleton - All
-* Setup backend directory & file structure - Jasmine, Edmond 
+* Setup backend directory & file structure - Jasmine & Ray
 * Finish user authentication (ex. demo login) - All
-* Connect React App to database - Edmond
-* Host site on Heroku - Ray
+* Connect React App to database - Jasmine
+* Host site on Heroku - Edmond
 
 ## December 1 
 * Implement frontend routes - Alexandria
 * Implement backend routes (ex. parties) - Jasmine 
-* Get started with Websockets and Google Maps API
-* Start working on functionality
+* Get started with Websockets and Google Maps API - Edmond
+* Start working on functionality - Edmond & Ray
 
 ## December 2
-* Websockets for live chat feature 
-* Continue working on functionality on routes and build API requests to backend
-* Start designing webpage and CSS
-* Implement Google Maps API 
+* Websockets for live chat feature - Edmond
+* Continue working on functionality on routes and build API requests to backend - Jasmine & Ray
+* Start designing webpage and CSS - Alexandria
+* Implement Google Maps API - Edmond & Jasmine
 
 ## December 3
-* Debugging and making sure all features work
-* Seed database with test data to test all features
-* Find and fix any bugs, data cleanup
+* Debugging and making sure all features work - All
+* Seed database with test data to test all features - Ray
+* Find and fix any bugs, data cleanup - All
 
 ## December 4
-* Complete Production README.md
-* Refine website and finish styling website
-* Finish testing and debugging
+* Complete Production README.md - Edmond
+* Refine website and finish styling website - Alexandria
+* Finish testing and debugging - All
