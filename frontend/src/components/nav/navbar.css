@@ -213,6 +213,11 @@
 
   .NavBarRGB .nav-h1 {
     position: static;
+    font-size: 24px;
+  }
+
+  .NavBarRGB {
+    height: 30px;
   }
 
 }
