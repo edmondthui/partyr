@@ -79,8 +79,8 @@
 
   .party-index-map-container {
     width: 100%;
-    margin: 5px auto 0px auto;
-    margin-bottom: 30px;
+    margin: 10px auto 0px auto;
+    margin-bottom: 10px;
   }
 
   .party-index-map-container div:first-child {
@@ -101,5 +101,10 @@
 
   .party-index-item .party-title {
     font-size: 26px;
+  }
+
+  .party-index-item .strong, .party-index-item div {
+    margin-right: 10px;
+    font-size: 16px;
   }
 }
