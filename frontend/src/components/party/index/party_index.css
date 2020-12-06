@@ -80,6 +80,15 @@
 
   .party-index-container {
     padding-top: 10px;
+    height: 100%;
+  }
+
+  .dashboard-container {
+    height: calc(100vh - 30px);
+  }
+
+  .overlay {
+    height: 100%;
   }
 
   .party-index-map-container {
@@ -108,6 +117,7 @@
 
   .party-index-item .party-title {
     font-size: 26px;
+    margin-top: 10px;
   }
 
   .party-index-item .strong, .party-index-item div, .party-index-item .party-description, .party-index-item .number-guest {
