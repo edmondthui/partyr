@@ -71,3 +71,35 @@
   font-weight: 700;
   margin-right: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+  .party-index-item {
+    width: 85%;
+  }
+
+  .party-index-map-container {
+    width: 100%;
+    margin: 5px auto 0px auto;
+    margin-bottom: 30px;
+  }
+
+  .party-index-map-container div:first-child {
+    width: 100% !important;
+  }
+
+  .gm-control-active {
+    display: none !important;
+  }
+
+  .gmnoprint {
+    display: none;
+  }
+
+  .party-index-container, .party-index {
+    width: 100%;
+  }
+
+  .party-index-item .party-title {
+    font-size: 26px;
+  }
+}

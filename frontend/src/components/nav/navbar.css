@@ -195,18 +195,24 @@
     width: 90%;
   }
 
+  .signup-form .session-form h2 {
+    margin-top: 0px;
+  }
+
   .gradient-bg h1, .gradient-bg p {
     padding: 0px 10px;
   }
 
-  .signup-from {
-    height: 90%
+  .NavBarRight .logout {
+    display: none;
   }
 
+  .signup-form .session-form input[type="submit"], .session-form .demo-btn{
+    font-size: 18px;
+  }
 
-  /* .NavBarRight .logout {
-    display: none;
-  } */
-  /* Eventually make a sandwich button or something that pops out to log out and see chat and profile */
+  .NavBarRGB .nav-h1 {
+    position: static;
+  }
 
 }
