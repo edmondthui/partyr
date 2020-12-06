@@ -77,6 +77,10 @@
     width: 85%;
   }
 
+  .party-index-container {
+    padding-top: 10px;
+  }
+
   .party-index-map-container {
     width: 100%;
     margin: 10px auto 0px auto;
