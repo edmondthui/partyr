@@ -75,6 +75,7 @@
 @media only screen and (max-width: 600px) {
   .party-index-item {
     width: 85%;
+    height: 90%;
   }
 
   .party-index-container {
@@ -83,12 +84,14 @@
 
   .party-index-map-container {
     width: 100%;
+    height: 200px;
     margin: 10px auto 0px auto;
     margin-bottom: 10px;
   }
 
   .party-index-map-container div:first-child {
     width: 100% !important;
+    height: 100% !important;
   }
 
   .gm-control-active {
@@ -107,8 +110,12 @@
     font-size: 26px;
   }
 
-  .party-index-item .strong, .party-index-item div {
+  .party-index-item .strong, .party-index-item div, .party-index-item .party-description, .party-index-item .number-guest {
     margin-right: 10px;
     font-size: 16px;
+  }
+
+  .party-index-item .party-date div{ 
+    white-space: nowrap;
   }
 }
