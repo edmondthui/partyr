@@ -5,7 +5,7 @@ Partyr is an application using the MERN Stack that allows users to organize and 
 # Background and Overview  
 Due to the COVID-19 quarantine, all of our team members have been feeling a bit of cabin fever. Now more than ever people have to be especially organized when attending events...  
 
-With Partyr you can organize parties, social gatherings, and events to meet new people with stress-free planning. Never have an unorganized party again! Let us do the planning and you do the partying.
+With Partyr you can organize parties, social gatherings, and events to meet new people with just a swipe. Never have an unorganized party again! Let us do the planning and you do the partying.
 
 * Great-Parties: Allow users to join and host parties on our platform.
 * Intuitive-UI: Users can use our app without any education on our product and is similar to other preexisiting web applications.
