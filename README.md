@@ -11,7 +11,7 @@ With Partyr you can organize parties, social gatherings, and events to meet new 
 * Intuitive-UI: Users can use our app without any education on our product and is similar to other preexisiting web applications.
 * Real-time: Communication for parties update in real-time so everyone stays on the same page. 
 
-Partyr is built with the MERN Stack, consisting of MongoDB, Express, React, and Node. Learn more about the technology used in this project [here](https://github.com/edmondthui/partyr/wiki/Technologies-and-Technical-Challenges).
+Partyr is built with the MERN Stack, consisting of MongoDB, Express, React, and Node.
 
 # Functionality & MVP
 - [x] User Auth
