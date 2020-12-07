@@ -22,7 +22,7 @@ Partyr is built with the MERN Stack, consisting of MongoDB, Express, React, and 
 ![Partyr Demo](https://i.imgur.com/QLGiL8s.gif)
 
 # Bonus Features
-- [ ] Mobile compatibility 
+- [x] Mobile compatibility 
 - [ ] Virtual party feature
 
 # Technologies and Technical Challenges
