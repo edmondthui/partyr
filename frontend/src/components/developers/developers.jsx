@@ -17,10 +17,10 @@ const Developers = () => (
                     <label className="developer-label">Edmond Hui</label>
                     <p>Team Lead</p>
                     <div className="developer-links">
-                        <a href="https://github.com/edmondthui/" className="personal-link github">
+                        <a href="https://github.com/edmondthui/" className="personal-link github" target="_blank">
                             <FontAwesomeIcon icon={ faGithub }/>
                         </a>
-                        <a href="https://www.linkedin.com/in/edmond-hui/" className="personal-link linkedin">
+                        <a href="https://www.linkedin.com/in/edmond-hui/" className="personal-link linkedin" target="_blank">
                             <FontAwesomeIcon icon={ faLinkedin }/>
                         </a>
                     </div>
@@ -33,10 +33,10 @@ const Developers = () => (
                     <label className="developer-label">Ray Liang</label>
                     <p>Flex Developer</p>
                     <div className="developer-links">
-                        <a href="https://github.com/bigcachemoney" className="github">
+                        <a href="https://github.com/bigcachemoney" className="github" target="_blank">
                         <FontAwesomeIcon icon={ faGithub }/>
                         </a>
-                        <a href="https://www.linkedin.com/in/raylanliang/" className="linkedin">
+                        <a href="https://www.linkedin.com/in/raylanliang/" className="linkedin" target="_blank">
                         <FontAwesomeIcon icon={ faLinkedin }/>
                         </a>
                     </div>
@@ -52,10 +52,10 @@ const Developers = () => (
                     <label className="developer-label">Alexandria Wong</label>
                     <p>Frontend Lead</p>
                     <div className="developer-links">
-                        <a href="https://github.com/alexawhy" className="personal-link github">
+                        <a href="https://github.com/alexawhy" className="personal-link github" target="_blank">
                         <FontAwesomeIcon icon={ faGithub }/>
                         </a>
-                        <a href="https://www.linkedin.com/in/alexandria-hy-wong/" className="personal-link linkedin">
+                        <a href="https://www.linkedin.com/in/alexandria-hy-wong/" className="personal-link linkedin" target="_blank">
                         <FontAwesomeIcon icon={ faLinkedin }/>
                         </a>
                     </div>
@@ -68,10 +68,10 @@ const Developers = () => (
                     <label className="developer-label">Jasmine Lok</label>
                     <p>Backend Lead</p>
                     <div className="developer-links">
-                        <a href="https://github.com/jasminellok" className="personal-link github">
+                        <a href="https://github.com/jasminellok" className="personal-link github" target="_blank">
                         <FontAwesomeIcon icon={ faGithub }/>
                         </a>
-                        <a href="https://www.linkedin.com/in/jasminellok/" className="personal-link linkedin">
+                        <a href="https://www.linkedin.com/in/jasminellok/" className="personal-link linkedin" target="_blank">
                         <FontAwesomeIcon icon={ faLinkedin }/>
                         </a>
                     </div>

@@ -42,7 +42,7 @@ class NavBar extends React.Component {
       return (
         <div className='NavBarRGB'>
           <div>
-            <a href="https://github.com/edmondthui/partyr" className="github-link">
+            <a href="https://github.com/edmondthui/partyr" className="github-link" target="_blank">
               <FontAwesomeIcon icon={ faGithub }/>
             </a>
             <Link to="/developers" className="developers-link">
