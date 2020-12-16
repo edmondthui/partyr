@@ -1,6 +1,7 @@
 import React from 'react'
 import Map from '../../map/party_map';
 import './upcoming_parties.css'
+import Livechat from '../../livechat/livechat_container';
 
 class UpcomingParties extends React.Component {
   constructor(props) {
@@ -26,28 +27,31 @@ class UpcomingParties extends React.Component {
       
       return (
         <div className="party-card" style={{borderColor: `${party.color}`}}>
-          <div>
-            <Map party={party}/>
+          <div className="map-and-info">
+            <div>
+              <Map party={party}/>
+            </div>
+            <div className="party-info-container">
+              <div className="party-title">
+                <p>{party.title}</p>
+              </div>
+              <div className="party-description">
+                <p>{party.description}</p>
+              </div>
+              <div className="party-date">
+                <div class="strong">Date: </div>
+                <div>{partyDate.toDateString()}</div>
+              </div>
+              <div className="party-time">
+                <div class="strong">Time: </div>
+                <div>{partyDate.getHours() < 10 ? "0" : ""}{partyDate.getHours()}:{partyDate.getMinutes() < 10 ? "0" : ""}{partyDate.getMinutes()}</div>
+              </div>
+              <div className="number-guest">
+                {numberGuest}
+              </div>
+            </div>
           </div>
-          <div className="party-info-container">
-            <div className="party-title">
-              <p>{party.title}</p>
-            </div>
-            <div className="party-description">
-              <p>{party.description}</p>
-            </div>
-            <div className="party-date">
-              <div class="strong">Date: </div>
-              <div>{partyDate.toDateString()}</div>
-            </div>
-            <div className="party-time">
-              <div class="strong">Time: </div>
-              <div>{partyDate.getHours() < 10 ? "0" : ""}{partyDate.getHours()}:{partyDate.getMinutes() < 10 ? "0" : ""}{partyDate.getMinutes()}</div>
-            </div>
-            <div className="number-guest">
-              {numberGuest}
-            </div>
-          </div>
+          <Livechat party={party} scroll={false}/>
         </div>
       )
     })

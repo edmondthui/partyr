@@ -62,7 +62,9 @@ class Party extends React.Component {
   }
 
   scrollToBottom() {
-    this.chat.scrollIntoView({ behavior: 'smooth' });
+    if (this.props.scroll !== false) {
+      this.chat.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   componentDidUpdate(prevProps) {

@@ -4,6 +4,10 @@
   padding-bottom: 60px;
 }
 
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
 .all-parties .page-title {
   /* display: block; */
   font-family: 'Raleway', sans-serif;
@@ -19,7 +23,6 @@
 .party-card {
   width: 70%;
   margin: 0 auto;
-  padding-right: 15px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -27,6 +30,7 @@
   border-right: 40px solid;
   box-shadow: 0px 0px 10px 1px #c9c9c990;
   overflow: hidden;
+  flex-direction: column;
 }
 
 .party-card .map-container {
@@ -79,4 +83,16 @@
 .party-info-container .strong {
   font-weight: 700;
   margin-right: 20px;
+}
+
+.map-and-info {
+  display: flex;
+}
+
+.party-card .chat-container .chat-msg-container{
+  height: 200px;
+}
+
+.party-card .chat-container {
+  height: 360px;
 }
