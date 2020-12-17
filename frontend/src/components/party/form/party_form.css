@@ -106,6 +106,11 @@
   height: 100px;
 }
 
+.errors {
+  text-align: center;
+  color: #f32b60;
+}
+
 @media only screen and (max-width: 600px) {
   .party-form-container {
     width: 90%;

@@ -83,7 +83,11 @@ class CreatePartyForm extends React.Component {
       lat: this.state.lat,
       lng: this.state.lng,
     }
-    this.props.createParty(party).then(() => this.props.history.push("/dashboard"));
+    this.props.createParty(party).then(response => {
+      if (!response) {
+        this.props.history.push("/dashboard")
+      }
+    });
   }
 
   componentWillUnmount() {
@@ -106,56 +110,58 @@ class CreatePartyForm extends React.Component {
     const party = this.state;
 
     return (
-      <div className="party-form-container">
-        <div className="map-container">
-          {this.state.map}
-        </div>
-        <form className="party-form" onSubmit={this.handleSubmit}>
-          <h1 className="party-form-title">Create a party</h1>
-          <div className="title">
-            <div className="input-wrapper">
-              <label htmlFor="input-title">Title</label>
-              <input 
-                type="text"
-                id="input-title"
-                value={party.title}
-                onChange={this.update('title')} />
-            </div>
+      <div className = "errors-container">
+        <div className="party-form-container">
+          <div className="map-container">
+            {this.state.map}
           </div>
-          <div className="description">
-            <div className="input-wrapper">
-              <label htmlFor="input-description">Description</label>
-              <textarea 
-                id="input-description"
-                value={party.description}
-                onChange={this.update('description')} />
-            </div>
-          </div>
-          <div className="date">
-            <div className="input-wrapper">
-              <label htmlFor="input-date">Date and Time</label>
-              <input 
-                type="datetime-local"
-                id="input-date"
-                value={party.date}
-                onChange={this.update('date')} />
-            </div>
-          </div>
-          <div className="location">
-            <h3>Please pick the location on the map</h3>
-            <div className="input-wrapper">
-              <label>Latitude:
-                <input type="text" value={this.state.lat} onChange={this.update("lat")} disabled />
-              </label>
+          <form className="party-form" onSubmit={this.handleSubmit}>
+            <h1 className="party-form-title">Create a party</h1>
+            <div className="title">
+              <div className="input-wrapper">
+                <label htmlFor="input-title">Title</label>
+                <input 
+                  type="text"
+                  id="input-title"
+                  value={party.title}
+                  onChange={this.update('title')} />
               </div>
-            <div className="input-wrapper">
-              <label>Longitude:
-                <input type="text" value={this.state.lng} onChange={this.update("lng")} disabled />
-              </label>
             </div>
-          </div>
-          <button className="submit-btn">Create Party!</button>
-        </form>
+            <div className="description">
+              <div className="input-wrapper">
+                <label htmlFor="input-description">Description</label>
+                <textarea 
+                  id="input-description"
+                  value={party.description}
+                  onChange={this.update('description')} />
+              </div>
+            </div>
+            <div className="date">
+              <div className="input-wrapper">
+                <label htmlFor="input-date">Date and Time</label>
+                <input 
+                  type="datetime-local"
+                  id="input-date"
+                  value={party.date}
+                  onChange={this.update('date')} />
+              </div>
+            </div>
+            <div className="location">
+              <h3>Please pick the location on the map</h3>
+              <div className="input-wrapper">
+                <label>Latitude:
+                  <input type="text" value={this.state.lat} onChange={this.update("lat")} disabled />
+                </label>
+                </div>
+              <div className="input-wrapper">
+                <label>Longitude:
+                  <input type="text" value={this.state.lng} onChange={this.update("lng")} disabled />
+                </label>
+              </div>
+            </div>
+            <button className="submit-btn">Create Party!</button>
+          </form>
+        </div>
         {this.renderErrors()}
       </div>
     )
