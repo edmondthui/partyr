@@ -41,9 +41,9 @@
   box-shadow: 0px 0px 10px 1px #c9c9c990;
 }
 
-.all-parties:last-child{
+/* .all-parties:last-child{
   margin-bottom: 50px;
-}
+} */
 
 .party-info-container {
   display: flex;
