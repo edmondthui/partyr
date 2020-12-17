@@ -44,7 +44,11 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user).then(() => this.props.login(user));
+    this.props.signup(user).then((response) => {
+      if (response.type === "RECEIVE_USER_SIGN_IN") {
+        this.props.login(user)
+      }
+    });
   }
 
   componentWillUnmount() {
