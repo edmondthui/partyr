@@ -36,6 +36,9 @@ class Party extends React.Component {
         })
       }
     })
+    this.socket.emit('join', {
+      partyId: this.props.party._id
+    })
   }
 
   update(e) {

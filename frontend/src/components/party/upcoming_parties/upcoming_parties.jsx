@@ -11,9 +11,10 @@ class UpcomingParties extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchParties()
   }
+
 
   render() {
     let parties = this.props.parties.filter(party => party.guests.includes(this.props.user.id));
@@ -26,7 +27,7 @@ class UpcomingParties extends React.Component {
       const partyDate = new Date(party.date);
       
       return (
-        <div className="party-card" style={{borderColor: `${party.color}`}}>
+        <div className="party-card" key={party.id} style={{borderColor: `${party.color}`}}>
           <div className="map-and-info">
             <div>
               <Map party={party}/>
@@ -39,11 +40,11 @@ class UpcomingParties extends React.Component {
                 <p>{party.description}</p>
               </div>
               <div className="party-date">
-                <div class="strong">Date: </div>
+                <div className="strong">Date: </div>
                 <div>{partyDate.toDateString()}</div>
               </div>
               <div className="party-time">
-                <div class="strong">Time: </div>
+                <div className="strong">Time: </div>
                 <div>{partyDate.getHours() < 10 ? "0" : ""}{partyDate.getHours()}:{partyDate.getMinutes() < 10 ? "0" : ""}{partyDate.getMinutes()}</div>
               </div>
               <div className="number-guest">
