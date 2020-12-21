@@ -1,12 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
-import './navbar.css'
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faUsers } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-
-
+import React from "react";
+import { Link } from "react-router-dom";
+import "./navbar.css";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faUsers } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -16,22 +13,28 @@ class NavBar extends React.Component {
   }
 
   logoutUser(e) {
-      e.preventDefault();
-      this.props.logout();
+    e.preventDefault();
+    this.props.logout();
   }
 
   getLinks() {
     if (this.props.loggedIn) {
       return (
         <div className="NavBarRight">
-          <button onClick={this.logoutUser} className="logout">Log Out</button>
+          <button onClick={this.logoutUser} className="logout">
+            Log Out
+          </button>
         </div>
       );
     } else {
       return (
         <div className="NavBarRight">
-          <Link to={'/login'} className="login">Log In</Link>
-          <Link to={'/signup'} className="signup">Sign Up</Link>
+          <Link to={"/login"} className="login">
+            Log In
+          </Link>
+          <Link to={"/signup"} className="signup">
+            Sign Up
+          </Link>
         </div>
       );
     }
@@ -40,17 +43,21 @@ class NavBar extends React.Component {
   render() {
     if (this.props.loggedIn) {
       return (
-        <div className='NavBarRGB'>
+        <div className="NavBarRGB">
           <div>
-            <a href="https://github.com/edmondthui/partyr" className="github-link" target="_blank">
-              <FontAwesomeIcon icon={ faGithub }/>
+            <a
+              href="https://github.com/edmondthui/partyr"
+              className="github-link"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faGithub} />
             </a>
             <Link to="/developers" className="developers-link">
-              <FontAwesomeIcon icon={ faUsers } />
+              <FontAwesomeIcon icon={faUsers} />
             </Link>
           </div>
           <h1 className="nav-h1">
-            <Link to={'/'}>
+            <Link to={"/"}>
               <div className="nav-letter">P</div>
               <div className="nav-letter2">A</div>
               <div className="nav-letter3">R</div>
@@ -65,18 +72,24 @@ class NavBar extends React.Component {
       );
     } else {
       return (
-        <div className='NavBar'>
+        <div className="NavBar">
           <div>
-            <a href="https://github.com/edmondthui/partyr" className="github-link logged-out">
-              <FontAwesomeIcon icon={ faGithub }/>
+            <a
+              href="https://github.com/edmondthui/partyr"
+              className="github-link logged-out"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faGithub} />
             </a>
             <Link to="/developers" className="developers-link logged-out">
-              <FontAwesomeIcon icon={ faUsers } />
+              <FontAwesomeIcon icon={faUsers} />
             </Link>
           </div>
 
-          <h1><Link to={'/'}>Partyr</Link></h1>
-          
+          <h1>
+            <Link to={"/"}>Partyr</Link>
+          </h1>
+
           {this.getLinks()}
         </div>
       );
