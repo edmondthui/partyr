@@ -15,6 +15,7 @@
   "author": "Edmond Hui, Jasmine Lok, Alexandria Wong, Ray Liang",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "aws-sdk": "^2.802.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
