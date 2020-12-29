@@ -48,7 +48,7 @@ Partyr is built with the MERN stack (MongoDB, Express, React, and Node).
 ## Technical Challenges
 There are always hiccups when learning new technologies. Our solution to all of our issues is our strong communication and collaboration between each of the members of the team. Whenever there was a bug there would always be a member of the team ready to listen and provide a new set of eyes.  
 
-```
+```JavaScript
 render() {
     let chatMessages = null;
     if (this.props.users.length > 0) {
