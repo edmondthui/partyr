@@ -135,39 +135,39 @@
 }
 
 .signup {
-  color: #f32b60;
+  color: $paradise-pink;
   background-color: white;
-}
 
-.signup:hover {
-  background-color: #f32b60;
-  color: white;
-  box-shadow: 0px 0px 10px 3px #f32b60b0;
-  transition: 0.2s;
+  &:hover {
+    background-color: $paradise-pink;
+    color: white;
+    box-shadow: 0px 0px 10px 3px $paradise-pink-shadow;
+    transition: 0.2s;
+  }
 }
 
 .login {
-  color: #ff8f1f;
+  color: $dark-orange;
   background-color: white;
-}
 
-.login:hover {
-  background-color: #ff8f1f;
-  color: white;
-  box-shadow: 0px 0px 10px 3px #ff8f1fb0;
-  transition: 0.2s;
+  &:hover {
+    background-color: $dark-orange;
+    color: white;
+    box-shadow: 0px 0px 10px 3px $dark-orange-shadow;
+    transition: 0.2s;
+  }
 }
 
 .logout {
   color: white; 
   background-color: black;
-}
 
-.logout:hover {
-  color: black;
-  background-color: white;
-  box-shadow: 0px 0px 10px 3px #ebebebb0;
-  transition: 0.2s;
+  &:hover {
+    color: black;
+    background-color: white;
+    box-shadow: 0px 0px 10px 3px #ebebebb0;
+    transition: 0.2s;
+  }
 }
 
 .github-link {
@@ -220,4 +220,11 @@
     height: 30px;
   }
 
+  .developers-link {
+    display: none;
+  }
+
+  .github-link {
+    display: none;
+  }
 }

@@ -1,6 +1,4 @@
 import React from 'react';
-// import './developers.css';
-
 import { faGithub, faLinkedin, faAngellist } from '@fortawesome/free-brands-svg-icons';
 import { faAddressCard } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

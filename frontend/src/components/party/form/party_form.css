@@ -88,9 +88,9 @@
 }
 
 .submit-btn:hover {
-  background-color: #ff8f1f;
+  background-color: $dark-orange;
   color: white;
-  box-shadow: 0px 0px 10px 3px #ff8f1fb0;
+  box-shadow: 0px 0px 10px 3px $dark-orangeb0;
   transition: 0.2s;
 }
 
@@ -108,7 +108,7 @@
 
 .errors {
   text-align: center;
-  color: #f32b60;
+  color: $paradise-pink;
 }
 
 @media only screen and (max-width: 600px) {

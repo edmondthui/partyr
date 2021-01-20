@@ -72,17 +72,5 @@
 }
 
 .linkedin:hover {
-  color: #0A66C2;
-}
-
-// move to navbar.scss
-
-@media only screen and (max-width: 600px) {
-  .developers-link {
-    display: none;
-  }
-
-  .github-link {
-    display: none;
-  }
+  color: $linkedin-blue;
 }
