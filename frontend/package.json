@@ -10,7 +10,7 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "faker": "^5.1.0",
     "google-maps-react": "^2.0.6",
@@ -24,6 +24,7 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "sass": "^1.32.5",
     "socket.io-client": "^3.0.3",
     "web-vitals": "^0.2.4"
   },
