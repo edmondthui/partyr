@@ -32,34 +32,34 @@
 }
 
 @-webkit-keyframes color_change {
-  0% { background-color: #df0024 }
-  30% { background-color: #f3c300 }
-  60% { background-color: #00ac9f }
-  100% { background-color: #2e6db4}
+  0% { background-color: $spanish-red }
+  30% { background-color: $spanish-red }
+  60% { background-color: $light-sea-green }
+  100% { background-color: $true-blue}
 }
 @-moz-keyframes color_change {
-  0% { background-color: #df0024 }
-  30% { background-color: #f3c300 }
-  60% { background-color: #00ac9f }
-  100% { background-color: #2e6db4}
+  0% { background-color: $spanish-red }
+  30% { background-color: $spanish-red }
+  60% { background-color: $light-sea-green }
+  100% { background-color: $true-blue}
 }
 @-ms-keyframes color_change {
-  0% { background-color: #df0024 }
-  30% { background-color: #f3c300 }
-  60% { background-color: #00ac9f }
-  100% { background-color: #2e6db4}
+  0% { background-color: $spanish-red }
+  30% { background-color: $spanish-red }
+  60% { background-color: $light-sea-green }
+  100% { background-color: $true-blue}
 }
 @-o-keyframes color_change {
-  0% { background-color: #df0024 }
-  30% { background-color: #f3c300 }
-  60% { background-color: #00ac9f }
-  100% { background-color: #2e6db4}
+  0% { background-color: $spanish-red }
+  30% { background-color: $spanish-red }
+  60% { background-color: $light-sea-green }
+  100% { background-color: $true-blue}
 }
 @keyframes color_change {
-  0% { background-color: #df0024 }
-  30% { background-color: #f3c300 }
-  60% { background-color: #00ac9f }
-  100% { background-color: #2e6db4}
+  0% { background-color: $spanish-red }
+  30% { background-color: $spanish-red }
+  60% { background-color: $light-sea-green }
+  100% { background-color: $true-blue}
 }
 
 .NavBarRGB h1 {
@@ -70,22 +70,21 @@
   position: absolute;
   left: calc(50% - 70px);
   letter-spacing: 0.5px;
-  
 }
 
-.nav-letter{
+.nav-letter {
   animation: jump 0.5s infinite;
   display:inline-block;
 }
-.nav-letter2{
+.nav-letter2 {
   animation: hop 0.5s infinite;
   display:inline-block;
 }
-.nav-letter3{
+.nav-letter3 {
   animation: shake 0.5s infinite;
   display:inline-block;
 }
-.nav-letter4{
+.nav-letter4 {
   animation: explode 0.5s infinite;
   display:inline-block;
 }
