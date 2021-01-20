@@ -16,7 +16,7 @@
     align-items: center;
     border-right: 40px solid;
     background-color:#f8f8f8;
-    box-shadow: 0px 0px 10px 1px #c9c9c990;
+    box-shadow: 0px 0px 10px 1px $light-gray;
     border-radius: 20px;
 }
 
