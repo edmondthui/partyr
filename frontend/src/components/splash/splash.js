@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import './splash.css';
 
 class Splash extends React.Component {
 
