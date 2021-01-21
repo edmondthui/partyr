@@ -12,36 +12,36 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #02040f;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  input[type="text"], input[type="password"] {
+    display: block;
+    width: 70%;
+    height: 40px;
+    box-shadow: 0px 0px 5px 1px #e9e3e6;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
 }
 
-.session-form h2 {
-  font-size: 30px;
-  font-weight: 700;
-  color: #02040f;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.session-form input[type="text"], 
-.session-form input[type="password"] {
-  display: block;
-  width: 70%;
-  height: 40px;
-  box-shadow: 0px 0px 5px 1px #e9e3e6;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  padding: 5px 10px;
-}
 
 .login-form input[type="text"]:focus, 
 .login-form input[type="password"]:focus {
-  box-shadow: 0px 0px 8px 1px $dark-orangea8;
+  box-shadow: 0px 0px 8px 1px $dark-orange-shadow;
   transition: 0.2s;
 }
 
 .signup-form input[type="text"]:focus, 
 .signup-form input[type="password"]:focus {
-  box-shadow: 0px 0px 8px 1px $paradise-pinka8;
+  box-shadow: 0px 0px 8px 1px $paradise-pink-shadow;
   transition: 0.2s;
 }
 
@@ -78,17 +78,15 @@
 }
 
 .login-form input[type="submit"]:hover {
-  background-color:$dark-orange;
+  background-color: $dark-orange;
   transition: 0.3s;
 }
 
 .signup-form .errors {
-  /* margin: 10px 0px; */
   color: $paradise-pink;
 }
 
 .login-form .errors {
-  /* margin: 10px 0px; */
   color: $dark-orange;
 }
 
