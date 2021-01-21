@@ -4,7 +4,7 @@ import PartyShow from './party_show';
 
 const mapStateToProps = (state) => {
   return ({
-    party : state.parties.party
+    party: state.parties.party
   });
 }
 

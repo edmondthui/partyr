@@ -1,5 +1,4 @@
 import React from "react";
-import "./partymap.css";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 
 class PartyMap extends React.Component {

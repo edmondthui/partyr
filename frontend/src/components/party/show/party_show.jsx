@@ -19,7 +19,6 @@ class PartyShow extends React.Component {
         <div>{party.title}</div>
         <div>{party.date}</div>
         <div>{party.description}</div>
-        {/* <div>{party.items}</div> */}
         <div>{party.lat}</div>
         <div>{party.lng}</div>
         <div>{party.guests ? party.guests.length : 0}</div>

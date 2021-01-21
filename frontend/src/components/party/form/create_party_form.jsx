@@ -1,6 +1,5 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import './party_form.css';
 
 class CreatePartyForm extends React.Component {
   constructor(props) {

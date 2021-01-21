@@ -1,6 +1,5 @@
 import React from 'react'
 import Map from '../../map/party_map';
-import './upcoming_parties.css'
 import Livechat from '../../livechat/livechat_container';
 
 class UpcomingParties extends React.Component {

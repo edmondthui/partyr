@@ -22,11 +22,11 @@
   flex-direction: column;
   padding: 0 25px;
   border-top: 30px solid;
-}
 
-.party-index-item:hover {
-  cursor: grab; 
-  /* this is so it shows a hand on the party cards can change if anyone doesn't like it */
+  &:hover {
+    cursor: grab; 
+    /* this is so it shows a hand on the party cards can change if anyone doesn't like it */
+  }
 }
 
 .party-index-map-container {
