@@ -1,7 +1,9 @@
-@import "./styles/base/colors.scss";
-@import "./styles/base/fonts.scss";
-@import "./styles/base/reset.scss";
-@import "./styles/base/layout.scss";
+@import "styles/base/reset";
+@import "styles/base/colors";
+@import "styles/base/fonts";
+@import "styles/base/layout";
 
-@import "./styles/components/developer.scss";
-@import "./styles/components/navbar.scss";
+// components
+@import "styles/components/developer";
+@import "styles/components/livechat";
+@import "styles/components/navbar";
