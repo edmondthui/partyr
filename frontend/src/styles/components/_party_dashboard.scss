@@ -8,9 +8,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-between; */
   width: calc(100% / 6);
-  box-shadow: 0px 0px 10px 1px #dbdbdb90;
+  box-shadow: 0px 0px 10px 1px $lightest-gray;
   z-index: 1;
 }
 
@@ -27,7 +26,6 @@
   height: 150px;
   object-fit: cover;
 }
-
 
 .username {
   font-size: 1.4em;
@@ -64,21 +62,21 @@
 .upcoming {
   border-bottom: 5px solid #ffb20c;
   transition: 0.2s;
-}
 
-.upcoming:hover {
-  border-bottom: 5px solid #ffd270;
-  transition: 0.2s;
+  &:hover {
+    border-bottom: 5px solid #ffd270;
+    transition: 0.2s;
+  }
 }
 
 .hosted {
-  border-bottom: 5px solid #f32b60;
+  border-bottom: 5px solid $paradise-pink;
   transition: 0.2s;
-}
 
-.hosted:hover {
-  border-bottom: 5px solid #ff7c9f;
-  transition: 0.2s;
+  &:hover {
+    border-bottom: 5px solid #ff7c9f;
+    transition: 0.2s;
+  }
 }
 
 .new-party-btn {
@@ -90,16 +88,16 @@
   border-radius: 50px;
   font-size: 20px;
   font-weight: 600;
-  background-color: #f32b60;
+  background-color: $paradise-pink;
   color: white;
   transition: 0.2s;
   padding-top: 10px;
   text-align: center;
-}
 
-.new-party-btn:hover {
-  background-color: black;
-  transition: 0.2s;
+  &:hover {
+    background-color: black;
+    transition: 0.2s;
+  }
 }
 
 .main-content {
@@ -107,7 +105,6 @@
   flex-direction: column;
   align-items: center;
   width: calc(100% / 2);
-  /* background-color: #fdfbfc; */
   overflow: auto;
 }
 
@@ -131,15 +128,10 @@
   justify-content: center;
   align-items: center;
   z-index: 2;
-  /* background-color: #fdfbfc; */
-  /* background-color: #4c4cc0; */
-}
-
-.party-btn-container .party-btn {
-  pointer-events: auto;
 }
 
 .party-btn {
+  pointer-events: auto;
   display: block;
   width: 70px;
   height: 70px;
@@ -152,32 +144,32 @@
 .decline-btn {
   font-size: 36px;
   margin-right: 10px;
-  color: #f32b60;
+  color: $paradise-pink;
   transition: 0.2s;
-}
 
-.decline-btn:hover {
-  background-color: #f32b60;
-  color: white;
-  transition: 0.2s;
+  &:hover {
+    background-color: $paradise-pink;
+    color: white;
+    transition: 0.2s;
+  }
 }
 
 .join-btn {
   font-size: 32px;
   color: #1be9b6;
   transition: 0.2s;
-}
 
-.join-btn:hover {
-  background-color: #1be9b6;
-  color: white;
-  transition: 0.2s;
+  &:hover {
+    background-color: #1be9b6;
+    color: white;
+    transition: 0.2s;
+  }
 }
 
 .right-sidebar {
   width: calc(100% / 3);
   overflow: hidden;
-  box-shadow: 0px 0px 10px 1px #dbdbdb90;
+  box-shadow: 0px 0px 10px 1px $lightest-gray;
   z-index: 1;
   margin-left: 3px;
   margin-right: 1px;

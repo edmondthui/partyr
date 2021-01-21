@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faHeart } from '@fortawesome/free-solid-svg-icons';
 import Livechat from '../../livechat/livechat_container';
-import './dashboard.css';
 import PartyIndex from '../index/party_index';
 
 class Dashboard extends React.Component {

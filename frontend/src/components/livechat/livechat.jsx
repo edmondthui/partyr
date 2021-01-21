@@ -1,6 +1,5 @@
 import React from 'react'
 import io from 'socket.io-client'
-import './livechat.css'
 import config from './config'
 
 class Party extends React.Component {

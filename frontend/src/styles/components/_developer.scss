@@ -27,24 +27,23 @@
   padding: 10px 0 10px 15px;
   border-radius: 20px;
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-evenly;
   align-items: center;
   margin-top: 30px;
   border-right: 40px solid;
-  box-shadow: 0px 0px 10px 1px #c9c9c990;
+  box-shadow: 0px 0px 10px 1px $light-gray;
   overflow: hidden;
-}
 
-.developer img {
-  width: 200px;
-  height: 200px;
-}
+  img {
+    width: 200px;
+    height: 200px;
+  }
 
-.developer .developer-info {
-  margin-left: 10px;
-  width: 175px;
-  flex-direction: column;
+  .developer-info {
+    margin-left: 10px;
+    width: 175px;
+    flex-direction: column;
+  }
 }
 
 .developer-label {
@@ -59,38 +58,19 @@
   height: 20px;
 }
 
-
 .developer-left {
   margin-right: 20px;
 }
 
-.github:hover {
-  transition: 0.3s;
-  transform: scale(1.25);
+.personal-link {
+  margin: 3px;
+
+  &:hover {
+    transition: 0.3s;
+    transform: scale(1.25);
+  }
 }
 
 .linkedin:hover {
-  transition: 0.3s;
-  transform: scale(1.25);
-  color: #0A66C2;
-}
-
-.angellist:hover {
-  transition: 0.3s;
-  transform: scale(1.25);
-}
-
-.portfolio:hover {
-  transition: 0.3s;
-  transform: scale(1.25);
-}
-
-@media only screen and (max-width: 600px) {
-  .developers-link {
-    display: none;
-  }
-
-  .github-link {
-    display: none;
-  }
+  color: $linkedin-blue;
 }

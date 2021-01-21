@@ -15,18 +15,18 @@
   width: 400px;
   height: 550px;
   background-color: white;
-  box-shadow: 0px 0px 10px 2px #c9c9c990;
+  box-shadow: 0px 0px 10px 2px $light-gray;
   border-radius: 15px;
   margin: 0 auto 10px auto;
   display: flex;
   flex-direction: column;
   padding: 0 25px;
   border-top: 30px solid;
-}
 
-.party-index-item:hover {
-  cursor: grab; 
-  /* this is so it shows a hand on the party cards can change if anyone doesn't like it */
+  &:hover {
+    cursor: grab; 
+    /* this is so it shows a hand on the party cards can change if anyone doesn't like it */
+  }
 }
 
 .party-index-map-container {

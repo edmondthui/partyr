@@ -1,6 +1,5 @@
 import React from 'react';
 import PartyIndexItem from './party_index_item'
-import './party_index.css';
 import TinderCard from 'react-tinder-card'
 
 class PartyIndex extends React.Component {

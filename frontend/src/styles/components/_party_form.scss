@@ -4,8 +4,7 @@
   padding: 20px;
   border-radius: 15px;
   background-color: white;
-  box-shadow: 0px 0px 10px 2px #c9c9c990;
-
+  box-shadow: 0px 0px 10px 2px $light-gray;
 }
 
 .party-form-container .map-container{
@@ -13,7 +12,7 @@
   height: 400px;
   border: none;
   margin-right: 15px;
-  box-shadow: 0px 0px 10px 1px #c9c9c990;
+  box-shadow: 0px 0px 10px 1px $light-gray;
 }
 
 .party-form {
@@ -35,37 +34,35 @@
   display: flex;
   flex-direction: column;
   height: 55px;
-  /* width: 90%; */
   margin: 12px 0;
   border: 3px solid transparent;
   border-radius: 4px; 
   box-shadow: 0px 0px 1px rgb(190, 190, 190);
   padding-left: 10px;
-}
+  
+  &:focus-within {
+    box-shadow: 0px 0px 5px 1px rgba(255, 149, 62, 0.445);
+  }
 
-.input-wrapper:focus-within {
-  box-shadow: 0px 0px 5px 1px rgba(255, 149, 62, 0.445);
-}
+  label {
+    margin: 5px 10px 2px 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(77, 77, 77);
+  }
 
-.input-wrapper label {
-  margin: 5px 10px 2px 0;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgb(77, 77, 77);
-}
-
-.input-wrapper input {
-  height: 2em;
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  outline: none;
-  border: none;
+  input {
+    height: 2em;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+  }
 }
 
 .party-form-container {
   display: flex;
-  /* justify-content: center; */
   justify-content: space-between;
   margin-top: 100px;
   align-items: center;
@@ -85,13 +82,13 @@
   font-size: 18px;
   font-weight: 700;
   transition: 0.2s;
-}
 
-.submit-btn:hover {
-  background-color: #ff8f1f;
-  color: white;
-  box-shadow: 0px 0px 10px 3px #ff8f1fb0;
-  transition: 0.2s;
+  &:hover {
+    background-color: $dark-orange;
+    color: white;
+    box-shadow: 0px 0px 10px 3px $dark-orange-shadow;
+    transition: 0.2s;
+  }
 }
 
 .location {
@@ -108,7 +105,7 @@
 
 .errors {
   text-align: center;
-  color: #f32b60;
+  color: $paradise-pink;
 }
 
 @media only screen and (max-width: 600px) {
@@ -139,5 +136,4 @@
   .gmnoprint {
     display: none;
   }
-
 }
