@@ -21,7 +21,7 @@
     text-shadow: 2px 2px 6px rgba(30, 30, 30, 0.3);
   }
 
-  p {
+  > p {
     font-size: 28px;
     font-weight: 700;
     color: #02040f;
@@ -75,6 +75,7 @@
   -webkit-background-clip:text;
   transition: color 1s ease-in-out;
   background-color: #02040f;
+  font-family: 'Raleway', sans-serif;
 }
 
 @keyframes rainbow { 
