@@ -90,17 +90,17 @@
   color: $dark-orange;
 }
 
-p.change-form {
+.change-form {
   font-weight: 500;
   font-size: 16px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.login-form p.change-form a {
+.login-form .change-form a {
   color: $dark-orange;
 }
 
-.signup-form p.change-form a {
+.signup-form .change-form a {
   color: $paradise-pink;
 }
