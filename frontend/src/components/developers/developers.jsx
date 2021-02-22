@@ -97,7 +97,7 @@ const Developers = () => (
       <div className="developer-right">
         <div className="developer" style={{ borderColor: "#ff8f1f" }}>
           <img
-            src="https://media-exp1.licdn.com/dms/image/C4E03AQERwWlNzQ2T0Q/profile-displayphoto-shrink_800_800/0?e=1612396800&v=beta&t=PCD58ecm8a0Ax2xZhK0c-XSekSO60uGtbNRhRtey0ww"
+            src="https://alexandria-wong.com/images/alexandria_wong.jpg"
             alt="developer-Alexandria-Wong"
           />
           <div className="developer-info">
