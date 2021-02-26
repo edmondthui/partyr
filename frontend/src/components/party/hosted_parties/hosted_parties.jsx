@@ -1,6 +1,6 @@
 import React from "react";
 import Map from '../../map/party_map';
-import './hosted_parties';
+import { ReturnToDashboard } from '../../nav/return_dashboard';
 
 class HostedParties extends React.Component {
   constructor(props) {
@@ -12,6 +12,7 @@ class HostedParties extends React.Component {
 
   componentDidMount() {
     this.props.fetchParties();
+    window.scrollTo(0, 0);
   }
 
   componentWillUnmount() {
@@ -60,6 +61,7 @@ class HostedParties extends React.Component {
 
     return (
       <div className="all-parties">
+        <ReturnToDashboard />
         <h1 className="page-title" style={{borderColor: `${this.props.user.color}`}}>Parties hosted by {this.props.user.username}</h1>
         {hostedParties}
       </div>

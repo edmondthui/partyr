@@ -101,7 +101,9 @@ class Dashboard extends React.Component {
       </div>
 
       <div className="right-sidebar">
-        <Livechat party={this.state.parties.length > 0 ? this.state.parties[0] : []}/>
+        <Livechat 
+          party={this.state.parties.length > 0 ? this.state.parties[0] : []}
+          scroll={true}/>
       </div>
     </div>
     )

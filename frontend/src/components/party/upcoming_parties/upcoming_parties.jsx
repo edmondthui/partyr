@@ -1,6 +1,7 @@
 import React from 'react'
 import Map from '../../map/party_map';
 import Livechat from '../../livechat/livechat_container';
+import { ReturnToDashboard } from '../../nav/return_dashboard';
 
 class UpcomingParties extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class UpcomingParties extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchParties()
+    this.props.fetchParties();
   }
 
 
@@ -58,6 +59,7 @@ class UpcomingParties extends React.Component {
 
     return(
       <div className="all-parties">
+        <ReturnToDashboard />
         <h1 className="page-title" style={{borderColor: `${this.props.user.color}`}}>{this.props.user.username}'s Upcoming Parties</h1>
         {upcomingParties}
       </div>
