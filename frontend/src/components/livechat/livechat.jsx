@@ -64,15 +64,9 @@ class Party extends React.Component {
   }
 
   scrollToBottom() {
-    if (this.props.scroll !== false) {
+    if (this.props.scroll) {
       this.chat.scrollIntoView({ behavior: 'smooth' });
-    }
-    else {
-      this.chat.scrollIntoView({
-        block: 'center',
-        behavior: "smooth",
-      })
-    }
+    } 
   }
 
   componentDidUpdate(prevProps) {
@@ -81,8 +75,7 @@ class Party extends React.Component {
         partyId: this.props.party._id
       })
       this.setState({chat: []})
-    } else {
-    }
+    } 
     this.scrollToBottom();
   }
 

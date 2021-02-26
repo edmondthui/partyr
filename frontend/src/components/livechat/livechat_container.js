@@ -6,9 +6,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     user: state.session.user,
     users: state.users.all,
-    // party: state.parties.all[0] ? state.parties.all[0] : {},
     party: ownProps.party
-
   };
 };
 
