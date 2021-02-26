@@ -1,0 +1,11 @@
+.return-dashboard {
+  display: block;
+  margin: 1.5em 0 0 2em;
+  font-size: 1.2em;
+  transition: 0.2s;
+
+  &:hover {
+    color: $dark-orange;
+    transition: 0.2s;
+  }
+}

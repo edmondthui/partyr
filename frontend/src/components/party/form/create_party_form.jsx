@@ -1,5 +1,6 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { ReturnToDashboard } from '../../nav/return_dashboard';
 
 class CreatePartyForm extends React.Component {
   constructor(props) {
@@ -110,6 +111,7 @@ class CreatePartyForm extends React.Component {
 
     return (
       <div className = "errors-container">
+        <ReturnToDashboard />
         <div className="party-form-container">
           <div className="map-container">
             {this.state.map}
