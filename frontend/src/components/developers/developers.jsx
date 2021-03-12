@@ -55,7 +55,7 @@ const Developers = () => (
         </div>
         <div className="developer" style={{ borderColor: "#424242" }}>
           <img
-            src="https://imgur.com/a/imz0Gze"
+            src="https://i.imgur.com/sM9rzDl.jpg"
             alt="developer-Ray-Liang"
           />
           <div className="developer-info">
